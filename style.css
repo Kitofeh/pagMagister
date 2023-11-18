@@ -1,0 +1,33 @@
+/*Plantilla Main*/
+
+.section-margin{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/*Seccion NavBar*/
+
+nav{
+    position: sticky;
+    top: 0;
+    width:100%;
+    display: flex;
+    background-color: black;
+    font-weight: bold;
+}
+
+ul li{
+    display: inline-block;
+    padding: 0px 15px;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    color: yellow;
+}
