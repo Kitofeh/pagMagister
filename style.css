@@ -1,10 +1,23 @@
 /*Plantilla Main*/
 
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
 .section-margin{
-    margin-top: 30px;
-    margin-bottom: 30px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-top: 160px;
+    margin-bottom: 160px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.primary-color{
+    background-color: #364c59;
+}
+
+.secondary-color{
+    background-color: #dbca11;
 }
 
 /*Seccion NavBar*/
@@ -20,7 +33,7 @@ nav{
 
 ul li{
     display: inline-block;
-    padding: 0px 15px;
+    padding: 0px 18px;
 }
 
 a{
@@ -29,5 +42,6 @@ a{
 }
 
 a:hover{
-    color: yellow;
+    color: #dbca11;
 }
+  
