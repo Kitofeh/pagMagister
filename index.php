@@ -87,15 +87,21 @@
         </section>
 
         <section id="PlanDeEstudios" class="section-margin"><!--Plan de Estudios-->
-            
+            <div class="section-header"></div>
+            <div class="container"></div>
+            <div class="container"></div>
         </section>
 
         <section id="Experiencias" class="section-margin"><!--Experiencias-->
-            
+        <div class="section-header"></div>
+            <div class="container"></div>
+            <div class="container"></div>
         </section>
 
         <section id="Recursos" class="section-margin"><!--Recursos-->
-            
+        <div class="section-header"></div>
+            <div class="container"></div>
+            <div class="container"></div>
         </section>
 
         <section id="Contactos" class="section-margin"><!--Contacto-->
