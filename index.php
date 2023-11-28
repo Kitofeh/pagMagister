@@ -227,108 +227,61 @@
         </div>
         </section>
         <section id="Experiencias" class="section-margin"><!--Experiencias-->                   
-            <article>     
+                <div class="container text-center" id="experi">
+                    <h2>
+                    <span style="box-shadow: inset 0 -2px 0 #dbca11"> EXPERIENCIAS</span>
+                    </h2>
+                </div>
+                <article>     
                         <div class="container text-center"> 
-                            <div class="container text-center">
-                                <h2>
-                                    <span style="box-shadow: inset 0 -2px 0 #dbca11"> EXPERIENCIAS</span>
-                                </h2>
-                            </div>                                                    
+                                                                                
                             <div class="row " id="cards">                          
                                 <div class="col">
                                     <div class="card">
-                                        <img src="profesores\Andres.jpg" class="card-img-top" style="width: 254px; " alt="">
+                                        <img src="profesores\Andres.jpg" class="card-img-top" style="width: 220px; " alt="">
                                         <div class="card-body">
-                                        <h5 class="card-title">Plantas tóxicas para gatos</h5>
-                                        <p class="card-text">
-                                            Los gatos son animales curiosos por naturaleza que, a menudo, tienden a ingerir 
-                                            o a entrar en contacto con algunas sustancias que pueden resultar tóxicas...
-                                        </p>
-                                        <button class="btn">Leer más</button>
-                                        <p class="card-text" id="small">Salud</p>
+                                        <h5 class="card-title">Andrés Alfaro</h5>
+                                        <em class="card-text">
+                                        Este programa me equipó con habilidades sólidas en Gestión de Tecnologías de Información.
+                                        La conexión teoría-práctica es evidente, y la capacidad de asesorar en computación es invaluable.
+                                        Es fundamental para mi éxito profesional.
+                                        </em>
+                                        <p class="card-text" id="small">Graduado</p>                                      
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col">
                                 <div class="card">
-                                    <img src="Imagenes\gato2meses.jpg" class="card-img-top" alt="...">
+                                    <img src="profesores\incognito.png" class="card-img-top" alt="...">
                                     <div class="card-body">
-                                        <h5 class="card-title">¿Qué darle de comer a un gato de 2 meses?</h5>
-                                        <p class="card-text">La alimentación es un pilar básico para el bienestar de nuestros gatos. 
-                                        Debemos cuidarla durante toda su vida, mucho más en determinadas etapas...</p>
-                                        <button class="btn">Leer más</button>
-                                        <p class="card-text"  id="small">Alimentación</p>
+                                        <h5 class="card-title">Jacqueline Manríquez</h5>
+                                        <em class="card-text">
+                                        El magíster en Inteligencia de Máquinas fue desafiante pero
+                                        gratificante. Ahora, como graduada, me siento preparada para liderar proyectos de 
+                                        investigación gracias a la sólida base construida en este programa.
+                                        </em> 
+                                        <p class="card-text" id="small">Graduada</p>                                       
                                     </div>
                                 </div>
                                 </div>
                                 <div class="col">
                                 <div class="card">
-                                    <img src="Imagenes/gato-arnes.jpeg" class="card-img-top" alt="...">
+                                    <img src="profesores\incognito.png" class="card-img-top" alt="...">
                                     <div class="card-body">
-                                        <h5 class="card-title">Arnés para gatos – Tipos y cómo ponerlo</h5>
-                                        <p class="card-text">Aunque no es muy usual ver propietarios sacar a pasear a sus gatos, lo 
-                                        cierto es que es una práctica que existe y que puede traer múltiples beneficios...</p>
-                                        <button class="btn">Leer más</button>  
-                                        <p class="card-text"  id="small">Belleza</p>
+                                        <h5 class="card-title">Jorge Rojas</h5>
+                                        <em class="card-text">
+                                            Este magíster ha sido un viaje inspirador. 
+                                            La línea de Ingeniería de Software y la metodología de investigación práctica me han moldeado como profesional. 
+                                            Ahora, como graduado, me siento capacitado para liderar proyectos con una perspectiva integral.
+                                        </em>  
+                                        <p class="card-text" id="small">Graduado</p>                                      
                                     </div>
                                 </div>
                                 </div> 
                             </div>
                         </div>     
                     </article>
-        </section> 
-        <article>     
-        <div class="container text-center">
-          <div class="container text-center" id="descubre">
-            <p class="animate__animated animate__tada animate__infinite animate__delay-1s ">  DESCUBRE</p>
-          </div>
-            
-            <div class="row " id="cards">
-              
-                <div class="col">
-                  <div class="card">
-                    <img src="Imagenes\plantas-toxicas.jpeg" class="card-img-top" alt="">
-                    <div class="card-body">
-                      <h5 class="card-title">Plantas tóxicas para gatos</h5>
-                      <p class="card-text">
-                        Los gatos son animales curiosos por naturaleza que, a menudo, tienden a ingerir 
-                        o a entrar en contacto con algunas sustancias que pueden resultar tóxicas...
-                      </p>
-                      <button class="btn">Leer más</button>
-                      <p class="card-text" id="small">Salud</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card">
-                    <img src="Imagenes\gato2meses.jpg" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <h5 class="card-title">¿Qué darle de comer a un gato de 2 meses?</h5>
-                        <p class="card-text">La alimentación es un pilar básico para el bienestar de nuestros gatos. 
-                          Debemos cuidarla durante toda su vida, mucho más en determinadas etapas...</p>
-                          <button class="btn">Leer más</button>
-                          <p class="card-text" id="small">Alimentación</p>
-                      </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card">
-                    <img src="Imagenes/gato-arnes.jpeg" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <h5 class="card-title">Arnés para gatos – Tipos y cómo ponerlo</h5>
-                        <p class="card-text">Aunque no es muy usual ver propietarios sacar a pasear a sus gatos, lo 
-                          cierto es que es una práctica que existe y que puede traer múltiples beneficios...</p>
-                          <button class="btn">Leer más</button>  
-                          <p class="card-text" id="small">Belleza</p>
-                      </div>
-                  </div>
-                </div> 
-
-            </div>
-            
-
-        </div>     
-      </article>       
+        </section>       
         <section id="Recursos" class="section-margin"><!--Recursos-->       
         <div class="container text-center">
                 <h2>
@@ -336,7 +289,7 @@
                 </h2>
             </div>        
             <div class="container">
-
+                
             </div>
         </section>
         <section id="Contactos" class="section-margin"><!--Contacto-->
