@@ -87,23 +87,177 @@
         </section>
 
         <section id="PlanDeEstudios" class="section-margin"><!--Plan de Estudios-->
-            <div class="section-header"></div>
-            <div class="container"></div>
-            <div class="container"></div>
-        </section>
+            <div class="container text-center">
+                <h2>
+                    <span style="box-shadow: inset 0 -2px 0 #dbca11"> ESTUDIOS</span>
+                </h2>
+            </div>
+            <div class="layout">
+                <div class="container">
+                    <div class="col-md-6 col-sm-6 col-xs-12 customized-text wow fadeInDown" >
 
-        <section id="Experiencias" class="section-margin"><!--Experiencias-->
-        <div class="section-header"></div>
-            <div class="container"></div>
-            <div class="container"></div>
-        </section>
+                        <h2>Grado</h2>
+                        <p>Magíster en Informática y Ciencias de la Computación
+                        </p>
+                        <h2>Objetivo</h2>
+                        <p>El objetivo del programa es formar capital humano con conocimientos sólidos y avanzados
+                             en computación e informática y en metodología de investigación que lo capaciten para 
+                             impulsar y desarrollar investigación fundamental y aplicada en forma autónoma, y prestar
+                              asesoría especializada en lo referente a la comprensión y aplicación de la computación.
+                        </p>
+                        <h2>Perfil de egreso</h2>
+                        <p>Los graduados del programa serán profesionales de alto nivel de especialización, con capacidad 
+                            y autonomía para emprender proyectos de investigación fundamental y aplicada en diversas líneas 
+                            de investigación de la informática y la computación. Las líneas de investigación comprenden, en
+                             principio y en forma no exclusiva, inteligencia de máquinas, ingeniería de software, sistemas 
+                             y tecnologías de información.
+                        </p>
+                           
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12 custom-sec-img wow fadeInDown" >
+                    <!--<div class="featuredImg">
+                        <img src="images/malla.png" alt="">
+                    </div>-->
+                    <table class="table ">
+                    <thead >
+                        <tr >
+                        <th scope="col">1° semestre <br>9/9</th>
+                        <th scope="col">2° semestre <br>6/6</th>
+                        <th scope="col">3° semestre <br>3/12</th>
+                        <th scope="col">4° semestre <br>3/12</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="col" style="background-color: #58D68D; margin-right: 30px;: 30px;">Asignatura fundamental <br> 3/3</th>
+                        <td scope="col" style="background-color: #CD6155; margin: 30px;">Seminario de investigación <br>  3/3</td>
+                        <td scope="col" style="background-color: #5DADE2; margin: 30px">Tesis de grado 1<br> 3/12</td>
+                        <td scope="col" style="background-color: #5DADE2;">Tesis de grado 2<br> 3/12</td>
+                        </tr>
+                        <tr>
+                        <th scope="col"  style="background-color: #BB8FCE ;">Tópico 1 <br>3/3</th>
+                        <td scope="col" style="background-color: #BB8FCE ;">tópico 2 <br>3/3</td>                       
+                        </tr>
+                        <tr>
+                        <th style="background-color: #CD6155; margin: 30px;">Metodologia de investigación <br>3/3</th>
+                        
+                        </tr>
+                    </tbody>
+                    </table>                    
+                </div>
+                <div class="container">
+            <div class="col-md-6 col-sm-6 col-xs-12 customized-text wow fadeInDown" >
+                 <h2>Perfil profesional</h2>
+                        <p>El egresado del programa estará capacitado para: continuar estudios de doctorado en Ciencias de la
+                             Informática o de la Computación; para incorporarse a equipos académicos de educación superior; 
+                             para integrar equipos de investigación en centros de ámbito público y privado; o para realizar 
+                             investigación,  innovación y transferencia tecnológica en el sector productivo.
+                        </p>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12 customized-text wow fadeInDown">
+                        <h2>Duración</h2>
+                        <p>4 Semestres
+                        </p>
+                        <h2>Modalidad</h2>
+                        <p>Diurna
+                        </p>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12 customized-text wow fadeInDown">
+                        <h2>Horarios</h2>
+                        <p>Lunes a Viernes
+                        </p>
+                        <h2>Créditos</h2>
+                        <p>60 SCT (Sistema de Creditos Transferibles)/1440 Hrs.
+                        </p>
+            </div>
+            
+            <div class="col-md-6 col-sm-6 col-xs-12 customized-text wow fadeInDown" >
+                        <h2>Requisitos de postulación</h2>
+                        <p>1.- Estar en posesión del grado académico de Licenciado en Ciencias de la Ingeniería 
+                            y un título profesional universitario en el área de la computación e informática o afín, 
+                            con un mínimo de cuatro años de estudio, y con nivel medio de lectura en inglés.
+                        </p>
+                        <p>
+                            2.- Los estudiantes del plan de la carrera de Ingeniería civil en computación e informática 
+                            de la Universidad de Atacama podrán postular al programa si han cursado completamente el quinto 
+                            año de la carrera.
+                        </p>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12 customized-text wow fadeInDown" >            
+                        <h2>Lineas de investigación</h2>
+                        <p>1.- Inteligencia de Máquinas
 
-        <section id="Recursos" class="section-margin"><!--Recursos-->
-        <div class="section-header"></div>
-            <div class="container"></div>
-            <div class="container"></div>
+                        </p>
+                        <p>
+                            2.- Gestión de Tecnologías de Información
+                        </p>
+                        <p>
+                            3.- Ingeniería de Software
+                        </p>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12 customized-text wow fadeInDown" >
+                        <h2>Becas</h2>
+                        <p>Existe la posibilidad de becas para exención de matriculas y manutención.
+                        </p>
+                        <h2>Documentación</h2>
+                        <p>Solicitud de postulación, carta de intenciones, certificado de grado y título
+                            (si procede), curriculum vitae, fotocopia cédula de identidad, certificado de
+                             notas si procede, certificado de lectura de Inglés (si lo tiene).
+                        </p>
+            </div>
+                </div>  
+            </div>                    
         </section>
+        <section id="Experiencias" class="section-margin"><!--Experiencias-->        
+        <div class="container">
+           <div class="container text-center">
+                <h2>
+                    <span style="box-shadow: inset 0 -2px 0 #dbca11"> EXPERIENCIAS</span>
+                </h2>
+            </div>         
+            <div class="container text-center">
+            <section class="ex-alumnos">            
+                <div class="ex-alumno1">
+                    <div class="row">   
+                        <div class="col">
+                            <div class="container">
+                                <img src="profesores\Andres.jpg" class="img-thumbnail" style="width: 200px" alt="">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <h4>Andrés Alfaro Ávalos </h3>
+                            <span>"Introducir experiencia en el magister"</span>
+                        </div>
+                    </div>                                            
+                </div>
+                <div class="ex-alumno2">
+                <div class="row">   
+                        <div class="col">
+                            <div class="container">
+                                <img src="profesores\Andres.jpg" class="img-thumbnail" style="width: 200px" alt="">
+                            </div>
+                        </div>
+                        <div class="col" >
+                            <h4>Andrés Alfaro Ávalos </h3>
+                            <span>"Introducir experiencia en el magister"</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            </div>      
+        </div>
+        </section>        
+        <section id="Recursos" class="section-margin"><!--Recursos-->       
+        <div class="container text-center">
+                <h2>
+                    <span style="box-shadow: inset 0 -2px 0 #dbca11">RECURSOS</span>
+                </h2>
+            </div>        
+            <div class="container">
 
+            </div>
+        </section>
         <section id="Contactos" class="section-margin"><!--Contacto-->
             
         </section>
