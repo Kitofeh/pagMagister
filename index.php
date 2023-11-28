@@ -283,13 +283,151 @@
                     </article>
         </section>       
         <section id="Recursos" class="section-margin"><!--Recursos-->       
-        <div class="container text-center">
+            <div class="container text-center" style="padding: bottom 30px;">
                 <h2>
                     <span style="box-shadow: inset 0 -2px 0 #dbca11">RECURSOS</span>
                 </h2>
             </div>        
             <div class="container">
-                
+                <div class="container text-center">
+                    <div class="row align-items-center">
+                        <div class="col" style="width: 500px; margin-top: 40px;">
+                            <div id="carouselExampleCaptions" class="carousel slide">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="8" aria-label="Slide 9"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="Recursos_academicos\Auditorio.jpg" class="d-block w-100" alt="...">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>Auditorio</h5>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="Recursos_academicos\Conectividad_y_redes.jpg" class="d-block w-100" alt="...">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>Laboratorio de Conectividad y Redes</h5>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="Recursos_academicos\DIICC2(sala_multimedia.jpg" class="d-block w-100" alt="...">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>Sala multimedia</h5>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="Recursos_academicos\Magister.jpg" class="d-block w-100" alt="...">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>Magister</h5>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="Recursos_academicos\Melquiades.jpg" class="d-block w-100" alt="...">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>Laboratorio Melquíades</h5>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="Recursos_academicos\Olimpo.jpg" class="d-block w-100" alt="...">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>Laboratorio Olimpo</h5>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="Recursos_academicos\Robotica1.jpg" class="d-block w-100" alt="...">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>Laboratorio de Robótica</h5>                                           
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="Recursos_academicos\Salas.jpg" class="d-block w-100" alt="...">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>Sala de estudio</h5>                                          
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="Recursos_academicos\SalaEstudio.jpg" class="d-block w-100" alt="...">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>Sala de clases</h5>                                          
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="container">
+                                <p style="text-align: left; margin-top: 40px;">
+                                El Departamento de Ingeniería Civil en Computación e Informática ofrece una completa infraestructura académica. 
+                                Destacan el Auditorio Dra. Karina Carvajal Cuello y la Sala Multimedia para eventos y aprendizaje interactivo. 
+                                Para el estudio, cuentan con la Sala de Estudios y Sala Modular de Estudios. Además, tres aulas bien equipadas. 
+                                Cuatro laboratorios especializados (Robótica, Conectividad y Redes, y dos de Computación) brindan experiencias prácticas en áreas clave. 
+                                Estos recursos enriquecen la formación de los estudiantes al aplicar conocimientos en un entorno avanzado.
+                                </p><br>                              
+                            </div>
+                        </div>                                             
+                    </div>
+                </div>             
+                <div class="col" style="margin-top: 40px;">                           
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Auditorio y sala multimedia
+                                    </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                    Destacan los recursos como el Auditorio Dra. Karina Carvajal Cuello, un espacio multifuncional para 
+                                    conferencias y presentaciones. La Sala Multimedia proporciona herramientas audiovisuales avanzadas, 
+                                    facilitando el aprendizaje interactivo.
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Estudio
+                                    </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                    Para el estudio individual y en grupo, la institución dispone de una Sala de Estudios y una Sala Modular de Estudios, ambas 
+                                    equipadas con recursos necesarios para 
+                                    la investigación y el trabajo colaborativo. Tres aulas bien equipadas ofrecen un ambiente propicio para la enseñanza.                                 </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                       Laboratorios
+                                    </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                    El departamento cuenta con cuatro especializados: el Laboratorio de Robótica, el Laboratorio de Conectividad y Redes, y 
+                                    dos Laboratorios de Computación. Estos espacios están diseñados para brindar a los estudiantes experiencias prácticas en 
+                                    áreas clave de la ingeniería informática, desde el desarrollo de software hasta la implementación de redes y la exploración 
+                                    en el campo de la robótica.                                    </div>
+                                    </div>
+                                </div>                               
+                            </div>
+                </div>
             </div>
         </section>
         <section id="Contactos" class="section-margin"><!--Contacto-->
