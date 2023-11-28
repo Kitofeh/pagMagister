@@ -104,15 +104,7 @@
                              en computación e informática y en metodología de investigación que lo capaciten para 
                              impulsar y desarrollar investigación fundamental y aplicada en forma autónoma, y prestar
                               asesoría especializada en lo referente a la comprensión y aplicación de la computación.
-                        </p>
-                        <h2>Perfil de egreso</h2>
-                        <p>Los graduados del programa serán profesionales de alto nivel de especialización, con capacidad 
-                            y autonomía para emprender proyectos de investigación fundamental y aplicada en diversas líneas 
-                            de investigación de la informática y la computación. Las líneas de investigación comprenden, en
-                             principio y en forma no exclusiva, inteligencia de máquinas, ingeniería de software, sistemas 
-                             y tecnologías de información.
-                        </p>
-                           
+                        </p>                         
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12 custom-sec-img wow fadeInDown" >
@@ -146,34 +138,55 @@
                     </tbody>
                     </table>                    
                 </div>
-                <div class="container">
-            <div class="col-md-6 col-sm-6 col-xs-12 customized-text wow fadeInDown" >
-                 <h2>Perfil profesional</h2>
+            </div>    
+        <div class="container " id="estudioscolum">
+            <div class="row">
+                <div class="col">
+                    <div class="perfile">
+                        <h2>Perfil de egreso</h2>
+                        <p>Los graduados del programa serán profesionales de alto nivel de especialización, con capacidad 
+                        y autonomía para emprender proyectos de investigación fundamental y aplicada en diversas líneas 
+                        de investigación de la informática y la computación. Las líneas de investigación comprenden, en
+                        principio y en forma no exclusiva, inteligencia de máquinas, ingeniería de software, sistemas 
+                        y tecnologías de información.
+                        </p>                                 
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="perfilp">
+                        <h2>Perfil profesional</h2>
                         <p>El egresado del programa estará capacitado para: continuar estudios de doctorado en Ciencias de la
-                             Informática o de la Computación; para incorporarse a equipos académicos de educación superior; 
-                             para integrar equipos de investigación en centros de ámbito público y privado; o para realizar 
-                             investigación,  innovación y transferencia tecnológica en el sector productivo.
+                        Informática o de la Computación; para incorporarse a equipos académicos de educación superior; 
+                        para integrar equipos de investigación en centros de ámbito público y privado; o para realizar 
+                        investigación,  innovación y transferencia tecnológica en el sector productivo.
                         </p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="duracion">
+                        <div class="col-md-6 col-sm-6 col-xs-12 customized-text wow fadeInDown">
+                                    <h2>Duración</h2>
+                                    <p>4 Semestres
+                                    </p>
+                                    <h2>Modalidad</h2>
+                                    <p>Diurna
+                                    </p>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12 customized-text wow fadeInDown">
+                                    <h2>Horarios</h2>
+                                    <p>Lunes a Viernes
+                                    </p>
+                                    <h2>Créditos</h2>
+                                    <p>60 SCT (Sistema de Creditos Transferibles)/1440 Hrs.
+                                    </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6 col-sm-6 col-xs-12 customized-text wow fadeInDown">
-                        <h2>Duración</h2>
-                        <p>4 Semestres
-                        </p>
-                        <h2>Modalidad</h2>
-                        <p>Diurna
-                        </p>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12 customized-text wow fadeInDown">
-                        <h2>Horarios</h2>
-                        <p>Lunes a Viernes
-                        </p>
-                        <h2>Créditos</h2>
-                        <p>60 SCT (Sistema de Creditos Transferibles)/1440 Hrs.
-                        </p>
-            </div>
-            
-            <div class="col-md-6 col-sm-6 col-xs-12 customized-text wow fadeInDown" >
-                        <h2>Requisitos de postulación</h2>
+            <div class="row">
+                <div class="col">
+                <div class="requisitos">
+                    <h2>Requisitos de postulación</h2>
                         <p>1.- Estar en posesión del grado académico de Licenciado en Ciencias de la Ingeniería 
                             y un título profesional universitario en el área de la computación e informática o afín, 
                             con un mínimo de cuatro años de estudio, y con nivel medio de lectura en inglés.
@@ -183,11 +196,12 @@
                             de la Universidad de Atacama podrán postular al programa si han cursado completamente el quinto 
                             año de la carrera.
                         </p>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12 customized-text wow fadeInDown" >            
+                </div>
+                </div>
+                <div class="col">
+                    <div class="lineaBeca">
                         <h2>Lineas de investigación</h2>
                         <p>1.- Inteligencia de Máquinas
-
                         </p>
                         <p>
                             2.- Gestión de Tecnologías de Información
@@ -195,8 +209,10 @@
                         <p>
                             3.- Ingeniería de Software
                         </p>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12 customized-text wow fadeInDown" >
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="document">
                         <h2>Becas</h2>
                         <p>Existe la posibilidad de becas para exención de matriculas y manutención.
                         </p>
@@ -205,49 +221,114 @@
                             (si procede), curriculum vitae, fotocopia cédula de identidad, certificado de
                              notas si procede, certificado de lectura de Inglés (si lo tiene).
                         </p>
-            </div>
-                </div>  
-            </div>                    
-        </section>
-        <section id="Experiencias" class="section-margin"><!--Experiencias-->        
-        <div class="container">
-           <div class="container text-center">
-                <h2>
-                    <span style="box-shadow: inset 0 -2px 0 #dbca11"> EXPERIENCIAS</span>
-                </h2>
-            </div>         
-            <div class="container text-center">
-            <section class="ex-alumnos">            
-                <div class="ex-alumno1">
-                    <div class="row">   
-                        <div class="col">
-                            <div class="container">
-                                <img src="profesores\Andres.jpg" class="img-thumbnail" style="width: 200px" alt="">
-                            </div>
-                        </div>
-                        <div class="col">
-                            <h4>Andrés Alfaro Ávalos </h3>
-                            <span>"Introducir experiencia en el magister"</span>
-                        </div>
-                    </div>                                            
-                </div>
-                <div class="ex-alumno2">
-                <div class="row">   
-                        <div class="col">
-                            <div class="container">
-                                <img src="profesores\Andres.jpg" class="img-thumbnail" style="width: 200px" alt="">
-                            </div>
-                        </div>
-                        <div class="col" >
-                            <h4>Andrés Alfaro Ávalos </h3>
-                            <span>"Introducir experiencia en el magister"</span>
-                        </div>
                     </div>
                 </div>
-            </section>
-            </div>      
+            </div>
         </div>
-        </section>        
+        </section>
+        <section id="Experiencias" class="section-margin"><!--Experiencias-->                   
+            <article>     
+                        <div class="container text-center"> 
+                            <div class="container text-center">
+                                <h2>
+                                    <span style="box-shadow: inset 0 -2px 0 #dbca11"> EXPERIENCIAS</span>
+                                </h2>
+                            </div>                                                    
+                            <div class="row " id="cards">                          
+                                <div class="col">
+                                    <div class="card">
+                                        <img src="profesores\Andres.jpg" class="card-img-top" style="width: 254px; " alt="">
+                                        <div class="card-body">
+                                        <h5 class="card-title">Plantas tóxicas para gatos</h5>
+                                        <p class="card-text">
+                                            Los gatos son animales curiosos por naturaleza que, a menudo, tienden a ingerir 
+                                            o a entrar en contacto con algunas sustancias que pueden resultar tóxicas...
+                                        </p>
+                                        <button class="btn">Leer más</button>
+                                        <p class="card-text" id="small">Salud</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                <div class="card">
+                                    <img src="Imagenes\gato2meses.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">¿Qué darle de comer a un gato de 2 meses?</h5>
+                                        <p class="card-text">La alimentación es un pilar básico para el bienestar de nuestros gatos. 
+                                        Debemos cuidarla durante toda su vida, mucho más en determinadas etapas...</p>
+                                        <button class="btn">Leer más</button>
+                                        <p class="card-text"  id="small">Alimentación</p>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="col">
+                                <div class="card">
+                                    <img src="Imagenes/gato-arnes.jpeg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Arnés para gatos – Tipos y cómo ponerlo</h5>
+                                        <p class="card-text">Aunque no es muy usual ver propietarios sacar a pasear a sus gatos, lo 
+                                        cierto es que es una práctica que existe y que puede traer múltiples beneficios...</p>
+                                        <button class="btn">Leer más</button>  
+                                        <p class="card-text"  id="small">Belleza</p>
+                                    </div>
+                                </div>
+                                </div> 
+                            </div>
+                        </div>     
+                    </article>
+        </section> 
+        <article>     
+        <div class="container text-center">
+          <div class="container text-center" id="descubre">
+            <p class="animate__animated animate__tada animate__infinite animate__delay-1s ">  DESCUBRE</p>
+          </div>
+            
+            <div class="row " id="cards">
+              
+                <div class="col">
+                  <div class="card">
+                    <img src="Imagenes\plantas-toxicas.jpeg" class="card-img-top" alt="">
+                    <div class="card-body">
+                      <h5 class="card-title">Plantas tóxicas para gatos</h5>
+                      <p class="card-text">
+                        Los gatos son animales curiosos por naturaleza que, a menudo, tienden a ingerir 
+                        o a entrar en contacto con algunas sustancias que pueden resultar tóxicas...
+                      </p>
+                      <button class="btn">Leer más</button>
+                      <p class="card-text" id="small">Salud</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card">
+                    <img src="Imagenes\gato2meses.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">¿Qué darle de comer a un gato de 2 meses?</h5>
+                        <p class="card-text">La alimentación es un pilar básico para el bienestar de nuestros gatos. 
+                          Debemos cuidarla durante toda su vida, mucho más en determinadas etapas...</p>
+                          <button class="btn">Leer más</button>
+                          <p class="card-text" id="small">Alimentación</p>
+                      </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card">
+                    <img src="Imagenes/gato-arnes.jpeg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Arnés para gatos – Tipos y cómo ponerlo</h5>
+                        <p class="card-text">Aunque no es muy usual ver propietarios sacar a pasear a sus gatos, lo 
+                          cierto es que es una práctica que existe y que puede traer múltiples beneficios...</p>
+                          <button class="btn">Leer más</button>  
+                          <p class="card-text" id="small">Belleza</p>
+                      </div>
+                  </div>
+                </div> 
+
+            </div>
+            
+
+        </div>     
+      </article>       
         <section id="Recursos" class="section-margin"><!--Recursos-->       
         <div class="container text-center">
                 <h2>
