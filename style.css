@@ -1,4 +1,13 @@
+@charset "UTF-8";
 /*Plantilla Main*/
+
+
+nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+}
 
 body {
   font-family: "Montserrat", sans-serif;
@@ -15,34 +24,15 @@ body {
   background-color: #364c59;
 }
 
+/*Seccion NavBar*/
 .secondary-color {
   background-color: #dbca11;
 }
 
 /*Seccion NavBar*/
 
-nav {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  display: flex;
-  background-color: black;
-  font-weight: bold;
-}
 
-ul li {
-  display: inline-block;
-  padding: 0px 18px;
-}
-
-a {
-  color: white;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #dbca11;
-}
+ 
 
 /*SECCION ESTUDIOS*/
 .section-header {
@@ -192,3 +182,7 @@ article {
   height: 158px;
 }
 /*Termino de cartas de seccion experiencia*/
+
+
+
+
