@@ -87,11 +87,151 @@
             
         </section>
 
-        <section id="Requisitos" ><!--4. Plan de estudios -->
-            
-        </section>
+       
 
-        <section class="container" id="InvestigacionYProyectos"><!--5. Investigación y proyectos-->
+
+        <section id="PlanDeEstudios" class="section-margin"><!--4. Plan de Estudios-->
+            <div class="container text-center">
+                <h2>
+                    <span style="box-shadow: inset 0 -2px 0 #dbca11"> ESTUDIOS</span>
+                </h2>
+            </div>
+            <div class="layout">
+                <div class="container">
+                    <div class="col-md-6 col-sm-6 col-xs-12 customized-text wow fadeInDown" >
+
+                        <h2>Grado</h2>
+                        <p>Magíster en Informática y Ciencias de la Computación
+                        </p>
+                        <h2>Objetivo</h2>
+                        <p>El objetivo del programa es formar capital humano con conocimientos sólidos y avanzados
+                             en computación e informática y en metodología de investigación que lo capaciten para 
+                             impulsar y desarrollar investigación fundamental y aplicada en forma autónoma, y prestar
+                              asesoría especializada en lo referente a la comprensión y aplicación de la computación.
+                        </p>                         
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12 custom-sec-img wow fadeInDown" >
+                    <!--<div class="featuredImg">
+                        <img src="images/malla.png" alt="">
+                    </div>-->
+                    <table class="table ">
+                    <thead >
+                        <tr >
+                        <th scope="col">1° semestre <br>9/9</th>
+                        <th scope="col">2° semestre <br>6/6</th>
+                        <th scope="col">3° semestre <br>3/12</th>
+                        <th scope="col">4° semestre <br>3/12</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="col" style="background-color: #58D68D; margin-right: 30px;: 30px;">Asignatura fundamental <br> 3/3</th>
+                        <td scope="col" style="background-color: #CD6155; margin: 30px;">Seminario de investigación <br>  3/3</td>
+                        <td scope="col" style="background-color: #5DADE2; margin: 30px">Tesis de grado 1<br> 3/12</td>
+                        <td scope="col" style="background-color: #5DADE2;">Tesis de grado 2<br> 3/12</td>
+                        </tr>
+                        <tr>
+                        <th scope="col"  style="background-color: #BB8FCE ;">Tópico 1 <br>3/3</th>
+                        <td scope="col" style="background-color: #BB8FCE ;">tópico 2 <br>3/3</td>                       
+                        </tr>
+                        <tr>
+                        <th style="background-color: #CD6155; margin: 30px;">Metodologia de investigación <br>3/3</th>
+                        
+                        </tr>
+                    </tbody>
+                    </table>                    
+                </div>
+            </div>    
+        <div class="container " id="estudioscolum">
+            <div class="row">
+                <div class="col">
+                    <div class="perfile">
+                        <h2>Perfil de egreso</h2>
+                        <p>Los graduados del programa serán profesionales de alto nivel de especialización, con capacidad 
+                        y autonomía para emprender proyectos de investigación fundamental y aplicada en diversas líneas 
+                        de investigación de la informática y la computación. Las líneas de investigación comprenden, en
+                        principio y en forma no exclusiva, inteligencia de máquinas, ingeniería de software, sistemas 
+                        y tecnologías de información.
+                        </p>                                 
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="perfilp">
+                        <h2>Perfil profesional</h2>
+                        <p>El egresado del programa estará capacitado para: continuar estudios de doctorado en Ciencias de la
+                        Informática o de la Computación; para incorporarse a equipos académicos de educación superior; 
+                        para integrar equipos de investigación en centros de ámbito público y privado; o para realizar 
+                        investigación,  innovación y transferencia tecnológica en el sector productivo.
+                        </p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="duracion">
+                        <div class="col-md-6 col-sm-6 col-xs-12 customized-text wow fadeInDown">
+                                    <h2>Duración</h2>
+                                    <p>4 Semestres
+                                    </p>
+                                    <h2>Modalidad</h2>
+                                    <p>Diurna
+                                    </p>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12 customized-text wow fadeInDown">
+                                    <h2>Horarios</h2>
+                                    <p>Lunes a Viernes
+                                    </p>
+                                    <h2>Créditos</h2>
+                                    <p>60 SCT (Sistema de Creditos Transferibles)/1440 Hrs.
+                                    </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                <div class="requisitos">
+                    <h2>Requisitos de postulación</h2>
+                        <p>1.- Estar en posesión del grado académico de Licenciado en Ciencias de la Ingeniería 
+                            y un título profesional universitario en el área de la computación e informática o afín, 
+                            con un mínimo de cuatro años de estudio, y con nivel medio de lectura en inglés.
+                        </p>
+                        <p>
+                            2.- Los estudiantes del plan de la carrera de Ingeniería civil en computación e informática 
+                            de la Universidad de Atacama podrán postular al programa si han cursado completamente el quinto 
+                            año de la carrera.
+                        </p>
+                </div>
+                </div>
+                <div class="col">
+                    <div class="lineaBeca">
+                        <h2>Lineas de investigación</h2>
+                        <p>1.- Inteligencia de Máquinas
+                        </p>
+                        <p>
+                            2.- Gestión de Tecnologías de Información
+                        </p>
+                        <p>
+                            3.- Ingeniería de Software
+                        </p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="document">
+                        <h2>Becas</h2>
+                        <p>Existe la posibilidad de becas para exención de matriculas y manutención.
+                        </p>
+                        <h2>Documentación</h2>
+                        <p>Solicitud de postulación, carta de intenciones, certificado de grado y título
+                            (si procede), curriculum vitae, fotocopia cédula de identidad, certificado de
+                             notas si procede, certificado de lectura de Inglés (si lo tiene).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+                      
+         <section class="container" id="InvestigacionYProyectos"><!--5. Investigación y proyectos-->
 
         <div style="display: flex; justify-content: center; align-items: center; background-color: white; width: 100%; height: 150px;">
                 <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Investigación y Proyectos</h2>
@@ -222,15 +362,211 @@
 
 
         </section>
-
-        <section id="Experiencias" ><!--6. Experiencia estudiantil-->
-            
+                      
+        <section id="Experiencias" class="section-margin"><!--6. Experiencias estudiantiles-->                   
+                <div class="container text-center" id="experi">
+                    <h2>
+                    <span style="box-shadow: inset 0 -2px 0 #dbca11"> EXPERIENCIAS</span>
+                    </h2>
+                </div>
+                <article>     
+                        <div class="container text-center"> 
+                                                                                
+                            <div class="row " id="cards">                          
+                                <div class="col">
+                                    <div class="card">
+                                        <img src="profesores\Andres.jpg" class="card-img-top" style="width: 220px; " alt="">
+                                        <div class="card-body">
+                                        <h5 class="card-title">Andrés Alfaro</h5>
+                                        <em class="card-text">
+                                        Este programa me equipó con habilidades sólidas en Gestión de Tecnologías de Información.
+                                        La conexión teoría-práctica es evidente, y la capacidad de asesorar en computación es invaluable.
+                                        Es fundamental para mi éxito profesional.
+                                        </em>
+                                        <p class="card-text" id="small">Graduado</p>                                      
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                <div class="card">
+                                    <img src="profesores\incognito.png" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Jacqueline Manríquez</h5>
+                                        <em class="card-text">
+                                        El magíster en Inteligencia de Máquinas fue desafiante pero
+                                        gratificante. Ahora, como graduada, me siento preparada para liderar proyectos de 
+                                        investigación gracias a la sólida base construida en este programa.
+                                        </em> 
+                                        <p class="card-text" id="small">Graduada</p>                                       
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="col">
+                                <div class="card">
+                                    <img src="profesores\incognito.png" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Jorge Rojas</h5>
+                                        <em class="card-text">
+                                            Este magíster ha sido un viaje inspirador. 
+                                            La línea de Ingeniería de Software y la metodología de investigación práctica me han moldeado como profesional. 
+                                            Ahora, como graduado, me siento capacitado para liderar proyectos con una perspectiva integral.
+                                        </em>  
+                                        <p class="card-text" id="small">Graduado</p>                                      
+                                    </div>
+                                </div>
+                                </div> 
+                            </div>
+                        </div>     
+                    </article>
+        </section>       
+        <section id="Recursos" class="section-margin"><!--7. Recursos academicos-->       
+            <div class="container text-center" style="padding: bottom 30px;">
+                <h2>
+                    <span style="box-shadow: inset 0 -2px 0 #dbca11">RECURSOS</span>
+                </h2>
+            </div>        
+            <div class="container">
+                <div class="container text-center">
+                    <div class="row align-items-center">
+                        <div class="col" style="width: 500px; margin-top: 40px;">
+                            <div id="carouselExampleCaptions" class="carousel slide">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="8" aria-label="Slide 9"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="Recursos_academicos\Auditorio.jpg" class="d-block w-100" alt="...">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>Auditorio</h5>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="Recursos_academicos\Conectividad_y_redes.jpg" class="d-block w-100" alt="...">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>Laboratorio de Conectividad y Redes</h5>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="Recursos_academicos\DIICC2(sala_multimedia.jpg" class="d-block w-100" alt="...">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>Sala multimedia</h5>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="Recursos_academicos\Magister.jpg" class="d-block w-100" alt="...">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>Magister</h5>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="Recursos_academicos\Melquiades.jpg" class="d-block w-100" alt="...">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>Laboratorio Melquíades</h5>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="Recursos_academicos\Olimpo.jpg" class="d-block w-100" alt="...">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>Laboratorio Olimpo</h5>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="Recursos_academicos\Robotica1.jpg" class="d-block w-100" alt="...">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>Laboratorio de Robótica</h5>                                           
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="Recursos_academicos\Salas.jpg" class="d-block w-100" alt="...">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>Sala de estudio</h5>                                          
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="Recursos_academicos\SalaEstudio.jpg" class="d-block w-100" alt="...">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>Sala de clases</h5>                                          
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="container">
+                                <p style="text-align: left; margin-top: 40px;">
+                                El Departamento de Ingeniería Civil en Computación e Informática ofrece una completa infraestructura académica. 
+                                Destacan el Auditorio Dra. Karina Carvajal Cuello y la Sala Multimedia para eventos y aprendizaje interactivo. 
+                                Para el estudio, cuentan con la Sala de Estudios y Sala Modular de Estudios. Además, tres aulas bien equipadas. 
+                                Cuatro laboratorios especializados (Robótica, Conectividad y Redes, y dos de Computación) brindan experiencias prácticas en áreas clave. 
+                                Estos recursos enriquecen la formación de los estudiantes al aplicar conocimientos en un entorno avanzado.
+                                </p><br>                              
+                            </div>
+                        </div>                                             
+                    </div>
+                </div>             
+                <div class="col" style="margin-top: 40px;">                           
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Auditorio y sala multimedia
+                                    </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                    Destacan los recursos como el Auditorio Dra. Karina Carvajal Cuello, un espacio multifuncional para 
+                                    conferencias y presentaciones. La Sala Multimedia proporciona herramientas audiovisuales avanzadas, 
+                                    facilitando el aprendizaje interactivo.
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Estudio
+                                    </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                    Para el estudio individual y en grupo, la institución dispone de una Sala de Estudios y una Sala Modular de Estudios, ambas 
+                                    equipadas con recursos necesarios para 
+                                    la investigación y el trabajo colaborativo. Tres aulas bien equipadas ofrecen un ambiente propicio para la enseñanza.                                 </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                       Laboratorios
+                                    </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                    El departamento cuenta con cuatro especializados: el Laboratorio de Robótica, el Laboratorio de Conectividad y Redes, y 
+                                    dos Laboratorios de Computación. Estos espacios están diseñados para brindar a los estudiantes experiencias prácticas en 
+                                    áreas clave de la ingeniería informática, desde el desarrollo de software hasta la implementación de redes y la exploración 
+                                    en el campo de la robótica.                                    </div>
+                                    </div>
+                                </div>                               
+                            </div>
+                </div>
+            </div>
         </section>
-
-        <section id="Recursos" ><!--7. Recursos académicos-->
-            
-        </section>
-
         <section  id="Contactos" class="container-fluid"><!--8. Formulario de Contacto y FAQ-->
         <div style="display: flex; justify-content: center; align-items: center; background-color: white; width: 100%; height: 150px;">
                 <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Contacto y FAQ</h2>

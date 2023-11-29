@@ -1,5 +1,14 @@
 @charset "UTF-8";
 /*Plantilla Main*/
+
+
+nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
 }
@@ -15,79 +24,165 @@ body {
   background-color: #364c59;
 }
 
+/*Seccion NavBar*/
 .secondary-color {
-  background-color: #1a180c;
+  background-color: #dbca11;
 }
 
 /*Seccion NavBar*/
-nav {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  display: flex;
-  font-weight: bold;
-  background-color: rgba(255, 255, 255, 0.1);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0px 20px;
-}
-nav ul li {
-  display: inline-block;
-  padding: 0 18px;
-}
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  text-shadow: 2px 2px 4px rgb(0, 0, 0);
-}
-nav ul li a a:hover {
-  color: #dbca11;
-}
 
-/*SECCIÓN NOSOTROS */
-#Nosotros {
-  margin: 100px 0px;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 750px;
-}
-#Nosotros #nosotros1 {
+
+ 
+
+/*SECCION ESTUDIOS*/
+.section-header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(212, 162, 162);
   width: 100%;
   height: 150px;
 }
-#Nosotros #nosotros1 h2 {
+.layout {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  justify-content: space-around;
+  align-content: space-evenly;
+}
+.layout tbody {
+  background-color: red;
+}
+/*estudios*/
+#estudioscolum {
+  width: 100%;
+  display: grid;
+  gap: 20px 40px;
+  justify-content: center;
+  align-content: center;
+  text-align: left;
+}
+.perfile {
+  grid-area: perfile;
+}
+.perfilp {
+  grid-area: perfilp;
+}
+.duracion {
+  grid-area: duracion;
+}
+.requisitos {
+  grid-area: requisitos;
+}
+.lineaBeca {
+  grid-area: lineaBeca;
+}
+.document {
+  grid-area: document;
+}
+/*Experiencias*/
+article {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: white;
+}
+/*Titulo experiencia, espacio*/
+#experi span {
+  padding-bottom: 80px;
   box-shadow: inset 0 -2px 0 #dbca11;
 }
-#Nosotros #nosotros2 {
-  background-color: #dbca11;
-  width: 100%;
-  height: 300px;
+/*Card de experiencias*/
+#cards .card:hover {
+  transform: scale(1.1, 1.1);
 }
-#Nosotros #nosotros2 img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
+#cards:hover > .card:not(:hover) {
+  filter: blur(10px);
+  transform: scale(0.9, 0.9);
 }
-#Nosotros #nosotros3 {
+.card-text {
+  margin-bottom: 10px;
+
+  text-align: left;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+}
+#small {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #364c59;
+}
+.card {
+  position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
-  background-color: #364c59;
-  width: 100%;
-  height: 300px;
+  justify-content: center;
+  width: 320px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  padding: 32px;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
-#Nosotros #nosotros3 p {
-  color: white;
-  margin: 0px 250px;
-} /*# sourceMappingURL=style.css.map */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  color: black;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.card-body .card-title {
+  font-weight: 700;
+  font-size: 20px;
+}
+.card-body .card-text {
+  line-height: 1.5;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  z-index: -1;
+  transition: all 0.1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.card::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background-color: white;
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+}
+.card:hover::before {
+  height: 100%;
+  transform: rotate(-90deg) scaleX(1.34) scaleY(0.77);
+}
+.card:hover::after {
+  filter: blur(30px);
+}
+.card:hover {
+  box-shadow: none;
+}
+.card-body .btn:hover {
+  outline: 2px solid #e8e8e8;
+  background: transparent;
+  color: #ffffff;
+}
+.card-body .btn:active {
+  box-shadow: none;
+}
+.card-img-top img {
+  width: 254px;
+  height: 158px;
+}
+/*Termino de cartas de seccion experiencia*/
+
+
+
+
