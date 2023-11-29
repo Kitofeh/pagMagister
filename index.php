@@ -28,8 +28,8 @@
                     <li class="px-2"><a href="#PlanDeEstudios" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">Plan de estudios</a></li>
                     <li class="px-2"><a href="#Experiencias" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">Experiencias</a></li>
                     <li class="px-2"><a href="#Recursos" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">Recursos</a></li>
-                    <li class="px-2"><a href="#Contacto" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">Contacto</a></li>
-                    <li class="px-2"><a href="#PreguntasFrecuentes" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">Preguntas Frecuentes</a></li>
+                    <li class="px-2"><a href="#Contacto" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">Contactos y Preguntas Frecuentes</a></li>
+                    
                 </ul>
             </nav>
         </section>
@@ -189,7 +189,7 @@
        
         <section id="AcercaDelPosgrado" class="section-margin my-5" style="height:700px;"><!--2. Acerca del Posgrado-->
             <div class="d-flex justify-content-center align-items-center bg-white w-100" style="height: 150px;">
-                <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Acerca del Posgrado</h2>
+                <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Acerca de Nosotros</h2>
             </div>
             <div class="container my-5">
                 <div class="row">
@@ -251,7 +251,7 @@
 
         <section id="Academicos" class="section-margin"><!--2.1 Academicos-->
             <div class="d-flex justify-content-center align-items-center bg-white w-100" style="height: 150px;">
-                <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Equipo de Academicos</h2>
+                <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Academicos</h2>
             </div>
             <div class="container">
                 <div class="row mb-5">
@@ -612,7 +612,7 @@
             </div>
         </section>
 
-  <section id="AdmisionYRequisitos" class="section-margin my-5"><!--Admision-->
+  <section id="AdmisionYRequisitos" class="section-margin my-5"><!--2.3Admision-->
               <div class="container my-5">
                   <div class="d-flex justify-content-center align-items-center bg-white w-100 mb-3" style="height: 150px;">
                       <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Admision y Requisitos</h2>
@@ -652,14 +652,12 @@
 
 
         <section id="PlanDeEstudios" class="section-margin"><!--4. Plan de Estudios-->
-            <div class="container text-center">
-                <h2>
-                    <span style="box-shadow: inset 0 -2px 0 #dbca11"> ESTUDIOS</span>
-                </h2>
-            </div>
-            <div class="layout">
+        <div style="display: flex; justify-content: center; align-items: center; background-color: white; width: 100%; height: 150px;">
+                <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Estudios</h2>
+        </div>
+            <div class="layout mt-5 mb-5">
                 <div class="container">
-                    <div class="col-md-6 col-sm-6 col-xs-12 customized-text wow fadeInDown" >
+                    <div class="col-md-10 customized-text wow fadeInDown " >
 
                         <h2>Grado</h2>
                         <p>Magíster en Informática y Ciencias de la Computación
@@ -673,10 +671,8 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12 custom-sec-img wow fadeInDown" >
-                    <!--<div class="featuredImg">
-                        <img src="images/malla.png" alt="">
-                    </div>-->
-                    <table class="table ">
+               
+                    <table class="table mx-5">
                     <thead >
                         <tr >
                         <th scope="col">1° semestre <br>9/9</th>
@@ -728,7 +724,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="duracion">
+                    <div class="duracion d-flex justify-content-center">
                         <div class="col-md-6 col-sm-6 col-xs-12 customized-text wow fadeInDown">
                                     <h2>Duración</h2>
                                     <p>4 Semestres
@@ -925,67 +921,61 @@
         </section>
                       
         <section id="Experiencias" class="section-margin"><!--6. Experiencias estudiantiles-->                   
-                <div class="container text-center" id="experi">
-                    <h2>
-                    <span style="box-shadow: inset 0 -2px 0 #dbca11"> EXPERIENCIAS</span>
-                    </h2>
+        <div style="display: flex; justify-content: center; align-items: center; background-color: white; width: 100%; height: 150px;">
+                <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Experiencias estudiantiles</h2>
+        </div>
+    <article>     
+        <div class="container text-center"> 
+            <div class="row " id="custom-cards">  
+                                        
+                <div class="col">
+                    <div class="custom-card d-flex flex-column">
+                        <img src="profesores\Andres.jpg" class="custom-card-img-top" style="width: 220px;" alt="">
+                        <div class="custom-card-body">
+                            <h5 class="custom-card-title">Andrés Alfaro</h5>
+                            <em class="custom-card-text">
+                                Este programa me equipó con habilidades sólidas en Gestión de Tecnologías de Información.
+                                La conexión teoría-práctica es evidente, y la capacidad de asesorar en computación es invaluable.
+                                Es fundamental para mi éxito profesional.
+                            </em>
+                            <p class="custom-card-text" id="custom-small">Graduado</p>                                      
+                        </div>
+                    </div>
                 </div>
-                <article>     
-                        <div class="container text-center"> 
-                                                                                
-                            <div class="row " id="cards">                          
-                                <div class="col">
-                                    <div class="card">
-                                        <img src="profesores\Andres.jpg" class="card-img-top" style="width: 220px; " alt="">
-                                        <div class="card-body">
-                                        <h5 class="card-title">Andrés Alfaro</h5>
-                                        <em class="card-text">
-                                        Este programa me equipó con habilidades sólidas en Gestión de Tecnologías de Información.
-                                        La conexión teoría-práctica es evidente, y la capacidad de asesorar en computación es invaluable.
-                                        Es fundamental para mi éxito profesional.
-                                        </em>
-                                        <p class="card-text" id="small">Graduado</p>                                      
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                <div class="card">
-                                    <img src="profesores\incognito.png" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Jacqueline Manríquez</h5>
-                                        <em class="card-text">
-                                        El magíster en Inteligencia de Máquinas fue desafiante pero
-                                        gratificante. Ahora, como graduada, me siento preparada para liderar proyectos de 
-                                        investigación gracias a la sólida base construida en este programa.
-                                        </em> 
-                                        <p class="card-text" id="small">Graduada</p>                                       
-                                    </div>
-                                </div>
-                                </div>
-                                <div class="col">
-                                <div class="card">
-                                    <img src="profesores\incognito.png" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Jorge Rojas</h5>
-                                        <em class="card-text">
-                                            Este magíster ha sido un viaje inspirador. 
-                                            La línea de Ingeniería de Software y la metodología de investigación práctica me han moldeado como profesional. 
-                                            Ahora, como graduado, me siento capacitado para liderar proyectos con una perspectiva integral.
-                                        </em>  
-                                        <p class="card-text" id="small">Graduado</p>                                      
-                                    </div>
-                                </div>
-                                </div> 
-                            </div>
-                        </div>     
-                    </article>
-        </section>       
+                <div class="col">
+                    <div class="custom-card d-flex flex-column">
+                        <img src="profesores\incognito.png" class="custom-card-img-top" alt="...">
+                        <div class="custom-card-body">
+                            <h5 class="custom-card-title">Jacqueline Manríquez</h5>
+                            <em class="custom-card-text">
+                                El magíster en Inteligencia de Máquinas fue desafiante pero gratificante. Ahora, como graduada, me siento preparada para liderar proyectos de investigación gracias a la sólida base construida en este programa.
+                            </em> 
+                            <p class="custom-card-text" id="custom-small">Graduada</p>                                       
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="custom-card d-flex flex-column">
+                        <img src="profesores\incognito.png" class="custom-card-img-top" alt="...">
+                        <div class="custom-card-body">
+                            <h5 class="custom-card-title">Jorge Rojas</h5>
+                            <em class="custom-card-text">
+                                Este magíster ha sido un viaje inspirador. La línea de Ingeniería de Software y la metodología de investigación práctica me han moldeado como profesional. Ahora, como graduado, me siento capacitado para liderar proyectos con una perspectiva integral.
+                            </em>  
+                            <p class="custom-card-text" id="custom-small">Graduado</p>                                      
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>     
+    </article>
+</section>
+
+
         <section id="Recursos" class="section-margin"><!--7. Recursos academicos-->       
-            <div class="container text-center" style="padding: bottom 30px;">
-                <h2>
-                    <span style="box-shadow: inset 0 -2px 0 #dbca11">RECURSOS</span>
-                </h2>
-            </div>        
+        <div style="display: flex; justify-content: center; align-items: center; background-color: white; width: 100%; height: 150px;">
+                <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Recursos Académicos</h2>
+        </div>       
             <div class="container">
                 <div class="container text-center">
                     <div class="row align-items-center">
@@ -1128,7 +1118,7 @@
                 </div>
             </div>
         </section>
-        <section  id="Contactos" class="container-fluid"><!--8. Formulario de Contacto y FAQ-->
+        <section  id="Contacto" class="container-fluid"><!--8. Formulario de Contacto y FAQ-->
         <div style="display: flex; justify-content: center; align-items: center; background-color: white; width: 100%; height: 150px;">
                 <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Contacto y FAQ</h2>
         </div>
