@@ -69,8 +69,9 @@ a:hover {
   width: 100%;
   display: grid;
   gap: 20px 40px;
-  justify-content: space-around;
-  text-align: justify;
+  justify-content: center;
+  align-content: center;
+  text-align: left;
 }
 .perfile {
   grid-area: perfile;
@@ -111,7 +112,7 @@ article {
 }
 .card-text {
   margin-bottom: 10px;
-  
+
   text-align: left;
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
