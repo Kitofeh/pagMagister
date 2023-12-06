@@ -748,7 +748,7 @@ $con = conectar();
                     </thead>
                     <tbody>
                         <tr>
-                        <th scope="col" style="background-color: #58D68D; margin-right: 30px;: 30px;">Asignatura fundamental <br> 3/3</th>
+                        <th scope="col" style="background-color: #58D68D; margin-right: 30px 30px;">Asignatura fundamental <br> 3/3</th>
                         <td scope="col" style="background-color: #CD6155; margin: 30px;">Seminario de investigación <br>  3/3</td>
                         <td scope="col" style="background-color: #5DADE2; margin: 30px">Tesis de grado 1<br> 3/12</td>
                         <td scope="col" style="background-color: #5DADE2;">Tesis de grado 2<br> 3/12</td>
