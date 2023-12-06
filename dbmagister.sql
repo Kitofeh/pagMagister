@@ -173,6 +173,15 @@ CREATE TABLE `noticias` (
   `URL_IMG` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+CREATE TABLE `noticia_importante` (
+  `id` int(11) NOT NULL,
+  `titulo` varchar(1000) DEFAULT NULL,
+  `cuerpo` varchar(1000) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO `noticia_importante` (`id`, `titulo`, `cuerpo`) VALUES
+(1, 'Titulo de la Noticia', 'Cuerpo de la noticia');
+
 -- --------------------------------------------------------
 
 --
