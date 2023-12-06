@@ -5,18 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="styleAcademicos.css">
   </head>
   <body>
 
     <div class="container">
     <br>
-    <center>
-        <h1>ACADÉMICOS</h1>
-    </center>
+ 
     <br>
     <div class="container">
-        <a href="nuevo_academico.php" class="btn btn-dark">Agregar</a>
-        <hr>
+        <a href="nuevo_academico.php" class="m-3 btn btn-success">NUEVO ACADÉMICO</a>
+
 
         <table class="table">
   <thead>
@@ -53,8 +52,8 @@
       <td><?php echo $fila['GRADO']?></td>
       <td><img style="width:200px;"src="data:image/jpg;base64,<?php echo base64_encode($fila['IMG_ACADEMICO'])?>" alt=""></td>
         <td>
-            <a href="modificar_academico.php?COD_ACADEMICO=<?php echo $fila["COD_ACADEMICO"]; ?>" class="btn btn-warning">EDITAR</a>
-            <a href="eliminar_academico.php?COD_ACADEMICO=<?php echo $fila["COD_ACADEMICO"]; ?>" class="btn btn-danger">ELIMINAR</a>
+            <a href="modificar_academico.php?COD_ACADEMICO=<?php echo $fila["COD_ACADEMICO"]; ?>" class="m-2 btn btn-warning">MODIFICAR</a>
+            <a href="eliminar_academico.php?COD_ACADEMICO=<?php echo $fila["COD_ACADEMICO"]; ?>" class="m-2 btn btn-danger">ELIMINAR</a>
 
 
 

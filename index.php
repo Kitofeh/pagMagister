@@ -40,16 +40,18 @@ $con = conectar();
                     session_start();
 
                     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-
-                        echo "<li class='px-2'><p>Bienvenido, " . $_SESSION['usuario'] . "</p></li>";
-                        echo "<li class='px-2'><a style='text-shadow: 2px 2px 4px rgba(0, 0, 0, 1)' href='logout.php'>CERRAR SESIÓN</a></li>";
-                        echo "<li class='px-2'><a style='text-shadow: 2px 2px 4px rgba(0, 0, 0, 1)' href='panel.php'>PANEL</a></li>";
+                        
+                        
+                        echo "<li class='mx-1'><a>BIEVENIDO, " . $_SESSION['usuario'] . "</p></li>";
+                        echo "<li class='mx-1'><img style='width:75px;' src='profesores/incognito.png' alt='Imagen de usuario'></li>";
+                        echo "<li class='mx-1 '><a style='text-shadow: 2px 2px 4px rgba(0, 0, 0, 1)' href='logout.php'>CERRAR SESIÓN</a></li>";
+                        echo "<li class='mx-1'><a style='text-shadow: 2px 2px 4px rgba(0, 0, 0, 1)' href='panel.php'>PANEL</a></li>";
+                     
+           
 
                     } else {
                         echo "<li class='px-2'><a style='text-shadow: 2px 2px 4px rgba(0, 0, 0, 1)' type='button' data-toggle='modal' data-target='#formularioLogin'>LOGIN</a></li>";
                     }
-                    
-                    
 
           
 
