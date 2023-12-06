@@ -15,6 +15,11 @@ a {
   list-style-type: none;
   color: white;
 }
+/*offcanvas*/
+.offcanvas.offcanvas-end {
+  width: 200px; /* Establece el ancho deseado */
+}
+
 /*container h1 academico*/
 .container h1 {
   margin-top: 75px;
