@@ -38,17 +38,17 @@ nav {
   font-weight: bold;
 }
 
-ul li {
+nav ul li {
   display: inline-block;
   padding: 0px 18px;
 }
 
-a {
+nav ul li a {
   color: white;
   text-decoration: none;
 }
 
-a:hover {
+nav ul li a:hover {
   color: #dbca11;
 }
 

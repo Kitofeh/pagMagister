@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
     <!--FUENTES-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +17,12 @@
     <link rel="stylesheet" href="style.css">
     <title>Web Magister UDA</title>
 </head>
+
+<?php
+include("conexion.php");
+$con = conectar();
+?>
+
 <body style="font-family: 'Montserrat', sans-serif;">
     <header>
         <section><!--Barra de navegacion-->
@@ -28,11 +35,69 @@
                     <li class="px-2"><a href="#PlanDeEstudios" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">Plan de estudios</a></li>
                     <li class="px-2"><a href="#Experiencias" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">Experiencias</a></li>
                     <li class="px-2"><a href="#Recursos" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">Recursos</a></li>
-                    <li class="px-2"><a href="#Contacto" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">Contactos y Preguntas Frecuentes</a></li>
+                    <li class="px-2"><a href="#Contacto" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">Soporte</a></li>
+                    <?php
+                    session_start();
+
+                    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+
+                        echo "<li class='px-2'><p>Bienvenido, " . $_SESSION['usuario'] . "</p></li>";
+                        echo "<li class='px-2'><a style='text-shadow: 2px 2px 4px rgba(0, 0, 0, 1)' href='logout.php'>CERRAR SESIÓN</a></li>";
+                        echo "<li class='px-2'><a style='text-shadow: 2px 2px 4px rgba(0, 0, 0, 1)' href='panel.php'>PANEL</a></li>";
+
+                    } else {
+                        echo "<li class='px-2'><a style='text-shadow: 2px 2px 4px rgba(0, 0, 0, 1)' type='button' data-toggle='modal' data-target='#formularioLogin'>LOGIN</a></li>";
+                    }
+                    
+                    
+
+          
+
+                    ?>
+
                     
                 </ul>
             </nav>
         </section>
+
+        <div class="modal fade" id="formularioLogin" tabindex="-1" role="dialog" aria-labelledby="modalLoginCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLongTitle">LOGIN</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <div>
+                                <div class="row">
+                                    <div class="col-md-6 offset-lg-3">
+                                        <form name="flogin" action = "autentificar.php" onsubmit = "return validation()" method="POST">
+                                            <div class="form-group mb-3">
+                        
+                                            </div>
+                                            <div class="form-group mb-3">
+                                                <label for="usuario">USUARIO:</label>
+                                                <input type="text" class="form-control mb-3 mt-3" name ="usuario" id="usuario" placeholder="Ingresa tu usuario">
+                                            </div>
+                                            <div class="form-group mb-3">
+                                                <label for="contrasena">CONTRASEÑA:</label>
+                                                <input type="password" class="form-control mb-3 mt-3" name ="contrasena" id="contrasena" placeholder="Ingresa tu contraseña">
+                                            </div>
+                         
+                                            
+                                            <input type="submit" class="mt-3 mx-5 mb-3 btn btn-primary btn-block" value="ENVIAR"></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
 
 
         <section class="section-margin my-0 mx-0"><!--Banner-->
@@ -850,7 +915,7 @@
 
     
               
-                <div class ="col-8">
+                <div class ="col-7">
                   <div style ="display: block;width: 100%;overflow-x: auto; overflow-y: auto; max-height: 200px">
                 <!-- TABLAx -->
                 <table class="table">
@@ -1298,15 +1363,33 @@
 
 </body>
 
-<script src="js/bootstrap.min.js"></script>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+<script>  
+            function validation()  
+            {  
+                var user=document.flogin.usuario.value;  
+                var pass=document.flogin.contrasena.value;  
+                if(user.length=="" && pass.length=="") {  
+                    alert("Usuario y contraseña están vacíos.");  
+                    return false;  
+                }  
+                else  
+                {  
+                    if(user.length=="") {  
+                        alert("El campo de usuario está vacío.");  
+                        return false;  
+                    }   
+                    if (pass.length=="") {  
+                    alert("El campo de contraseña está vacío.");  
+                    return false;  
+                    }  
+                }                             
+            }  
+        </script>
 
 
 </html>
