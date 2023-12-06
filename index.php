@@ -155,13 +155,22 @@ $con = conectar();
                 <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Noticias y Eventos</h2>
             </div>
             <div class="my-5"><!--Tarjeta Ancha-->
+                <?php 
+                include("../../conexion.php");
+                $con = conectar();
+
+                $sql="SELECT * FROM noticia_importante WHERE id='1'";
+                $query=mysqli_query($con,$sql);
+
+                $row=mysqli_fetch_array($query);
+                ?>
                 <div class="card">
                     <div class="card-header">
                         Informacion mas reciente
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Sigue nuestros pasos junto a Magister UDA</h5>
-                        <p class="card-text">Con la ultima informacion acerca de los procesos de Posgrado de la institucion.</p>
+                        <h5 class="card-title"><?php echo $row['titulo']?></h5>
+                        <p class="card-text"><?php echo $row['cuerpo']?></p>
                         <!--<a href="#" class="btn btn-primary">Click aqui</a>-->
                     </div>
                 </div>
