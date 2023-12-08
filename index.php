@@ -18,12 +18,9 @@
     <title>Web Magister UDA</title>
 </head>
 
-<?php
-include("conexion.php");
-$con = conectar();
-?>
 
-<body style="font-family: 'Montserrat', sans-serif;">
+
+<body style="font-family: 'Montserrat', sans-serif; overflow-x: hidden;">
     <header>
         <section><!--Barra de navegacion-->
             <nav class="py-4 fixed-top" style="background-color: rgba(255, 255, 255, 0.1);backdrop-filter: blur(10px); box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
@@ -37,19 +34,29 @@ $con = conectar();
                     <li class="px-2"><a href="#Recursos" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">Recursos</a></li>
                     <li class="px-2"><a href="#Contacto" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">Soporte</a></li>
                     <?php
+
+
+                    include("conexion.php");
+                    $con = conectar();
+
                     session_start();
 
                     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                        
+                        
+                        echo "<li class='mx-1'><a>BIEVENIDO, " . $_SESSION['usuario'] . "</p></li>";
+                        echo "<li class='mx-1'><img style='width:75px;' src='profesores/incognito.png' alt='Imagen de usuario'></li>";
+                        echo "<li class='mx-1 '><a style='text-shadow: 2px 2px 4px rgba(0, 0, 0, 1)' href='logout.php'>CERRAR SESIÓN</a></li>";
+                        echo "<li class='mx-1'><a style='text-shadow: 2px 2px 4px rgba(0, 0, 0, 1)' href='ficheros_panel/academicos/academicos.php'>PANEL</a></li>";
+                     
+           
 
-                        echo "<li class='px-2'><p>Bienvenido, " . $_SESSION['usuario'] . "</p></li>";
-                        echo "<li class='px-2'><a style='text-shadow: 2px 2px 4px rgba(0, 0, 0, 1)' href='logout.php'>CERRAR SESIÓN</a></li>";
-                        echo "<li class='px-2'><a style='text-shadow: 2px 2px 4px rgba(0, 0, 0, 1)' href='panel.php'>PANEL</a></li>";
+                    } 
+                    else
 
-                    } else {
+                    {
                         echo "<li class='px-2'><a style='text-shadow: 2px 2px 4px rgba(0, 0, 0, 1)' type='button' data-toggle='modal' data-target='#formularioLogin'>LOGIN</a></li>";
                     }
-                    
-                    
 
           
 
@@ -154,8 +161,8 @@ $con = conectar();
             <div class="d-flex justify-content-center align-items-center bg-white w-100" style="height: 150px;">
                 <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Noticias y Eventos</h2>
             </div>
-            <div class="my-5"><!--Tarjeta Ancha-->
-                <?php 
+           <!----> <div class="my-5"><!--Tarjeta Ancha-->
+                <?php /* 
                 include("../../conexion.php");
                 $con = conectar();
 
@@ -163,7 +170,7 @@ $con = conectar();
                 $query=mysqli_query($con,$sql);
 
                 $row=mysqli_fetch_array($query);
-                ?>
+                */?>
                 <div class="card">
                     <div class="card-header">
                         Informacion mas reciente
@@ -321,8 +328,23 @@ $con = conectar();
 
         </section>
 
+    
+
+        <?php 
+        include("../../conexion.php");
+        $con = conectar();
+
+        $sql="SELECT * FROM academicos WHERE COD_ACADEMICO='9991'";
+        $query=mysqli_query($con,$sql);
+
+        $row=mysqli_fetch_array($query);
+
+        
+    
 
 
+
+        ?>
         <section id="Academicos" class="section-margin"><!--2.1 Academicos-->
             <div class="d-flex justify-content-center align-items-center bg-white w-100" style="height: 150px;">
                 <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Academicos</h2>
@@ -334,6 +356,7 @@ $con = conectar();
                         <div class="card-body d-flex flex-column justify-content-center">
                             <h4 class="text-center">Dante Carrizo</h4>
                             <p class="text-center">Profesor</p>
+                            
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
                             <img src="img-academicos/eye.svg" style="margin-right: 5px; width:20px;">Ver perfil
@@ -386,8 +409,8 @@ $con = conectar();
                     <div class="col">
                     <div class="card">
                         <div class="card-body d-flex flex-column justify-content-center">
-                            <h4 class="text-center">Juan Olivares Pacheco</h4>
-                            <p class="text-center">Doctor en Estadistica</p>
+                            <h4 class="text-center"><?php echo $row['NOMBRE']?></h4>
+                            <p class="text-center"><?php echo $row['CARGO']?></p>
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
                             <img src="img-academicos/eye.svg" style="margin-right: 5px; width:20px;">Ver perfil
@@ -405,16 +428,19 @@ $con = conectar();
                                 <div class="container">
                                     <div class="row align-items-start">
                                         <div class="col-4">
-                                        <img src="img-academicos/jfolivar.png" class="img-fluid" alt="Dante">
+                                        <img style="width:200px;"src="data:image/jpg;base64,<?php echo base64_encode($row['IMG_ACADEMICO'])?>" alt="">
                                         </div>
                                         <div class="col-8">
                                         
-                                        <p><br>Nombre: Juan Olivares Pacheco<br><br>Edad: 20 anios<br><br>Rol: Estadisticas<br></p>
+                                        <p><br>Nombre:<?php echo $row['NOMBRE']?><br><br>Correo:<?php echo $row['CORREO']?><br><br></p>
                                         </div>
                                     </div>
                                     <div class="row mt-4 mb-3">
                                         <div class="col-12">
-                                        <p>Esta es una descripción adicional del perfil. Aquí se puede incluir más detalles o información relevante.</p>
+                                        <center>
+                                        <strong>GRADO ACADÉMICO</strong>
+                                        <p><?php echo $row['GRADO']?></p>
+                                        </center>
                                         </div>
                                     </div>
                                 </div>
@@ -483,171 +509,7 @@ $con = conectar();
                     </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col">
-                    <div class="card">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h4 class="text-center">John Castro</h4>
-                            <p class="text-center">Profesor</p>
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal4">
-                            <img src="img-academicos/eye.svg" style="margin-right: 5px; width:20px;">Ver perfil
-                            </button>
-
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Perfil</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                <div class="container">
-                                    <div class="row align-items-start">
-                                        <div class="col-4">
-                                        <img src="img-academicos/John.jpg" class="img-fluid" alt="John">
-                                        </div>
-                                        <div class="col-8">
-                                        
-                                        <p><br>Nombre: John Castro<br><br>Edad: 20 anios<br><br>Rol: Profesor<br></p>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-4 mb-3">
-                                        <div class="col-12">
-                                        <p>Esta es una descripción adicional del perfil. Aquí se puede incluir más detalles o información relevante.</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-12 d-flex justify-content-center">
-                                            <a href="https://diicc.uda.cl/academico.php?id=8">
-                                            <button type="button" class="btn btn-primary">
-                                                <img src="img-academicos/user-icon.svg" style="margin-right: 5px; width:20px;">Ir a Web Personal
-                                            </button>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="col">
-                    <div class="card">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h4 class="text-center">Vladimir Riffo</h4>
-                            <p class="text-center">Director de Investigacion</p>
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal5">
-                            <img src="img-academicos/eye.svg" style="margin-right: 5px; width:20px;">Ver perfil
-                            </button>
-
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Perfil</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                <div class="container">
-                                    <div class="row align-items-start">
-                                        <div class="col-4">
-                                        <img src="img-academicos/Riffo.jpg" class="img-fluid" alt="Riffo">
-                                        </div>
-                                        <div class="col-8">
-                                        
-                                        <p><br>Nombre: Vladimir Riffo<br><br>Edad: 20 anios<br><br>Rol: Director<br></p>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-4 mb-3">
-                                        <div class="col-12">
-                                        <p>Esta es una descripción adicional del perfil. Aquí se puede incluir más detalles o información relevante.</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-12 d-flex justify-content-center">
-                                            <a href="https://diicc.uda.cl/academico.php?id=6">
-                                            <button type="button" class="btn btn-primary">
-                                                <img src="img-academicos/user-icon.svg" style="margin-right: 5px; width:20px;">Ir a Web Personal
-                                            </button>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="col">
-                    <div class="card">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h4 class="text-center">Wilson Castillo</h4>
-                            <p class="text-center">Coordinador</p>
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal6">
-                            <img src="img-academicos/eye.svg" style="margin-right: 5px; width:20px;">Ver perfil
-                            </button>
-
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Perfil</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                <div class="container">
-                                    <div class="row align-items-start">
-                                        <div class="col-4">
-                                        <img src="img-academicos/Wilson.jpg" class="img-fluid" alt="Wilson">
-                                        </div>
-                                        <div class="col-8">
-                                        
-                                        <p><br>Nombre: Wilson Castillo<br><br>Edad: 20 anios<br><br>Rol: Coordinador<br></p>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-4 mb-3">
-                                        <div class="col-12">
-                                        <p>Esta es una descripción adicional del perfil. Aquí se puede incluir más detalles o información relevante.</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-12 d-flex justify-content-center">
-                                            <a href="https://diicc.uda.cl/academico.php?id=9">
-                                            <button type="button" class="btn btn-primary">
-                                                <img src="img-academicos/user-icon.svg" style="margin-right: 5px; width:20px;">Ir a Web Personal
-                                            </button>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            </div>
+                
         </section>
 
 
@@ -656,31 +518,31 @@ $con = conectar();
                 <div class="d-flex justify-content-center align-items-center bg-white w-100" style="height: 150px;">
                     <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Areas de Investigacion</h2>
                 </div>
-                <div class="row mx-auto" style="border-bottom: 2px solid #364c59; width:1200px; height: 300px;">
+                <div class="row mx-auto" style="border-bottom: 2px solid #364c59; width:1000px; height: 300px;">
                     <div class="col w-25 d-flex justify-content-center">
                         <img src="img-areas-inv/img-area-inv-1.jpg" class="mx-auto my-auto rounded-circle" width="200px;">
                     </div>
-                    <div class="col w-75 d-flex flex-column justify-content-left my-auto p-3">
+                    <div class="col w-50 d-flex flex-column justify-content-left my-auto p-3">
                         <h4>Ingenieria de Software</h4>
-                        <p>La Ingeniería de Software comprende procesos, metodologías, métodos, herramientas, y personas que tienen por objetivo producir un producto software de calidad. La investigación en esta área se orienta a proponer mejoras en el proceso de desarrollo y en la generación de productos que satisfagan los requerimientos cada vez más sofisticados de los usuarios. Sus líneas actuales de investigación son: Ingeniería de Requisitos, Usabilidad, Procesos Software.</p>
+                        <p class="text-justify">La Ingeniería de Software comprende procesos, metodologías, métodos, herramientas, y personas que tienen por objetivo producir un producto software de calidad. La investigación en esta área se orienta a proponer mejoras en el proceso de desarrollo y en la generación de productos que satisfagan los requerimientos cada vez más sofisticados de los usuarios. Sus líneas actuales de investigación son: Ingeniería de Requisitos, Usabilidad, Procesos Software.</p>
                     </div>
                 </div>
-                <div class="row mx-auto" style="border-bottom: 2px solid #364c59; width:1200px; height: 300px;">
+                <div class="row mx-auto" style="border-bottom: 2px solid #364c59; width:1000px; height: 300px;">
                     <div class="col w-25 d-flex justify-content-center">
                         <img src="img-areas-inv/img-area-inv-2.jpg" class="mx-auto my-auto rounded-circle" width="200px;">
                     </div>
                     <div class="col w-75 d-flex flex-column justify-content-left my-auto p-3">
                         <h4>Gestion de Tecnologias de Informacion</h4>
-                        <p>La información cada vez más valiosa en las organizaciones requiere de procesos, tecnologías y técnicas adecuadas para su procesamiento. El uso correcto de los datos y la generación de información otorga un activo relevante y diferenciador para las empresas e instituciones. Esta área tiene que ver con líneas como TICs, Dataminig, Big data, entre otros.</p>
+                        <p class="text-justify">La información cada vez más valiosa en las organizaciones requiere de procesos, tecnologías y técnicas adecuadas para su procesamiento. El uso correcto de los datos y la generación de información otorga un activo relevante y diferenciador para las empresas e instituciones. Esta área tiene que ver con líneas como TICs, Dataminig, Big data, entre otros.</p>
                     </div>
                 </div>
-                <div class="row mx-auto" style="border-bottom: 2px solid #364c59; width:1200px; height: 300px;">
+                <div class="row mx-auto" style="border-bottom: 2px solid #364c59; width:1000px; height: 300px;">
                     <div class="col w-25 d-flex justify-content-center">
                         <img src="img-areas-inv/img-area-inv-3.jpg" class="mx-auto my-auto rounded-circle" width="200px;">
                     </div>
                     <div class="col w-75 d-flex flex-column justify-content-left my-auto p-3">
                         <h4>Inteligencia de Maquinas</h4>
-                        <p>La ciencia de computación ha facilitado la creación de tecnologías con capacidades de procesamiento, almacenamiento y percepción similares a las de los seres humanos. Esta área pretende realizar mejoras en estas capacidades de tal forma que generen productos transferibles al entorno y que ayuden al desarrollo económico de los países. En este momento contamos con líneas como: Redes neuronales, Procesamiento de imágenes, Visión por computador, Reconocimiento de patrones.</p>
+                        <p class="text-justify" >La ciencia de computación ha facilitado la creación de tecnologías con capacidades de procesamiento, almacenamiento y percepción similares a las de los seres humanos. Esta área pretende realizar mejoras en estas capacidades de tal forma que generen productos transferibles al entorno y que ayuden al desarrollo económico de los países. En este momento contamos con líneas como: Redes neuronales, Procesamiento de imágenes, Visión por computador, Reconocimiento de patrones.</p>
                     </div>
                 </div>
             </div>
@@ -691,7 +553,7 @@ $con = conectar();
                   <div class="d-flex justify-content-center align-items-center bg-white w-100 mb-3" style="height: 150px;">
                       <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Admision y Requisitos</h2>
                   </div>
-                  <div style="width: 1200px; height: 700px;">
+                  <div style="width: 1100px; height: 700px;">
                       <div class="row primary-color h-100">
                           <div class="col h-100 p-4 d-flex flex-column">
                               <h3 class="text-white text-center mt-4 mb-5">Postulacion</h3>
@@ -1192,6 +1054,8 @@ $con = conectar();
                 </div>
             </div>
         </section>
+
+        
         <section  id="Contacto" class="container-fluid"><!--8. Formulario de Contacto y FAQ-->
         <div style="display: flex; justify-content: center; align-items: center; background-color: white; width: 100%; height: 150px;">
                 <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Contacto y FAQ</h2>
@@ -1372,10 +1236,14 @@ $con = conectar();
 
 </body>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 
 <script>  
             function validation()  
