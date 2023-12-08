@@ -41,8 +41,7 @@ tbody {
   margin: 10px;
   padding: 0px;
 }
-
-nav a {
+.navbar-branda a {
   nav-left: auto;
   float: right;
   display: block;
