@@ -8,20 +8,19 @@
     <link rel="stylesheet" href="styleAcademicos.css">
   </head>
   <body>
-    <header>
     <nav class="navbar navbar-dark fixed-top" style="background-color: #364c59;">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-          <img src="../../logos/logo-corp-diic-txtblanco.png"  width="132px"  height="50px">
+          <img src="../../logos/logo-corp-diic-txtblanco.png"  width="150px"  height="50px">
         </a>
         <a class="navbar-brand" href="../../index.php">
           Inicio
         </a>
-        <a class="navbar-brand" id="sesion" href="../../index.php">
+        <a class="navbar-brand" href="../../index.php" id="cerrar">
         <?php
           session_start();
             if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-            echo "<a class='navbar-brand' href='pagMagister/logout.php'>Cerrar sesión</a>";            
+            echo "<a  href='../../logout.php'>Cerrar sesión</a>";            
           } else {
             echo "<li class='px-2'><a  type='button' data-toggle='modal' data-target='#formularioLogin'>LOGIN</a></li>";
           }                
@@ -33,13 +32,13 @@
           <div class="offcanvas offcanvas-end text-bg-dark" style="background-color: #364c59;" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
             <div class="offcanvas-header">
               <a class="navbar-brand" href="#">
-                <img src="../../logos/logo-corp-diic-txtblanco.png"  width="132px" height="50px">
+                <img src="../../logos/logo-corp-diic-txtblanco.png"  width="150px" height="50px">
               </a>
             </div>
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="../../ficheros_panel/academicos/academicos.php">Académicos</a>
+                  <a class="nav-link active" aria-current="page" href="#">Académicos</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="#">Calendario eventos</a>
@@ -48,7 +47,7 @@
                   <a class="nav-link active" aria-current="page" href="#">Ex-alumnos</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="../../ficheros_panel/Noticias_Eventos/NoticiaImportante.php">Noticias</a>
+                  <a class="nav-link active" aria-current="page" href="#">Noticias</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="#">Proyectos</a>
@@ -57,27 +56,30 @@
                   <a class="nav-link active" aria-current="page" href="#">Publicaciones</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="../../ficheros_panel/formulario_contacto/formulario_contacto.php">Form contacto</a>
+                  <a class="nav-link active" aria-current="page" href="#">Form contacto</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="#">Form postulación</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="../../ficheros_panel/horario_clases/horario_clases.php">Horario de clases</a>
+                  <a class="nav-link active" aria-current="page" href="#">Horario de clases</a>
                 </li>
               </ul>            
             </div>
           </div>
         </div>
       </nav>
-    </header>
     <div class="container">
-    <br>
+
     <center>
-        <h1>ACADÉMICOS</h1>
-    </center>   
-    <a href="nuevo_academico.php" class="btn btn-dark">Agregar</a>
-    </div>
+        <h1 class ="mt-5">ACADÉMICOS</h1>
+    </center>
+    <br>   
+        <a href="nuevo_academico.php" class="m-3 btn btn-dark">Agregar</a>
+    
+  </div>
+
+    <center>
     <table class="table">
     <thead>
       <tr>
@@ -93,6 +95,7 @@
     </thead>
     <tbody>
 
+
     <?php
         include("../../conexion.php");
         $con = conectar();
@@ -103,17 +106,18 @@
       <th scope="row"><?php echo $fila['COD_ACADEMICO']?></th>
       <td><?php echo $fila['NOMBRE']?></td>
       <td><?php echo $fila['CORREO']?></td>
+
       <td style="width:200px;"><?php echo $fila['CARGO']?></td>
       <td  colspan="2"><?php echo $fila['GRADO']?></td>
       <td style="width: 250px;"><img style="width:200px;"src="data:image/jpg;base64,<?php echo base64_encode($fila['IMG_ACADEMICO'])?>" alt=""></td>
       <td>
         <a href="modificar_academico.php?COD_ACADEMICO=<?php echo $fila["COD_ACADEMICO"]; ?>" class="btn btn-warning">EDITAR</a>
-        <a href="eliminar_academico.php?COD_ACADEMICO=<?php echo $fila["COD_ACADEMICO"]; ?>" class="btn btn-danger">ELIMINAR</a>
-        </td>
+        <a href="eliminar_academico.php?COD_ACADEMICO=<?php echo $fila["COD_ACADEMICO"]; ?>" class="btn btn-danger">ELIMINAR</a>        </td>
     </tr>
   </tbody>
   <?php } ?>
   </table>
+        </center>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>
 </html>
