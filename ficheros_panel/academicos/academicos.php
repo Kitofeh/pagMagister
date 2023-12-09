@@ -16,11 +16,12 @@
         <a class="navbar-brand" href="../../index.php">
           Inicio
         </a>
-        <a class="navbar-brand" href="../../index.php">
+
+        <a class="navbar-brand" href="../../index.php" id="cerrar">
         <?php
           session_start();
             if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-            echo "<a  href='../../logout.php'>CERRAR SESIÓN</a>";            
+            echo "<a  href='../../logout.php'>Cerrar sesión</a>";            
           } else {
             echo "<li class='px-2'><a  type='button' data-toggle='modal' data-target='#formularioLogin'>LOGIN</a></li>";
           }                

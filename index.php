@@ -161,8 +161,8 @@
             <div class="d-flex justify-content-center align-items-center bg-white w-100" style="height: 150px;">
                 <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Noticias y Eventos</h2>
             </div>
-            <div class="my-5"><!--Tarjeta Ancha-->
-                <?php 
+           <!----> <div class="my-5"><!--Tarjeta Ancha-->
+                <?php /* 
                 include("../../conexion.php");
                 $con = conectar();
 
@@ -170,7 +170,7 @@
                 $query=mysqli_query($con,$sql);
 
                 $row=mysqli_fetch_array($query);
-                ?>
+                */?>
                 <div class="card">
                     <div class="card-header">
                         Informacion mas reciente

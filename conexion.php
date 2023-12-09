@@ -5,7 +5,6 @@ function conectar()
     $host = "localhost";
     $user = "root";
     $pass = "kito1234";
-
     $bd = "dbmagister";
 
     $con = mysqli_connect($host, $user, $pass);
