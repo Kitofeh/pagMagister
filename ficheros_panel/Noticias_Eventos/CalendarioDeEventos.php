@@ -174,6 +174,64 @@ $row=mysqli_fetch_array($query);
         </div>
     </div>
     </div>
+
+    <!-- Crear la tabla con Bootstrap -->
+    <table class="table table-bordered">
+    <!-- Crear las cabeceras de la tabla -->
+    <thead>
+        <tr>
+        <th scope="col">ID_EVENTO</th>
+        <th scope="col">TITULO</th>
+        <th scope="col">DESCRIPCION</th>
+        <th scope="col">FECHA INICIO</th>
+        <th scope="col">FECHA FIN</th>
+        <th scope="col">UBICACION</th>
+        <th scope="col">TIPO EVENTO</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Eliminar</th>
+        </tr>
+    </thead>
+
+    <!-- Rellenar la tabla con los datos -->
+    <tbody>
+        <?php
+            $sql="SELECT * FROM calendario_eventos";
+            $query=mysqli_query($con,$sql);
+            while($row=mysqli_fetch_array($query)){
+        ?>
+        
+        <tr>
+        <td><?php echo $row['ID_EVENTO']; ?></td>
+        <td><?php echo $row['TITULO']; ?></td>
+        <td><?php echo $row['DESCRIPCION']; ?></td>
+        <td><?php echo $row['FECHA_INICIO']; ?></td>
+        <td><?php echo $row['FECHA_FIN']; ?></td>
+        <td><?php echo $row['UBICACION']; ?></td>
+        <td><?php echo $row['TIPO_EVENTO']; ?></td>
+        <td><button class="btn btn-primary">Editar</button></td>
+        <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#EliminarEvento<?php echo $row['ID_EVENTO']; ?>">Eliminar</button></td>
+        </tr>
+        <!-- Modal Eliminar -->
+        <div class="modal fade" id="EliminarEvento<?php echo $row['ID_EVENTO']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Estas seguro que deseas eliminar el evento ID <?php echo $row['ID_EVENTO']; ?>?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
+                <a href="EliminarEvento.php?id=<?php echo $row['ID_EVENTO'] ?>" class="btn btn-danger">Eliminar</a>
+            </div>
+            </div>
+        </div>
+        </div>
+        <?php } ?>
+    </tbody>
+    </table>
     
 </body>
 </html>
