@@ -72,6 +72,6 @@ a.nav-link.active:hover {
 a.navbar-brand:hover {
   cursor: pointer;
   transition: color 0.3s;
-  color: #dbca11;
+  color: #dbca1;
   text-decoration: none;
 }
