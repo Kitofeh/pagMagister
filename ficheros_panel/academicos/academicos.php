@@ -16,6 +16,7 @@
         <a class="navbar-brand" href="../../index.php">
           Inicio
         </a>
+
         <a class="navbar-brand" href="../../index.php" id="cerrar">
         <?php
           session_start();
