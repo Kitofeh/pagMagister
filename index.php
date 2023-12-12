@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 
     <!--FUENTES-->
@@ -197,6 +198,11 @@
                         </div>
                     </div>
                 </div>
+
+                <?php
+                include_once("ficheros_panel/Noticias_Eventos/VariablesCalendario.php");
+                ?>
+
                 <div class="row">
                     <div class="col"><!--Calendario-->
                         <div class="my-5">
@@ -218,45 +224,45 @@
                                 <tr>
                                 <td class="p-5"></td>
                                 <td class="p-5"></td>
-                                <td class="p-5">1</td>
-                                <td class="p-5">2</td>
-                                <td class="p-5">3</td>
-                                <td class="p-5">4</td>
-                                <td class="p-5">5</td>
+                                <td class="p-2">1<br><br><?php echo $titulos_1?></td>
+                                <td class="p-2">2<br><br><?php echo $titulos_2?></td>
+                                <td class="p-2">3<br><br><?php echo $titulos_3?></td>
+                                <td class="p-2">4<br><br><?php echo $titulos_4?></td>
+                                <td class="p-2">5<br><br><?php echo $titulos_5?></td>
                                 </tr>
                                 <tr class="p-5">
-                                <td class="p-5">6</td>
-                                <td class="p-5">7</td>
-                                <td class="p-5">8</td>
-                                <td class="p-5">9</td>
-                                <td class="p-5">10</td>
-                                <td class="p-5">11</td>
-                                <td class="p-5">12</td>
+                                <td class="p-2">6<br><br><?php echo $titulos_6?></td>
+                                <td class="p-2">7<br><br><?php echo $titulos_7?></td>
+                                <td class="p-2">8<br><br><?php echo $titulos_8?></td>
+                                <td class="p-2">9<br><br><?php echo $titulos_9?></td>
+                                <td class="p-2">10<br><br><?php echo $titulos_10?></td>
+                                <td class="p-2">11<br><br><?php echo $titulos_11?></td>
+                                <td class="p-2">12<br><br><?php echo $titulos_12?></td>
                                 </tr>
                                 <tr>
-                                <td class="p-5">13</td>
-                                <td class="p-5">14</td>
-                                <td class="p-5">15</td>
-                                <td class="p-5">16</td>
-                                <td class="p-5">17</td>
-                                <td class="p-5">18</td>
-                                <td class="p-5">19</td>
+                                <td class="p-2">13<br><br><?php echo $titulos_13?></td>
+                                <td class="p-2">14<br><br><?php echo $titulos_14?></td>
+                                <td class="p-2">15<br><br><?php echo $titulos_15?></td>
+                                <td class="p-2">16<br><br><?php echo $titulos_16?></td>
+                                <td class="p-2">17<br><br><?php echo $titulos_17?></td>
+                                <td class="p-2">18<br><br><?php echo $titulos_18?></td>
+                                <td class="p-2">19<br><br><?php echo $titulos_19?></td>
                                 </tr>
                                 <tr>
-                                <td class="p-5">20</td>
-                                <td class="p-5">21</td>
-                                <td class="p-5">22</td>
-                                <td class="p-5">23</td>
-                                <td class="p-5">24</td>
-                                <td class="p-5">25</td>
-                                <td class="p-5">26</td>
+                                <td class="p-2">20<br><br><?php echo $titulos_20?></td>
+                                <td class="p-2">21<br><br><?php echo $titulos_21?></td>
+                                <td class="p-2">22<br><br><?php echo $titulos_22?></td>
+                                <td class="p-2">23<br><br><?php echo $titulos_23?></td>
+                                <td class="p-2">24<br><br><?php echo $titulos_24?></td>
+                                <td class="p-2">25<br><br><?php echo $titulos_25?></td>
+                                <td class="p-2">26<br><br><?php echo $titulos_26?></td>
                                 </tr>
                                 <tr class="p-5">
-                                <td class="p-5">27</td>
-                                <td class="p-5">28</td>
-                                <td class="p-5">29</td>
-                                <td class="p-5">30</td>
-                                <td class="p-5">31</td>
+                                <td class="p-2">27<br><br><?php echo $titulos_27?></td>
+                                <td class="p-2">28<br><br><?php echo $titulos_28?></td>
+                                <td class="p-2">29<br><br><?php echo $titulos_29?></td>
+                                <td class="p-2">30<br><br><?php echo $titulos_30?></td>
+                                <td class="p-2">31<br><br><?php echo $titulos_31?></td>
                                 <td class="p-5"></td>
                                 <td class="p-5"></td>
                                 </tr>
