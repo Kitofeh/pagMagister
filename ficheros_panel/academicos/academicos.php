@@ -53,7 +53,7 @@
                   <a class="nav-link active" aria-current="page" href="../../ficheros_panel/publicaciones/publicaciones.php">Publicaciones</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="../../ficheros_panel/formulario_contacto/formulario_contacto.php">Form contacto</a>
+                  <a class="nav-link active" aria-current="page" href="../../ficheros_panel/form_contacto/formulario_contacto.php">Form contacto</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="../../ficheros_panel/form_postulacion/formulario_postulacion.php">Form postulación</a>
