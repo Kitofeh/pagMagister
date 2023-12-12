@@ -2,6 +2,7 @@
 include_once("../../conexion.php");
 $con = conectar();
 
+$id_evento = $_POST['idevento'];
 $titulo = $_POST['titulo'];
 $descripcion = $_POST['descripcion'];
 $fechaInicio = $_POST['fechainicio'];
@@ -9,7 +10,7 @@ $fechaFin = $_POST['fechafin'];
 $ubicacion = $_POST['ubicacion'];
 $tipo = $_POST['tipo'];
 
-$query = mysqli_query($con, "INSERT INTO `calendario_eventos`(`TITULO`, `DESCRIPCION`, `FECHA_INICIO`, `FECHA_FIN`, `UBICACION`, `TIPO_EVENTO`) VALUES ('$titulo','$descripcion','$fechaInicio','$fechaFin','$ubicacion','$tipo')");
+$query = mysqli_query($con, "UPDATE `calendario_eventos` SET `TITULO`='$titulo', `DESCRIPCION`='$descripcion', `FECHA_INICIO`='$fechaInicio', `FECHA_FIN`='$fechaFin', `UBICACION`='$ubicacion', `TIPO_EVENTO`='$tipo' WHERE `ID_EVENTO` = '$id_evento'");
 
 //echo $titulo,$descripcion,$fechaInicio,$fechaFin,$ubicacion,$tipo;
 

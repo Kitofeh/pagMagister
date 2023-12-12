@@ -208,9 +208,66 @@ $row=mysqli_fetch_array($query);
         <td><?php echo $row['FECHA_FIN']; ?></td>
         <td><?php echo $row['UBICACION']; ?></td>
         <td><?php echo $row['TIPO_EVENTO']; ?></td>
-        <td><button class="btn btn-primary">Editar</button></td>
+        <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModificarEvento<?php echo $row['ID_EVENTO']; ?>">Modificar</button></td>
         <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#EliminarEvento<?php echo $row['ID_EVENTO']; ?>">Eliminar</button></td>
         </tr>
+        <!-- Modal Modificar-->
+        <div class="modal fade" id="ModificarEvento<?php echo $row['ID_EVENTO']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <form action="ModificarEvento.php" method="POST" autocomplete="off">
+                    <div class="form-floating mb-3">
+                        <input type="hidden" id="floatingInput" name="idevento" value="<?php echo $row['ID_EVENTO']; ?>">
+                        <input type="text" class="form-control" id="floatingInput" name="titulo" value="<?php echo $row['TITULO']; ?>" placeholder="Titulo del Evento" required>
+                        <label for="floatingInput">Titulo del Evento</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" name="descripcion" style="height: 100px" required><?php echo $row['DESCRIPCION']; ?></textarea>
+                        <label for="floatingTextarea2">Descripcion del Evento</label>
+                    </div>
+                    <div class="row g-2 mb-3">
+                        <div class="col-md">
+                            <div class="form-floating">
+                            <label for="fechaHora">Fecha y Hora de Inicio:</label><br>
+                            <input type="datetime-local" id="fechaHora" name="fechainicio" value="<?php echo $row['FECHA_INICIO']; ?>" required><br>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-floating">
+                                <label for="fechaHora">Fecha y Hora de Fin:</label><br>
+                                <input type="datetime-local" id="fechaHora" name="fechafin" value="<?php echo $row['FECHA_FIN']; ?>" required><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" name="ubicacion" value="<?php echo $row['UBICACION']; ?>" placeholder="Ubicacion del Evento" required>
+                        <label for="floatingInput">Ubicacion del Evento</label>
+                    </div>
+                    <div class="form-floating">
+                        <select class="form-select" id="floatingSelectDisabled" name="tipo" aria-label="Floating label disabled select example" required>
+                            <option selected>Open this select menu</option>
+                            <option value="Conferencia" <?php if($row['TIPO_EVENTO'] == 'Conferencia') echo 'selected'; ?>>Conferencia</option>
+                            <option value="Seminario" <?php if($row['TIPO_EVENTO'] == 'Seminario') echo 'selected'; ?>>Seminario</option>
+                            <option value="Taller" <?php if($row['TIPO_EVENTO'] == 'Taller') echo 'selected'; ?>>Taller</option>
+                            <option value="Otro" <?php if($row['TIPO_EVENTO'] == 'Otro') echo 'selected'; ?>>Otro</option>
+                        </select>
+                        <label for="floatingSelectDisabled">Tipo de Evento</label>
+                    </div>
+        
+            </div>
+                    <div class="modal-footer">
+                        <input type="submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
         <!-- Modal Eliminar -->
         <div class="modal fade" id="EliminarEvento<?php echo $row['ID_EVENTO']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
