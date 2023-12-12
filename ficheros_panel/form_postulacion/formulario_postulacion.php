@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="styleAcademicos.css">
+    <link rel="stylesheet" href="stylepostulacion.css">
   </head>
-  <body>
+<body>
     <nav class="navbar navbar-dark fixed-top" style="background-color: #364c59;">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
@@ -53,7 +53,7 @@
                   <a class="nav-link active" aria-current="page" href="../../ficheros_panel/publicaciones/publicaciones.php">Publicaciones</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="../../ficheros_panel/formulario_contacto/formulario_contacto.php">Form contacto</a>
+                  <a class="nav-link active" aria-current="page" href="../../ficheros_panel/form_contacto/formulario_contacto.php">Form contacto</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="../../ficheros_panel/form_postulacion/formulario_postulacion.php">Form postulación</a>
@@ -65,17 +65,14 @@
             </div>
           </div>
         </div>
-      </nav>
+    </nav>
     <div class="container">
-
     <center>
         <h1 class ="mt-5">ACADÉMICOS</h1>
     </center>
     <br>   
-        <a href="nuevo_academico.php" class="m-3 btn btn-dark">Agregar</a>
-    
+    <a href="nuevo_academico.php" class="m-3 btn btn-dark">Agregar</a>   
   </div>
-
     <center>
     <table class="table">
     <thead>
