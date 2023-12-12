@@ -103,7 +103,7 @@
                           </div>
                         </div>
                       </div>
-
+    </header>
 
 
 
@@ -1158,38 +1158,38 @@
                               <div>
                                 <div class="row">
                                     <div class="col-md-6 offset-lg-3">
-                                        <form >
+                                        <form action ="ficheros_panel/form_contacto/agregar_contactoindex.php" method="POST" enctype="multipart/form-data">
                                             <div class="form-group mb-3">
                                                 <label for="nombre">RUT:</label>
-                                                <input type="text" class="form-control mb-3 mt-3" name ="rut" id="rut" placeholder="Ingresa tu RUT">
+                                                <input type="text" class ="form-control mb-3 mt-3" name = "RUT" placeholder = "RUT" required>
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label for="nombre">NOMBRE:</label>
-                                                <input type="text" class="form-control mb-3 mt-3" name ="nombre" id="nombre" placeholder="Ingresa tu nombre">
+                                                <input type="text" class ="form-control mb-3 mt-3" name = "NOMBRE" placeholder = "NOMBRE" required>
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label for="nombre">FECHA NACIMIENTO:</label>
-                                                <input type="text" class="form-control mb-3 mt-3" name ="fecha_nac" id="fecha_nac" placeholder="Ingresa tu fecha de nacimiento">
+                                                <input type="date" class ="form-control mb-3 mt-3" name = "FECHA_NAC" placeholder = "FECHA_NAC">
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label for="nombre">GENERO:</label>
-                                                <input type="text" class="form-control mb-3 mt-3" name ="genero" id="genero" placeholder="Ingresa tu género">
+                                                <input type="text" class ="form-control mb-3 mt-3"  name = "GENERO" placeholder = "GENERO">
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label for="nombre">CORREO:</label>
-                                                <input type="email" class="form-control mb-3 mt-3" name ="email" id="email" placeholder="Ingresa tu e-mail">
+                                                <input type="email" class ="form-control mb-3 mt-3" name = "CORREO" placeholder = "CORREO" required>
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label for="nombre">TELEFONO:</label>
-                                                <input type="text" class="form-control mb-3 mt-3" name ="telefono" id="telefono" placeholder="Ingresa tu teléfono">
+                                                <input type="text" class ="form-control mb-3 mt-3" name = "TELEFONO" placeholder="TELEFONO">
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label for="nombre">DIRECCION:</label>
-                                                <input type="text" class="form-control mb-3 mt-3" name ="direccion" id="direccion" placeholder="Ingresa tu dirección">
+                                                <input type="text" class ="form-control mb-3 mt-3" name = "DIRECCION" placeholder = "DIRECCION">
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label for="nombre">INSTITUCIÓN:</label>
-                                                <input type="text" class="form-control mb-3 mt-3" name ="institucion" id="institucion" placeholder="Ingresa tu institución">
+                                                <input type="text" class ="form-control mb-3 mt-3" name = "INSTITUCION" placeholder = "INSTITUCION">
                                             </div>
                                             
                                             <input type="submit" class="mt-3 mx-5 mb-3 btn btn-primary btn-block" value="ENVIAR"></button>
