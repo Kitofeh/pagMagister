@@ -24,11 +24,11 @@
       <input type="text" class ="mb-3 form-control" name = "COD_PUBLICACION" placeholder = "AREA" value="<?php echo $fila["COD_PUBLICACION"]?>">
       <input type="text" class ="mb-3 form-control" name = "AREA" placeholder = "AREA" value="<?php echo $fila["AREA"]?>">
       <input type="number" class ="mb-3 form-control" name = "COD_AUTOR" placeholder = "COD_AUTOR" value="<?php echo $fila["COD_AUTOR"]?>">
-      <input type="number" class ="mb-3 form-control" name = "COHORTE" placeholder = "COHORTE" value="<?php echo $fila["COHORTE"]?>">
+      <input type="number" class ="mb-3 form-control" name = "COHORTE"  min="1900" max="2300" placeholder = "COHORTE" value="<?php echo $fila["COHORTE"]?>">
       <input type="number" class ="mb-3 form-control" name = "COD_ESTUDIANTE" placeholder = "COD_ESTUDIANTE" value="<?php echo $fila["COD_ESTUDIANTE"]?>">
       <input type="text" class ="mb-3 form-control" name = "TITULO" placeholder="TITULO" required value="<?php echo $fila["TITULO"]?>">
       <input type="text" class ="mb-3 form-control" name = "INDEXACION" placeholder = "INDEXACION" value="<?php echo $fila["INDEXACION"]?>">
-      <input type="number" class ="mb-3 form-control" name = "FECHA" placeholder = "FECHA" value="<?php echo $fila["FECHA"]?>">
+      <input type="number" class ="mb-3 form-control" name = "FECHA" min="1900" max="2300" placeholder = "FECHA" value="<?php echo $fila["FECHA"]?>">
       <input type="text" class ="mb-3 form-control" name = "EVENTO" placeholder = "EVENTO" value="<?php echo $fila["EVENTO"]?>">
       <input type="submit" class ="btn btn-primary btn-success">
       <a class ="btn btn-dark mx-2" href="index.php">Regresar</a>  

@@ -79,9 +79,11 @@
       <tr>
         <th scope="col">COD_PUBLICACION</th>
         <th scope="col">AREA</th>
-        <th scope="col">COD_AUTOR</th>
+        <th scope="col">COD_TUTOR</th>
+        <th scope="col">TUTOR</th>
         <th scope="col">COHORTE</th>       
         <th scope="col">COD_ESTUDIANTE</th> 
+        <th scope="col">ESTUDIANTE</th> 
         <th scope="col"> TITULO</th>
         <th scope="col">INDEXACION</th>
         <th scope="col">FECHA</th>

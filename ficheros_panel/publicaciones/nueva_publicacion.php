@@ -12,11 +12,11 @@
             <input type="number" class ="mb-3 form-control" name = "COD_PUBLICACION" placeholder = "COD. PUBLICACION">
             <input type="text" class ="mb-3 form-control" name = "AREA" placeholder = "AREA">
             <input type="number" class ="mb-3 form-control" name = "COD_AUTOR" placeholder = "COD_AUTOR">
-            <input type="number" class ="mb-3 form-control" name = "COHORTE" placeholder = "COHORTE">
+            <input type="number" class ="mb-3 form-control"  min="1900" max="2300" name = "COHORTE" placeholder = "COHORTE">
             <input type="number" class ="mb-3 form-control" name = "COD_ESTUDIANTE" placeholder = "COD_ESTUDIANTE">
             <input type="text" class ="mb-3 form-control" name = "TITULO" placeholder="TITULO" required>
             <input type="text" class ="mb-3 form-control" name = "INDEXACION" placeholder = "INDEXACION">
-            <input type="number" class ="mb-3 form-control" name = "FECHA" placeholder = "FECHA">
+            <input type="number" class ="mb-3 form-control"  min="1900" max="2300" name = "FECHA" placeholder = "FECHA">
             <input type="text" class ="mb-3 form-control" name = "EVENTO" placeholder = "EVENTO">
 
             <input type="submit" class ="btn btn-primary btn-success">
