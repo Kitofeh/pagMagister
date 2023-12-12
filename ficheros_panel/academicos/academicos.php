@@ -11,16 +11,17 @@
     <nav class="navbar navbar-dark fixed-top" style="background-color: #364c59;">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-          <img src="logos/logo-corp-diic-txtblanco.png"  width="132px"  height="30">
+          <img src="../../logos/logo-corp-diic-txtblanco.png"  width="150px"  height="50px">
         </a>
-        <a class="navbar-brand" href="index.php">
+        <a class="navbar-brand" href="../../index.php">
           Inicio
         </a>
-        <a class="navbar-brand" href="index.php">
+
+        <a class="navbar-brand" href="../../index.php" id="cerrar">
         <?php
           session_start();
             if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-            echo "<a  href='pagMagister\logout.php'>CERRAR SESIÓN</a>";            
+            echo "<a  href='../../logout.php'>Cerrar sesión</a>";            
           } else {
             echo "<li class='px-2'><a  type='button' data-toggle='modal' data-target='#formularioLogin'>LOGIN</a></li>";
           }                
@@ -32,7 +33,7 @@
           <div class="offcanvas offcanvas-end text-bg-dark" style="background-color: #364c59;" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
             <div class="offcanvas-header">
               <a class="navbar-brand" href="#">
-                <img src="logo-corp-diic-txtblanco.png"  width="132px" height="30">
+                <img src="../../logos/logo-corp-diic-txtblanco.png"  width="150px" height="50px">
               </a>
             </div>
             <div class="offcanvas-body">
@@ -70,16 +71,16 @@
         </div>
       </nav>
     <div class="container">
-    <br>
-    <br>
-    <br>
+
     <center>
-        <h1>ACADÉMICOS</h1>
+        <h1 class ="mt-5">ACADÉMICOS</h1>
     </center>
     <br>   
-        <a href="nuevo_academico.php" class="btn btn-dark">Agregar</a>
-    <hr>
+        <a href="nuevo_academico.php" class="m-3 btn btn-dark">Agregar</a>
+    
   </div>
+
+    <center>
     <table class="table">
     <thead>
       <tr>
@@ -95,6 +96,7 @@
     </thead>
     <tbody>
 
+
     <?php
         include("../../conexion.php");
         $con = conectar();
@@ -105,17 +107,18 @@
       <th scope="row"><?php echo $fila['COD_ACADEMICO']?></th>
       <td><?php echo $fila['NOMBRE']?></td>
       <td><?php echo $fila['CORREO']?></td>
+
       <td style="width:200px;"><?php echo $fila['CARGO']?></td>
       <td  colspan="2"><?php echo $fila['GRADO']?></td>
       <td style="width: 250px;"><img style="width:200px;"src="data:image/jpg;base64,<?php echo base64_encode($fila['IMG_ACADEMICO'])?>" alt=""></td>
       <td>
         <a href="modificar_academico.php?COD_ACADEMICO=<?php echo $fila["COD_ACADEMICO"]; ?>" class="btn btn-warning">EDITAR</a>
-        <a href="eliminar_academico.php?COD_ACADEMICO=<?php echo $fila["COD_ACADEMICO"]; ?>" class="btn btn-danger">ELIMINAR</a>
-        </td>
+        <a href="eliminar_academico.php?COD_ACADEMICO=<?php echo $fila["COD_ACADEMICO"]; ?>" class="btn btn-danger">ELIMINAR</a>        </td>
     </tr>
   </tbody>
   <?php } ?>
   </table>
+        </center>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>
 </html>

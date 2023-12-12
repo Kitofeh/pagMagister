@@ -23,7 +23,7 @@
          
 
                                 <input type="submit" class ="btn btn-primary btn-success">
-                                <a class ="btn btn-dark mx-2" href="index.php">Regresar</a> 
+                                <a class ="btn btn-dark mx-2" href="academicos.php">Regresar</a> 
 
 </form>
 

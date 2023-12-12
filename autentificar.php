@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AUTENTIFICACIÓN</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -16,7 +15,6 @@
     $usuario = $_POST['usuario'];  
     $contrasena = $_POST['contrasena'];  
       
-        //to prevent from mysqli injection  
         $usuario = stripcslashes($usuario);  
         $contrasena = stripcslashes($contrasena);  
         $usuario = mysqli_real_escape_string($con, $usuario);  
@@ -29,7 +27,7 @@
             $_SESSION['loggedin'] = true;
             $_SESSION['usuario'] = $usuario;
 
-            define('TIEMPO_EXPIRACION', 30 * 60);  // 30 minutos en segundos (SE PUEDE CAMBIAR ACÁ)
+            define('TIEMPO_EXPIRACION', 1 * 60);  // 1 minutos en segundos (SE PUEDE CAMBIAR ACÁ)
 
             $_SESSION['start'] = time();
             $_SESSION['expire'] = $_SESSION['start'] + TIEMPO_EXPIRACION;
