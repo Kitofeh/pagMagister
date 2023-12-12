@@ -2,14 +2,14 @@
 include("../../conexion.php");
 $con = conectar();
 
-$COD_PUBLICACION = $_REQUEST['COD_PUBLICACION'];
+$RUT = $_REQUEST['RUT'];
 
-$sql = "DELETE FROM publicaciones WHERE COD_PUBLICACION = $COD_PUBLICACION";
+$sql = "DELETE FROM formulario_postulacion WHERE RUT = $RUT";
 
 $resultado = $con->query($sql);
 
 if ($resultado) {
-    header("Location: publicaciones.php");
+    header("Location: formulario_postulacion.php");
 } else {
     echo "NO SE ELIMINÓ EL DATO";
 }

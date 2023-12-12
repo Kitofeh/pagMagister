@@ -10,30 +10,32 @@
     <?php
     include("../../conexion.php");
     $con = conectar();
-    $COD_PUBLICACION = $_REQUEST['COD_PUBLICACION'];
-    $sql = "SELECT * FROM publicaciones WHERE COD_PUBLICACION = $COD_PUBLICACION";
+    $RUT = $_REQUEST['RUT'];
+    $sql = "SELECT * FROM formulario_postulacion WHERE RUT = $RUT";
     $resultado = $con->query($sql);
     $fila = $resultado->fetch_assoc();
     ?>
     <br>
     <center>
-      <h1>MODIFICAR PUBLICACION</h1>
+      <h1>MODIFICAR FORMULARIO DE CONTACTO</h1>
     </center>
     <div class="container m-5">
-    <form action ="actualizar_publicacion.php?IdEditar=<?php echo $fila["COD_PUBLICACION"]?>" method="POST" enctype="multipart/form-data">
-      <input type="text" class ="mb-3 form-control" name = "COD_PUBLICACION" placeholder = "AREA" value="<?php echo $fila["COD_PUBLICACION"]?>">
-      <input type="text" class ="mb-3 form-control" name = "AREA" placeholder = "AREA" value="<?php echo $fila["AREA"]?>">
-      <input type="number" class ="mb-3 form-control" name = "COD_AUTOR" placeholder = "COD_AUTOR" value="<?php echo $fila["COD_AUTOR"]?>">
-      <input type="number" class ="mb-3 form-control" name = "COHORTE"  min="1900" max="2300" placeholder = "COHORTE" value="<?php echo $fila["COHORTE"]?>">
-      <input type="number" class ="mb-3 form-control" name = "COD_ESTUDIANTE" placeholder = "COD_ESTUDIANTE" value="<?php echo $fila["COD_ESTUDIANTE"]?>">
-      <input type="text" class ="mb-3 form-control" name = "TITULO" placeholder="TITULO" required value="<?php echo $fila["TITULO"]?>">
-      <input type="text" class ="mb-3 form-control" name = "INDEXACION" placeholder = "INDEXACION" value="<?php echo $fila["INDEXACION"]?>">
-      <input type="number" class ="mb-3 form-control" name = "FECHA" min="1900" max="2300" placeholder = "FECHA" value="<?php echo $fila["FECHA"]?>">
-      <input type="text" class ="mb-3 form-control" name = "EVENTO" placeholder = "EVENTO" value="<?php echo $fila["EVENTO"]?>">
+    <form action ="actualizar_postulacion.php?IdEditar=<?php echo $fila["RUT"]?>" method="POST" enctype="multipart/form-data">
+      <input type="text" class ="mb-3 form-control" name = "RUT" placeholder = "RUT" value="<?php echo $fila["RUT"]?>" readonly> <!-- readonly muestra el dato pero no deja que se modifique -->
+      <input type="text" class ="mb-3 form-control" name = "NOMBRE" placeholder = "NOMBRE" value="<?php echo $fila["NOMBRE"]?>" required> 
+      <input type="date" class ="mb-3 form-control" name = "FECHA_NAC" placeholder = "FECHA_NAC" value="<?php echo $fila["FECHA_NAC"]?>">
+      <input type="text" class ="mb-3 form-control"  name = "GENERO" placeholder = "GENERO" value="<?php echo $fila["GENERO"]?>">
+      <input type="email" class ="mb-3 form-control" name = "CORREO" placeholder = "CORREO" value="<?php echo $fila["CORREO"]?>" required>
+      <input type="text" class ="mb-3 form-control" name = "TELEFONO" placeholder="TELEFONO" value="<?php echo $fila["TELEFONO"]?>">
+      <input type="text" class ="mb-3 form-control" name = "DIRECCION" placeholder = "DIRECCION" value="<?php echo $fila["DIRECCION"]?>">
+      <input type="text" class ="mb-3 form-control" name = "INSTITUCION" placeholder = "INSTITUCION" value="<?php echo $fila["INSTITUCION"]?>">    
+      <input type="text" class ="mb-3 form-control" name = "GRADO" placeholder = "GRADO" value="<?php echo $fila["GRADO"]?>">    
+      <input type="text" class ="mb-3 form-control" name = "ANO_GRADUACION" placeholder = "ANO_GRADUACION" value="<?php echo $fila["ANO_GRADUACION"]?>">    
+      <input type="text" class ="mb-3 form-control" name = "CAMPO_ESTUDIO" placeholder = "CAMPO_ESTUDIO" value="<?php echo $fila["CAMPO_ESTUDIO"]?>">    
       <input type="submit" class ="btn btn-primary btn-success">
       <a class ="btn btn-dark mx-2" href="index.php">Regresar</a>  
     </form>
-  </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>
 </html>

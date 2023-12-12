@@ -9,14 +9,17 @@
 <body>    
     <div class="container m-5">
         <form action ="agregar_postulacion.php" method="POST" enctype="multipart/form-data">
-            <input type="text" class ="mb-3 form-control" name = "RUT" placeholder = "RUT">
-            <input type="text" class ="mb-3 form-control" name = "NOMBRE" placeholder = "NOMBRE">
-            <input type="date" class ="mb-3 form-control" name = "FECHA_NAC" placeholder = "FECHA_NAC">
+            <input type="text" class ="mb-3 form-control" name = "RUT" placeholder = "RUT" required>
+            <input type="text" class ="mb-3 form-control" name = "NOMBRE" placeholder = "NOMBRE" required>
+            <input type="date" class ="mb-3 form-control" name = "FECHA_NAC" placeholder = "FECHA NACIMIENTO">
             <input type="text" class ="mb-3 form-control"  name = "GENERO" placeholder = "GENERO">
-            <input type="email" class ="mb-3 form-control" name = "CORREO" placeholder = "CORREO">
-            <input type="text" class ="mb-3 form-control" name = "TELEFONO" placeholder="TELEFONO" required>
-            <input type="text" class ="mb-3 form-control" name = "DIRECCION" placeholder = "DIRECCION">
-            <input type="text" class ="mb-3 form-control" name = "INSTITUCION" placeholder = "INSTITUCION">
+            <input type="email" class ="mb-3 form-control" name = "CORREO" placeholder = "CORREO" required>
+            <input type="text" class ="mb-3 form-control" name = "TELEFONO" placeholder="TELÉFONO">
+            <input type="text" class ="mb-3 form-control" name = "DIRECCION" placeholder = "DIRECCIÓN">
+            <input type="text" class ="mb-3 form-control" name = "INSTITUCION" placeholder = "INSTITUCIÓN">
+            <input type="text" class ="mb-3 form-control" name = "GRADO" placeholder = "GRADO" >    
+            <input type="text" class ="mb-3 form-control" name = "ANO_GRADUACION" placeholder = "AÑO GRADUACIÓN" >    
+            <input type="text" class ="mb-3 form-control" name = "CAMPO_ESTUDIO" placeholder = "CAMPO DE ESTUDIO" >      
             <input type="submit" class ="btn btn-primary btn-success">
             <a class ="btn btn-dark mx-2" href="index.php">Regresar</a> 
         </form>
