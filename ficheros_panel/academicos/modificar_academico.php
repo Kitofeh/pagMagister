@@ -39,7 +39,7 @@ $fila = $resultado->fetch_assoc();
                                 <input type="email" class ="mb-3 form-control" name = "CORREO" placeholder = "CORREO" value="<?php echo $fila["CORREO"]?>">
                                 <input type="text" class ="mb-3 form-control" name = "CARGO" placeholder = "CARGO" value="<?php echo $fila["CARGO"]?>">
                                 <input type="text" class ="mb-3 form-control" name = "GRADO" placeholder = "GRADO" value="<?php echo $fila["GRADO"]?>">
-                                <img class ="m-5" style="width:200px;"src="data:image/jpg;base64,<?php echo base64_encode($fila['IMG_ACADEMICO'])?>" alt="">
+                                 
                                 <input type="file" class ="mb-3 form-control" name = "IMG_ACADEMICO">
          
 

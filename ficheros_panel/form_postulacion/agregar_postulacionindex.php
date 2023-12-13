@@ -20,7 +20,7 @@ VALUES ('$RUT', '$NOMBRE', '$FECHA_NAC', '$GENERO', '$CORREO', '$TELEFONO', '$DI
 $resultado = $con->query($sql);
 
 if ($resultado) {
-    header("Location: index.php");
+    header("Location: ../../index.php");
 } else {
     echo "NO SE LOGRARON INSERTAR LOS DATOS";
 }

@@ -8,64 +8,65 @@
     <link rel="stylesheet" href="stylecontacto.css">
   </head>
 <body>
-  <nav class="navbar navbar-dark fixed-top" style="background-color: #364c59;">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="../../logos/logo-corp-diic-txtblanco.png"  width="150px"  height="50px">
-          </a>
-          <a class="navbar-brand" href="../../index.php">
-            Inicio
-          </a>
-          <a class="navbar-brand" href="../../index.php" id="cerrar">
-          <?php
-            session_start();
-              if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-              echo "<a  href='../../logout.php'>Cerrar sesión</a>";            
-            } else {
-              echo "<li class='px-2'><a  type='button' data-toggle='modal' data-target='#formularioLogin'>LOGIN</a></li>";
-            }                
-          ?>
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-            <div class="offcanvas offcanvas-end text-bg-dark" style="background-color: #364c59;" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-              <div class="offcanvas-header">
-                <a class="navbar-brand" href="#">
-                  <img src="../../logos/logo-corp-diic-txtblanco.png"  width="150px" height="50px">
-                </a>
-              </div>
-              <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../../ficheros_panel/academicos/academicos.php">Académicos</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Calendario eventos</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../../ficheros_panel/Noticias_Eventos/NoticiaImportante.php">Noticias</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Proyectos</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../../ficheros_panel/publicaciones/publicaciones.php">Publicaciones</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../../ficheros_panel/form_contacto/formulario_contacto.php">Form contacto</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../../ficheros_panel/form_postulacion/formulario_postulacion.php">Form postulación</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Horario de clases</a>
-                  </li>
-                </ul>            
-              </div>
+<nav class="navbar navbar-dark fixed-top" style="background-color: #364c59;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="../../logos/logo-corp-diic-txtblanco.png"  width="150px"  height="50px">
+        </a>
+        <a class="navbar-brand" href="../../index.php">
+          Inicio
+        </a>
+
+        <a class="navbar-brand" href="../../index.php" id="cerrar">
+        <?php
+          session_start();
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+            echo "<a  href='../../logout.php'>Cerrar sesión</a>";            
+          } else {
+            echo "<li class='px-2'><a  type='button' data-toggle='modal' data-target='#formularioLogin'>LOGIN</a></li>";
+          }                
+        ?>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+          <div class="offcanvas offcanvas-end text-bg-dark" style="background-color: #364c59;" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+              <a class="navbar-brand" href="#">
+                <img src="../../logos/logo-corp-diic-txtblanco.png"  width="150px" height="50px">
+              </a>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="../../ficheros_panel/academicos/academicos.php">Académicos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="../../ficheros_panel/Noticias_Eventos/CalendarioDeEventos.php">Calendario eventos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="../../ficheros_panel/Noticias_Eventos/NoticiaImportante.php">Noticias</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="../../ficheros_panel/proyectos/proyectos.php">Proyectos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="../../ficheros_panel/publicaciones/publicaciones.php">Publicaciones</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="../../ficheros_panel/form_contacto/formulario_contacto.php">Form contacto</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="../../ficheros_panel/form_postulacion/formulario_postulacion.php">Form postulación</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="../../ficheros_panel/horario_clases/HorarioClases.php">Horario de clases</a>
+                </li>
+              </ul>            
             </div>
           </div>
-  </nav>
+        </div>
+    </nav>
   <div class="container">
   <center>
     <h1 class ="mt-5">FORMULARIO DE CONTACTOS</h1>

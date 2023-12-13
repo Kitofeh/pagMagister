@@ -163,15 +163,15 @@
                 <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Noticias y Eventos</h2>
             </div>
            <!----> <div class="my-5"><!--Tarjeta Ancha-->
-                <?php /* 
-                include("../../conexion.php");
+                <?php 
+                include_once("../../conexion.php");
                 $con = conectar();
 
                 $sql="SELECT * FROM noticia_importante WHERE id='1'";
                 $query=mysqli_query($con,$sql);
 
                 $row=mysqli_fetch_array($query);
-                */?>
+                ?>
                 <div class="card">
                     <div class="card-header">
                         Informacion mas reciente
@@ -188,7 +188,7 @@
                     <div class="card" style="width: 18rem;">
                         <img src="img-about-us.jpg" class="card-img-top" alt="Imagen Noticia 1">
                         <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="card-text"></p>
                         </div>
                     </div>
                     <div class="card" style="width: 18rem;">
@@ -340,15 +340,10 @@
         
         $con = conectar();
 
-        $sql="SELECT * FROM academicos WHERE COD_ACADEMICO='9991'";
+        $sql="SELECT * FROM academicos";
         $query=mysqli_query($con,$sql);
 
         $row=mysqli_fetch_array($query);
-
-        
-    
-
-
 
         ?>
         <section id="Academicos" class="section-margin"><!--2.1 Academicos-->
@@ -360,12 +355,12 @@
                     <div class="col">
                     <div class="card">
                         <div class="card-body d-flex flex-column justify-content-center">
-                            <h4 class="text-center">Dante Carrizo</h4>
+                            <h4 class="text-center">DANTE CARRIZO</h4>
                             <p class="text-center">Profesor</p>
                             
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-                            <img src="img-academicos/eye.svg" style="margin-right: 5px; width:20px;">Ver perfil
+                            <img src="img-academicos/eye-svgrepo-com.svg" style="margin-right: 5px; width:20px;">Ver perfil
                             </button>
 
                             <!-- Modal -->
@@ -396,7 +391,7 @@
                                         <div class="col-12 d-flex justify-content-center">
                                             <a href="https://diicc.uda.cl/academico.php?id=3">
                                             <button type="button" class="btn btn-primary">
-                                                <img src="img-academicos/user-icon.svg" style="margin-right: 5px; width:20px;">Ir a Web Personal
+                                                <img src="img-academicos/eye-svgrepo-com.svg" style="margin-right: 5px; width:20px;">Ir a Web Personal
                                             </button>
                                             </a>
                                         </div>
@@ -419,7 +414,7 @@
                             <p class="text-center"><?php echo $row['CARGO']?></p>
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-                            <img src="img-academicos/eye.svg" style="margin-right: 5px; width:20px;">Ver perfil
+                            <img src="img-academicos/eye-svgrepo-com.svg" style="margin-right: 5px; width:20px;">Ver perfil
                             </button>
 
                             <!-- Modal -->
@@ -467,7 +462,7 @@
                             <p class="text-center">Profesor</p>
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">
-                            <img src="img-academicos/eye.svg" style="margin-right: 5px; width:20px;">Ver perfil
+                            <img src="img-academicos/eye-svgrepo-com.svg" style="margin-right: 5px; width:20px;">Ver perfil
                             </button>
 
                             <!-- Modal -->
@@ -554,8 +549,8 @@
             </div>
         </section>
     <!--Agregado enlace de formulario con modal para postulacion-->
-    <section id="AdmisionYRequisitos" class="section-margin my-5"><!--2.3Admision-->
-              <div class="container my-5">
+    <section id="AdmisionYRequisitos" class="section-margin"><!--2.3Admision-->
+              <div class="container">
                   <div class="d-flex justify-content-center align-items-center bg-white w-100 mb-3" style="height: 150px;">
                       <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Admision y Requisitos</h2>
                   </div>
@@ -651,6 +646,68 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12 custom-sec-img wow fadeInDown" >
+
+                <?php
+                include_once("ficheros_panel/horario_clases/VariablesClase.php");
+                ?>
+
+                <div class="row">
+                    <div class="col"><!--Calendario-->
+
+                        <table class="table table-bordered">
+                    <thead >
+                        <tr>
+                        <th scope="col" style="background-color: #364c59;color:white;">HORAS</th>
+                        <th scope="col" style="background-color: #364c59;color:white;">Lunes</th>
+                        <th scope="col" style="background-color: #364c59;color:white;">Martes</th>
+                        <th scope="col" style="background-color: #364c59;color:white;">Miércoles</th>
+                        <th scope="col" style="background-color: #364c59;color:white;">Jueves</th>
+                        <th scope="col" style="background-color: #364c59;color:white;">Viernes</th>
+                        <th scope="col" style="background-color: #364c59;color:white;">Sábado</th>
+                        <th scope="col" style="background-color: #364c59;color:white;">Domingo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>8:00 - 9:30</td>
+                        
+                        <td class="p-2">1<br><br><?php echo $titulos_1?></td>
+                        <td class="p-2">2<br><br><?php echo $titulos_2?></td>
+                        <td class="p-2">3<br><br><?php echo $titulos_3?></td>
+                        <td class="p-2">4<br><br><?php echo $titulos_4?></td>
+                        <td class="p-2">5<br><br><?php echo $titulos_5?></td>
+                        <td class="p-2">6<br><br><?php echo $titulos_6?></td>
+                        <td class="p-2">7<br><br><?php echo $titulos_7?></td>
+                        </tr>
+                        <tr class="p-5">
+                        <td>9:40 - 11:10</td>
+                        <td class="p-2">8<br><br><?php echo $titulos_8?></td>
+                        <td class="p-2">9<br><br><?php echo $titulos_9?></td>
+                        <td class="p-2">10<br><br><?php echo $titulos_10?></td>
+                        <td class="p-2">11<br><br><?php echo $titulos_11?></td>
+                        <td class="p-2">12<br><br><?php echo $titulos_12?></td>
+                        <td class="p-2">13<br><br><?php echo $titulos_13?></td>
+                        <td class="p-2">14<br><br><?php echo $titulos_14?></td>
+                        </tr>
+                        <tr>
+                        <td>11:20 - 12:50</td>
+                        <td class="p-2">15<br><br><?php echo $titulos_15?></td>
+                        <td class="p-2">16<br><br><?php echo $titulos_16?></td>
+                        <td class="p-2">17<br><br><?php echo $titulos_17?></td>
+                        <td class="p-2">18<br><br><?php echo $titulos_18?></td>
+                        <td class="p-2">19<br><br><?php echo $titulos_19?></td>
+                        <td class="p-2">20<br><br><?php echo $titulos_20?></td>
+                        <td class="p-2">21<br><br><?php echo $titulos_21?></td>
+                        </tr>
+                 
+                        
+                        
+                    </tbody>
+                </table>
+                    </div>
+                </div>
+
+               <!--SDADSADASDADS
                
                     <table class="table mx-5">
                     <thead >
@@ -677,7 +734,9 @@
                         
                         </tr>
                     </tbody>
-                    </table>                    
+                    </table>  
+                    
+                    --> 
                 </div>
             </div>    
         <div class="container " id="estudioscolum">
@@ -833,37 +892,43 @@
                 <div class ="col-7">
                   <div style ="display: block;width: 100%;overflow-x: auto; overflow-y: auto; max-height: 200px">
                 <!-- TABLAx -->
-                <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Área de Investigación</th>
-        <th scope="col">Investigador</th>
-        <th scope="col">Título</th>
-        <th scope="col">Año de Ejecución</th>
-        <th scope="col">Detalles</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Ingeniería de Software</td>
-        <td>Dante Carrizo</td>
-        <td>Mejora del proceso de educción de requisitos software por medio de evidencia empírica (1º Parte)</td>
-        <td>2010</td>
-        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#proyectoModal" data-investigador="Dante Carrizo" data-titulo="Mejora del proceso de educción de requisitos software por medio de evidencia empírica (1º Parte)" data-tipo-fondo="DIUDA2010" data-ano-ejecucion="2010">Ver Detalles</button></td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Gestión de Tecnologías de Información</td>
-        <td>Alejandro Cataldo</td>
-        <td>Evaluación de la usabilidad de aplicaciones móviles multi-plataforma</td>
-        <td>2016</td>
-        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#proyectoModal" data-investigador="Alejandro Cataldo" data-titulo="Evaluación de la usabilidad de aplicaciones móviles multi-plataforma" data-tipo-fondo="DIUDA" data-ano-ejecucion="2016">Ver Detalles</button></td>
-      </tr>
 
-    </tbody>
-  </table>
+  <table class="table">
+                <thead id="tablapostulacion" style=" background-color: #364c59;color: white;text-align: center;">
+                    <tr>
+                        <th scope="col">COD. PROYECTO</th>
+                        <th scope="col">AREA</th>
+                        <th scope="col">TITULO</th>
+                        <th scope="col">FONDO</th>
+                        <th scope="col">ANO</th>
+                        <th scope="col">URL_PROYECTO</th>       
+                        <th scope="col">INVESTIGADOR</th> 
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                        include_once("../../conexion.php");
+                        $con = conectar();
+                        $sql = "SELECT p.*, a.NOMBRE as nombre_autor
+                        FROM proyectos p
+                        LEFT JOIN academicos a ON p.COD_AUTOR = a.COD_ACADEMICO";
+
+                        $resultado = $con->query($sql);
+                        while($fila = $resultado->fetch_assoc()) { ?>
+                    <tr>
+                        <th scope="row"><?php echo $fila['COD_PROYECTO']?></th>
+                        <td><?php echo $fila['AREA']?></td>
+                        <td><?php echo $fila['TITULO']?></td>
+                        <td><?php echo $fila['FONDO']?></td>
+                        <td><?php echo $fila['ANO']?></td>
+                        <td><?php echo $fila['URL_PROYECTO']?></td> 
+                        <td><?php echo $fila['nombre_autor']?></td>
+                    </tr>
+                    </tbody>
+
+                    <?php } ?>
+                </table>
+
 </div>
 </div>
 
@@ -938,6 +1003,7 @@
                         <td><?php echo $fila['EVENTO']?></td>
                     </tr>
                     </tbody>
+
                     <?php } ?>
                 </table>
                 </div>
