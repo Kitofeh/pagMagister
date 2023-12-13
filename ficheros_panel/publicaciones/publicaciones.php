@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="styleAcademicos.css">
-  </head>
-  <body>
+    <link rel="stylesheet" href="stylepublicaciones.css">
+</head>
+<body>
     <nav class="navbar navbar-dark fixed-top" style="background-color: #364c59;">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
@@ -16,7 +16,6 @@
         <a class="navbar-brand" href="../../index.php">
           Inicio
         </a>
-
         <a class="navbar-brand" href="../../index.php" id="cerrar">
         <?php
           session_start();
@@ -39,7 +38,7 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="../../ficheros_panel/academicos/academicos.php">Académicos</a>
+                  <a class="nav-link active" aria-current="page" href="../../academicos.php">Académicos</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="#">Calendario eventos</a>
@@ -66,51 +65,60 @@
             </div>
           </div>
         </div>
-      </nav>
+    </nav>
     <div class="container">
-
     <center>
-        <h1 class ="mt-5">ACADÉMICOS</h1>
+        <h1 class ="mt-5">PUBLICACIONES</h1>
     </center>
-    <br>   
-        <a href="nuevo_academico.php" class="m-3 btn btn-dark">Agregar</a>
-    
-  </div>
-
+        <br>   
+        <a href="nueva_publicacion.php" class="m-3 btn btn-dark">Agregar</a> 
+    </div>
     <center>
     <table class="table">
     <thead>
       <tr>
-        <th scope="col">CÓD. ACADÉMICO</th>
-        <th scope="col">NOMBRE</th>
-        <th scope="col">CORREO</th>
-        <th scope="col">CARGO</th>       
-        <th scope="col">GRADO</th> 
-        <th scope="col"> ACADÉMICO</th>
-        <th scope="col">IMG. ACADÉMICO</th>
-        <th scope="col">ACCIONES</th>
+        <th scope="col">COD_PUBLICACION</th>
+        <th scope="col">AREA</th>
+        <th scope="col">COD_TUTOR</th>
+        <th scope="col">TUTOR</th>
+        <th scope="col">COHORTE</th>       
+        <th scope="col">COD_ESTUDIANTE</th> 
+        <th scope="col">ESTUDIANTE</th> 
+        <th scope="col"> TITULO</th>
+        <th scope="col">INDEXACION</th>
+        <th scope="col">FECHA</th>
+        <th scope="col">EVENTO</th>
+        <th colspan="2">ACCIÓN</th>
       </tr>
     </thead>
     <tbody>
-
-
     <?php
         include("../../conexion.php");
         $con = conectar();
-        $sql = "SELECT * FROM academicos";
+        $sql = "SELECT p.*, a.NOMBRE as nombre_autor, e.NOMBRE as nombre_estudiante
+        FROM publicaciones p
+        LEFT JOIN academicos a ON p.COD_AUTOR = a.COD_ACADEMICO
+        LEFT JOIN exalumnos e ON p.COD_ESTUDIANTE = e.ID_EXLAUMNO";
+
         $resultado = $con->query($sql);
         while($fila = $resultado->fetch_assoc()) { ?>
     <tr>
-      <th scope="row"><?php echo $fila['COD_ACADEMICO']?></th>
-      <td><?php echo $fila['NOMBRE']?></td>
-      <td><?php echo $fila['CORREO']?></td>
+      <th scope="row"><?php echo $fila['COD_PUBLICACION']?></th>
+      <td><?php echo $fila['AREA']?></td>
+      <td><?php echo $fila['COD_AUTOR']?></td>
+      <td><?php echo $fila['nombre_autor']?></td>
+      <td><?php echo $fila['COHORTE']?></td>
+      <td><?php echo $fila['COD_ESTUDIANTE']?></td>
+      <td><?php echo $fila['nombre_estudiante']?></td>
+      <td><?php echo $fila['TITULO']?></td>
+      <td><?php echo $fila['INDEXACION']?></td>
+      <td><?php echo $fila['FECHA']?></td>
+      <td><?php echo $fila['EVENTO']?></td>
 
-      <td style="width:200px;"><?php echo $fila['CARGO']?></td>
-      <td  colspan="2"><?php echo $fila['GRADO']?></td>
-      <td style="width: 250px;"><img style="width:200px;"src="data:image/jpg;base64,<?php echo base64_encode($fila['IMG_ACADEMICO'])?>" alt=""></td>
+
       <td>
-        <a href="modificar_academico.php?COD_ACADEMICO=<?php echo $fila["COD_ACADEMICO"]; ?>" class="btn btn-warning">EDITAR</a>
-        <a href="eliminar_academico.php?COD_ACADEMICO=<?php echo $fila["COD_ACADEMICO"]; ?>" class="btn btn-danger">ELIMINAR</a>        </td>
+        <a href="modificar_publicacion.php?COD_PUBLICACION=<?php echo $fila["COD_PUBLICACION"]; ?>" class="btn btn-warning">EDITAR</a>
+        <a href="eliminar_publicacion.php?COD_PUBLICACION=<?php echo $fila["COD_PUBLICACION"]; ?>" class="btn btn-danger">ELIMINAR</a>        </td>
     </tr>
   </tbody>
   <?php } ?>

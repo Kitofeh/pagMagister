@@ -104,7 +104,7 @@
                           </div>
                         </div>
                       </div>
-
+    </header>
 
 
 
@@ -337,7 +337,7 @@
     
 
         <?php 
-        include("../../conexion.php");
+        
         $con = conectar();
 
         $sql="SELECT * FROM academicos WHERE COD_ACADEMICO='9991'";
@@ -553,42 +553,80 @@
                 </div>
             </div>
         </section>
-
-  <section id="AdmisionYRequisitos" class="section-margin my-5"><!--2.3Admision-->
+    <!--Agregado enlace de formulario con modal para postulacion-->
+    <section id="AdmisionYRequisitos" class="section-margin my-5"><!--2.3Admision-->
               <div class="container my-5">
                   <div class="d-flex justify-content-center align-items-center bg-white w-100 mb-3" style="height: 150px;">
                       <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Admision y Requisitos</h2>
                   </div>
                   <div style="width: 1100px; height: 700px;">
-                      <div class="row primary-color h-100">
-                          <div class="col h-100 p-4 d-flex flex-column">
-                              <h3 class="text-white text-center mt-4 mb-5">Postulacion</h3>
-                              <p class="text-white text-justify">Se inicia la convocatoria de postulación para el programa de "MAGÍSTER EN INFORMÁTICA Y CIENCIAS DE LA COMPUTACIÓN". Podrán ser postulantes todos aquellos que cumplan con los requisitos asociados.
+                      <div class="row primary-color h-100" >
+                          <div class="col h-100 p-4 d-flex flex-column" >
+                                <h3 class="text-white text-center mt-4 mb-5">Postulacion</h3>
+                                <p class="text-white text-justify">Se inicia la convocatoria de postulación para el programa de "MAGÍSTER EN INFORMÁTICA Y CIENCIAS DE LA COMPUTACIÓN". Podrán ser postulantes todos aquellos que cumplan con los requisitos asociados.
 
-                              "La Universidad de Atacama ofrece becas de liberación de arancel y la posibildad de una ayuda económica, otorgables de acuerdo a la exigencia del reglamento"
-                              <ul class="text-white text-justify">
-                              <li class="m-2">- Postulación de las bases: 17 de noviembre del 2023</li>
-                              <li class="m-2">- Fin recepción documentación postulantes: 15 de diciembre del 2023</li>
-                              <li class="m-2">- Entrevista a los postulantes: 18 - 22 de diciembre del 2023</li>
-                              </ul>
-                              </p>
-                          </div>
-                          <div class="col p-0 h-100">
+                                "La Universidad de Atacama ofrece becas de liberación de arancel y la posibildad de una ayuda económica, otorgables de acuerdo a la exigencia del reglamento"
+                                <ul class="text-white text-justify">
+                                <li class="m-2">- Postulación de las bases: 17 de noviembre del 2023</li>
+                                <li class="m-2">- Fin recepción documentación postulantes: 15 de diciembre del 2023</li>
+                                <li class="m-2">- Entrevista a los postulantes: 18 - 22 de diciembre del 2023</li>
+                                </ul>
+                                </p>
+                                <div class="col-2 justify-content-center mx-5 mb-5">
+                                    <button type="button" class="btn btn-primary" style="width: 150px;" data-toggle="modal" data-target="#formulariopostulacion">Postulacion</button>             
+                                </div>
+                                <!-- Modal Contacto -->
+                                <div class="modal fade" id="formulariopostulacion" tabindex="-1" role="dialog" aria-labelledby="modalContactoCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLongTitle">Formulario Postulacion</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">                                        
+                                                <div class="row">
+                                                    <div class="col-md-6 offset-lg-3">
+                                                        <form action ="ficheros_panel/form_postulacion/agregar_postulacionindex.php" method="POST" enctype="multipart/form-data">
+                                                            <input type="text" class ="mb-3 form-control" name = "RUT" placeholder = "RUT" required>
+                                                            <input type="text" class ="mb-3 form-control" name = "NOMBRE" placeholder = "NOMBRE" required>
+                                                            <input type="date" class ="mb-3 form-control" name = "FECHA_NAC" placeholder = "FECHA NACIMIENTO">
+                                                            <input type="text" class ="mb-3 form-control"  name = "GENERO" placeholder = "GENERO">
+                                                            <input type="email" class ="mb-3 form-control" name = "CORREO" placeholder = "CORREO" required>
+                                                            <input type="text" class ="mb-3 form-control" name = "TELEFONO" placeholder="TELÉFONO">
+                                                            <input type="text" class ="mb-3 form-control" name = "DIRECCION" placeholder = "DIRECCIÓN">
+                                                            <input type="text" class ="mb-3 form-control" name = "INSTITUCION" placeholder = "INSTITUCIÓN">
+                                                            <input type="text" class ="mb-3 form-control" name = "GRADO" placeholder = "GRADO" >    
+                                                            <input type="text" class ="mb-3 form-control" name = "ANO_GRADUACION" placeholder = "AÑO GRADUACIÓN" >    
+                                                            <input type="text" class ="mb-3 form-control" name = "CAMPO_ESTUDIO" placeholder = "CAMPO DE ESTUDIO" >      
+                                                            <input type="submit" class ="btn btn-primary btn-success">
+                                                        </form>
+                                                    </div>
+                                                </div>                           
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            
+                        
+                        <div class="col p-0 h-100">
                               <img src="img-magister-desc/img-magister-desc-3.jpg" style="width: 100%; height: 100%; object-fit: cover;">
-                          </div>
-                          <div class="col secondary-color h-100 p-4 d-flex flex-column">
-                              <h3 class="text-center mt-4 mb-5">Requisitos</h3>
-                              <p class="text-justify">1.- Estar en posesión de grado académico Licenciado en Ciencias de la Ingeniería y un título profesional universitario en el área de la computación e informática o afín, con un mínimo de cuatro años de estudio, y con nivel medio de lectura en inglés.
+                        </div>
+                        <div class="col secondary-color h-100 p-4 d-flex flex-column" >
+                            <h3 class="text-center mt-4 mb-5">Requisitos</h3>
+                            <p class="text-justify">1.- Estar en posesión de grado académico Licenciado en Ciencias de la Ingeniería y un título profesional universitario en el área de la computación e informática o afín, con un mínimo de cuatro años de estudio, y con nivel medio de lectura en inglés.
 
-                              <br><br>2.-Los estudiantes del plan de la carrera de Ingeniería civil en computación e informática de la Universidad de Atacama podrán postular al programa si han cursado completamente el quinto año de la carrera.
+                            <br><br>2.-Los estudiantes del plan de la carrera de Ingeniería civil en computación e informática de la Universidad de Atacama podrán postular al programa si han cursado completamente el quinto año de la carrera.
 
-                              <br><br>Documentación: Solicitud de postulación, carta de intensiones, certificado de grado y título (si procede), curriculum vitae, fotocopia de cédula de indentidad, certificado de notas si procede, certificado de lectura de Inglés si lo tiene.
-                              </p>
-                          </div>
-                      </div>
+                            <br><br>Documentación: Solicitud de postulación, carta de intensiones, certificado de grado y título (si procede), curriculum vitae, fotocopia de cédula de indentidad, certificado de notas si procede, certificado de lectura de Inglés si lo tiene.
+                            </p>
+                        </div>
+                    </div>
                   </div>
               </div>
-          </section>
+    </section>
 
        
 
@@ -730,13 +768,13 @@
         </div>
         </section>
                       
-         <section class="container" id="InvestigacionYProyectos"><!--5. Investigación y proyectos-->
+        <section class="container" id="InvestigacionYProyectos"><!--5. Investigación y proyectos-->
 
         <div style="display: flex; justify-content: center; align-items: center; background-color: white; width: 100%; height: 150px;">
                 <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Investigación y Proyectos</h2>
-            </div>
+        </div>
 
-            <div class ="row">
+        <div class ="row">
 
 
                 
@@ -841,10 +879,10 @@
       </div>
       <div class="modal-body">
         <!-- CONTENIDO QUE VA CAMBIANDO DEL MODAL -->
-        <p id="investigador"></p>
-        <p id="titulo"></p>
-        <p id="tipo-fondo"></p>
-        <p id="ano-ejecucion"></p>
+        <p id="investigador">a</p>
+        <p id="titulo">a</p>
+        <p id="tipo-fondo">a</p>
+        <p id="ano-ejecucion">a</p>
     
       </div>
       <div class="modal-footer">
@@ -856,8 +894,55 @@
             </div>
 
 
-            </div>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center; background-color: white; width: 100%; height: 150px;">
+            <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Publicaciones</h2>
+        </div>
+        <div class="row" >  
+            <div class ="container text-center">
+                <div style ="display: block; width: 100%;overflow-x: auto; overflow-y: auto; max-height: 500px">               
+                <table class="table">
+                <thead id="tablapostulacion" style=" background-color: #364c59;color: white;text-align: center;">
+                    <tr>
+                        <th scope="col" style="width: 50px">#</th>
+                        <th scope="col">AREA</th>
+                        <th scope="col">TUTOR</th>
+                        <th scope="col">COHORTE</th>       
+                        <th scope="col">ESTUDIANTE</th> 
+                        <th scope="col"> TITULO</th>
+                        <th scope="col">INDEXACION</th>
+                        <th scope="col">FECHA</th>
+                        <th scope="col">EVENTO</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                        include("../../conexion.php");
+                        $con = conectar();
+                        $sql = "SELECT p.*, a.NOMBRE as nombre_autor, e.NOMBRE as nombre_estudiante
+                        FROM publicaciones p
+                        LEFT JOIN academicos a ON p.COD_AUTOR = a.COD_ACADEMICO
+                        LEFT JOIN exalumnos e ON p.COD_ESTUDIANTE = e.ID_EXLAUMNO";
 
+                        $resultado = $con->query($sql);
+                        while($fila = $resultado->fetch_assoc()) { ?>
+                    <tr>
+                        <th scope="row"><?php echo $fila['COD_PUBLICACION']?></th>
+                        <td><?php echo $fila['AREA']?></td>
+                        <td><?php echo $fila['nombre_autor']?></td>
+                        <td><?php echo $fila['COHORTE']?></td>
+                        <td><?php echo $fila['nombre_estudiante']?></td>
+                        <td><?php echo $fila['TITULO']?></td>
+                        <td><?php echo $fila['INDEXACION']?></td>
+                        <td><?php echo $fila['FECHA']?></td>
+                        <td><?php echo $fila['EVENTO']?></td>
+                    </tr>
+                    </tbody>
+                    <?php } ?>
+                </table>
+                </div>
+                </div>
+        </div>
 
 
         </section>
@@ -1164,38 +1249,38 @@
                               <div>
                                 <div class="row">
                                     <div class="col-md-6 offset-lg-3">
-                                        <form >
+                                        <form action ="ficheros_panel/form_contacto/agregar_contactoindex.php" method="POST" enctype="multipart/form-data">
                                             <div class="form-group mb-3">
                                                 <label for="nombre">RUT:</label>
-                                                <input type="text" class="form-control mb-3 mt-3" name ="rut" id="rut" placeholder="Ingresa tu RUT">
+                                                <input type="text" class ="form-control mb-3 mt-3" name = "RUT" placeholder = "RUT" required>
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label for="nombre">NOMBRE:</label>
-                                                <input type="text" class="form-control mb-3 mt-3" name ="nombre" id="nombre" placeholder="Ingresa tu nombre">
+                                                <input type="text" class ="form-control mb-3 mt-3" name = "NOMBRE" placeholder = "NOMBRE" required>
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label for="nombre">FECHA NACIMIENTO:</label>
-                                                <input type="text" class="form-control mb-3 mt-3" name ="fecha_nac" id="fecha_nac" placeholder="Ingresa tu fecha de nacimiento">
+                                                <input type="date" class ="form-control mb-3 mt-3" name = "FECHA_NAC" placeholder = "FECHA_NAC">
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label for="nombre">GENERO:</label>
-                                                <input type="text" class="form-control mb-3 mt-3" name ="genero" id="genero" placeholder="Ingresa tu género">
+                                                <input type="text" class ="form-control mb-3 mt-3"  name = "GENERO" placeholder = "GENERO">
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label for="nombre">CORREO:</label>
-                                                <input type="email" class="form-control mb-3 mt-3" name ="email" id="email" placeholder="Ingresa tu e-mail">
+                                                <input type="email" class ="form-control mb-3 mt-3" name = "CORREO" placeholder = "CORREO" required>
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label for="nombre">TELEFONO:</label>
-                                                <input type="text" class="form-control mb-3 mt-3" name ="telefono" id="telefono" placeholder="Ingresa tu teléfono">
+                                                <input type="text" class ="form-control mb-3 mt-3" name = "TELEFONO" placeholder="TELEFONO">
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label for="nombre">DIRECCION:</label>
-                                                <input type="text" class="form-control mb-3 mt-3" name ="direccion" id="direccion" placeholder="Ingresa tu dirección">
+                                                <input type="text" class ="form-control mb-3 mt-3" name = "DIRECCION" placeholder = "DIRECCION">
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label for="nombre">INSTITUCIÓN:</label>
-                                                <input type="text" class="form-control mb-3 mt-3" name ="institucion" id="institucion" placeholder="Ingresa tu institución">
+                                                <input type="text" class ="form-control mb-3 mt-3" name = "INSTITUCION" placeholder = "INSTITUCION">
                                             </div>
                                             
                                             <input type="submit" class="mt-3 mx-5 mb-3 btn btn-primary btn-block" value="ENVIAR"></button>

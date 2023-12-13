@@ -201,3 +201,15 @@ article {
   height: 158px;
 }
 /* Termino de cartas de seccion experiencia */
+
+/*postulacion y requisitos*/
+div.container.my-5 {
+  display: flex;
+  columns: 35% 30% 35%;
+}
+/*tabla de publicacion*/
+#tablapostulacion thead {
+  background-color: #364c59;
+  color: white;
+  text-align: center;
+}
