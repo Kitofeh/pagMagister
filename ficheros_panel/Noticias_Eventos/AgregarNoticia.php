@@ -9,6 +9,6 @@ $fecha = $_POST['fecha'];
 $img = addslashes(file_get_contents($_FILES["urlimg"]["tmp_name"]));
 $visibilidad = $_POST['visibilidad'];
 
-$query = mysqli_query($con, "INSERT INTO `noticias`(`FECHA`, `TITULO`, `DESCRIPCION`, `URL_IMG`, `VISIBILIDAD`) VALUES ('$fecha','$titulo','$descripcion','$img', $visibilidad)");
+$query = mysqli_query($con, "INSERT INTO `noticias`(`FECHA`, `TITULO`, `DESCRIPCION`, `URL_IMG`, `VISIBILIDAD`) VALUES ('$fecha','$titulo','$descripcion','$img', '$visibilidad')");
 
 Header("Location: PanelNoticias.php");

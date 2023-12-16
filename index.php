@@ -162,16 +162,16 @@
             <div class="d-flex justify-content-center align-items-center bg-white w-100" style="height: 150px;">
                 <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Noticias y Eventos</h2>
             </div>
-           <!----> <div class="my-5"><!--Tarjeta Ancha-->
-                <?php /* 
-                include("../../conexion.php");
+            <div class="my-5"><!--Tarjeta Ancha-->
+                <?php 
+                include_once("../../conexion.php");
                 $con = conectar();
 
                 $sql="SELECT * FROM noticia_importante WHERE id='1'";
                 $query=mysqli_query($con,$sql);
 
                 $row=mysqli_fetch_array($query);
-                */?>
+                ?>
                 <div class="card">
                     <div class="card-header">
                         Informacion mas reciente
@@ -183,30 +183,28 @@
                     </div>
                 </div>
             </div>
-            <?php
-            include_once("conexion.php");
-            $con = conectar();
-            $sql = "SELECT * FROM noticias";
-            $resultado = $con->query($sql);
-            while($row = $resultado->fetch_assoc()) {?>
-            <div class="container text-center">
-                <div class="row d-flex justify-content-around my-5"><!--Tarjetas-->
-                    <div class="card" style="width: 18rem;">
-                        <img style="width:200px;" src="data:image/jpg;base64,<?php echo base64_encode($row['URL_IMG'])?>" class="card-img-top" alt="Imagen Noticia 1">
-                        <div class="card-body">
-                            <p class="card-text"><?php echo $row['DESCRIPCION']?></p>
+            <div class="d-flex justify-content-around">
+                <?php
+                include_once("conexion.php");
+                $con = conectar();
+                $sql = "SELECT * FROM noticias WHERE VISIBILIDAD='SI'";
+                $resultado = $con->query($sql);
+                while($row = $resultado->fetch_assoc()) {?>
+                    <div class="container text-center">
+                        <div class="row d-flex justify-content-around my-5"><!--Tarjetas-->
+                            <div class="card" style="width: 18rem;">
+                                <img style="width:200px;" src="data:image/jpg;base64,<?php echo base64_encode($row['URL_IMG'])?>" class="card-img-top" alt="Imagen Noticia">
+                                <div class="card-body">
+                                    <h5 class="card-text"><?php echo $row['TITULO']?></h5>
+                                    <p class="card-text"><?php echo $row['DESCRIPCION']?></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="card" style="width: 18rem;">
-                        <img src="img-about-us.jpg" class="card-img-top" alt="Imagen Noticia 2">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-            <?php
-            } // Cierre del bucle while
-            ?>
+                <?php
+                } // Cierre del bucle while
+                ?>
+            </div>
 
                 <?php
                 include_once("ficheros_panel/Noticias_Eventos/VariablesCalendario.php");
