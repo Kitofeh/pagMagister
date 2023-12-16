@@ -112,6 +112,20 @@
                         <input type="file" class ="form-control" name = "urlimg" accept=".jpg , .jpeg, .png" required>
                         <label for="floatingInput">Imagen de la Noticia</label>
                     </div>
+                    <?php
+                    include_once("../../conexion.php");
+                    $con = conectar();
+                    $sql = "SELECT COUNT(*) AS count FROM noticias WHERE VISIBILIDAD = 'SI'";
+                    $result = $con->query($sql);
+                    ?>
+                    <div class="form-floating mb-3">
+                      <select class="form-select" id="floatingSelect" name="visibilidad" aria-label="Floating label select example" required <?php if ($result->fetch_assoc()["count"] >= 4) echo "disabled"; ?>>
+                        <option></option>
+                        <option value="SI">SI</option>
+                        <option value="NO" <?php if ($result->fetch_assoc()["count"] >= 4) echo "selected"; ?>>NO</option>
+                      </select>
+                      <label for="floatingSelect">Visibilidad</label>
+                    </div>
 
             </div>
                     <div class="modal-footer">
@@ -133,6 +147,7 @@
         <th scope="col">TITULO</th>
         <th scope="col">DESCRIPCION</th>       
         <th scope="col">URL IMAGEN</th>
+        <th scope="col">VISIBLE</th>
         <th></th>
         <th></th>
       </tr>
@@ -152,6 +167,7 @@
       <td><?php echo $row['TITULO']?></td>
       <td style="width:200px;"><?php echo $row['DESCRIPCION']?></td>
       <td style="width: 250px;"><img style="width:200px;"src="data:image/jpg;base64,<?php echo base64_encode($row['URL_IMG'])?>" alt=""></td>
+      <td><?php echo $row['VISIBILIDAD']?></td>
       <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModificarNoticia<?php echo $row['ID_NOTICIA']; ?>">Modificar</button></td>
       <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#EliminarNoticia<?php echo $row['ID_NOTICIA']; ?>">Eliminar</button></td>
       <!-- Modal Modificar -->
@@ -187,6 +203,20 @@
                         <input type="file" class ="form-control" name = "urlimg" accept=".jpg , .jpeg, .png">
                         <label for="floatingInput">Imagen de la Noticia</label>
                     </div>
+                    <?php
+                    include_once("../../conexion.php");
+                    $con = conectar();
+                    $sql = "SELECT COUNT(*) AS count FROM noticias WHERE VISIBILIDAD = 'SI'";
+                    $result = $con->query($sql);
+                    ?>
+                    <div class="form-floating mb-3">
+                      <select class="form-select" id="floatingSelect" name="visibilidad" aria-label="Floating label select example" required <?php if ($result->fetch_assoc()["count"] >= 4) echo "disabled"; ?>>
+                        <option></option>
+                        <option value="SI" <?php if ($row['VISIBILIDAD'] == 'SI') echo "selected";?>>SI</option>
+                        <option value="NO" <?php if ($result->fetch_assoc()["count"] >= 4) echo "selected"; if ($row['VISIBILIDAD'] == 'NO') echo "selected";?>>NO</option>
+                      </select>
+                      <label for="floatingSelect">Visibilidad</label>
+                    </div>
 
             </div>
                     <div class="modal-footer">
@@ -209,7 +239,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
-                <a href="EliminarNoticia.php?id=<?php echo $row['ID_EVENTO'] ?>" class="btn btn-danger">Eliminar</a>
+                <a href="EliminarNoticia.php?id=<?php echo $row['ID_NOTICIA'] ?>" class="btn btn-danger">Eliminar</a>
             </div>
             </div>
         </div>
@@ -218,6 +248,55 @@
   </tbody>
   <?php } ?>
   </table>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID NOTICIA</th>
+        <th scope="col">FECHA</th>
+        <th scope="col">TITULO</th>
+        <th scope="col">VISIBLE</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+
+
+    <?php
+        include_once("../../conexion.php");
+        $con = conectar();
+        $sql = "SELECT * FROM noticias WHERE VISIBILIDAD = 'SI'";
+        $resultado = $con->query($sql);
+        while($row = $resultado->fetch_assoc()) { ?>
+    <tr>
+      <th scope="row"><?php echo $row['ID_NOTICIA']?></th>
+      <td><?php echo $row['FECHA']?></td>
+      <td><?php echo $row['TITULO']?></td>
+      <td><?php echo $row['VISIBILIDAD']?></td>
+      <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#OcultarNoticia<?php echo $row['ID_NOTICIA']; ?>">Ocultar</button></td>
+      <!-- Modal Ocultar -->
+      <div class="modal fade" id="OcultarNoticia<?php echo $row['ID_NOTICIA']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+          <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              Estas seguro que deseas ocultar la noticia de ID <?php echo $row['ID_NOTICIA']; ?> de la pagina principal?
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
+              <a href="OcultarNoticia.php?id=<?php echo $row['ID_NOTICIA'] ?>" class="btn btn-danger">Ocultar</a>
+          </div>
+          </div>
+      </div>
+      </div>
+    </tr>
+  </tbody>
+  <?php } ?>
+  </table>
+
         </center>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>
