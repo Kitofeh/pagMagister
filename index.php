@@ -132,12 +132,7 @@
             </button>
             </div>
         </section>
-
     </header>
-
-    
-
-
         <section id="Nosotros"><!--Descripcion General-->
             <div class="d-flex justify-content-center align-items-center bg-white w-100" style="height: 150px;">
 
@@ -150,14 +145,6 @@
                 <p class="text-white p-5 mx-5">El Departamento de Ingeniería Informática y Ciencias de la Computación ha estado ofreciendo el Magíster de Investigación desde 2013 con el objetivo de fomentar el desarrollo de habilidades avanzadas en investigación y potenciar la generación de conocimientos científicos en áreas vinculadas a las tecnologías de la información y las ciencias de la computación.</p>
             </div>
         </section>
-
-
-       
-
-
-
-
-
         <section id="NoticiasYEventos" class="section-margin"><!--1. Noticias y Eventos-->
             <div class="d-flex justify-content-center align-items-center bg-white w-100" style="height: 150px;">
                 <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Noticias y Eventos</h2>
@@ -670,34 +657,33 @@
                     <tbody>
                         <tr>
                         <td>8:00 - 9:30</td>
-                        
-                        <td class="p-2">1<br><br><?php echo $titulos_1?></td>
-                        <td class="p-2">2<br><br><?php echo $titulos_2?></td>
-                        <td class="p-2">3<br><br><?php echo $titulos_3?></td>
-                        <td class="p-2">4<br><br><?php echo $titulos_4?></td>
-                        <td class="p-2">5<br><br><?php echo $titulos_5?></td>
-                        <td class="p-2">6<br><br><?php echo $titulos_6?></td>
-                        <td class="p-2">7<br><br><?php echo $titulos_7?></td>
+                        <td><?php echo $titulos_1?></td>
+                        <td><?php echo $titulos_2?></td>
+                        <td><?php echo $titulos_3?></td>
+                        <td><?php echo $titulos_4?></td>
+                        <td><?php echo $titulos_5?></td>
+                        <td><?php echo $titulos_6?></td>
+                        <td><?php echo $titulos_7?></td>
                         </tr>
-                        <tr class="p-5">
+                        <tr>
                         <td>9:40 - 11:10</td>
-                        <td class="p-2">8<br><br><?php echo $titulos_8?></td>
-                        <td class="p-2">9<br><br><?php echo $titulos_9?></td>
-                        <td class="p-2">10<br><br><?php echo $titulos_10?></td>
-                        <td class="p-2">11<br><br><?php echo $titulos_11?></td>
-                        <td class="p-2">12<br><br><?php echo $titulos_12?></td>
-                        <td class="p-2">13<br><br><?php echo $titulos_13?></td>
-                        <td class="p-2">14<br><br><?php echo $titulos_14?></td>
+                        <td><?php echo $titulos_8?></td>
+                        <td><?php echo $titulos_9?></td>
+                        <td><?php echo $titulos_10?></td>
+                        <td><?php echo $titulos_11?></td>
+                        <td><?php echo $titulos_12?></td>
+                        <td><?php echo $titulos_13?></td>
+                        <td><?php echo $titulos_14?></td>
                         </tr>
                         <tr>
                         <td>11:20 - 12:50</td>
-                        <td class="p-2">15<br><br><?php echo $titulos_15?></td>
-                        <td class="p-2">16<br><br><?php echo $titulos_16?></td>
-                        <td class="p-2">17<br><br><?php echo $titulos_17?></td>
-                        <td class="p-2">18<br><br><?php echo $titulos_18?></td>
-                        <td class="p-2">19<br><br><?php echo $titulos_19?></td>
-                        <td class="p-2">20<br><br><?php echo $titulos_20?></td>
-                        <td class="p-2">21<br><br><?php echo $titulos_21?></td>
+                        <td><?php echo $titulos_15?></td>
+                        <td><?php echo $titulos_16?></td>
+                        <td><?php echo $titulos_17?></td>
+                        <td><?php echo $titulos_18?></td>
+                        <td><?php echo $titulos_19?></td>
+                        <td><?php echo $titulos_20?></td>
+                        <td><?php echo $titulos_21?></td>
                         </tr>
                  
                         

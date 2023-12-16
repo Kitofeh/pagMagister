@@ -239,7 +239,7 @@ $row=mysqli_fetch_array($query);
         <tr>
         <td><?php echo $row['ID_CLASE']; ?></td>
         <td><?php echo $row['NOMBRE_CLASE']; ?></td>
-        <td><?php echo $row['LUGAR']; ?></td>
+        <td><?php echo $row['LUGAR_CLASE']; ?></td>
         <td><?php echo $row['NOMBRE_PROFESOR']; ?></td>
         <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModificarEvento<?php echo $row['ID_CLASE']; ?>">Modificar</button></td>
         <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#EliminarEvento<?php echo $row['ID_CLASE']; ?>">Eliminar</button></td>
