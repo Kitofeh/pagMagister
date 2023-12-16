@@ -24,16 +24,16 @@
 <body style="font-family: 'Montserrat', sans-serif; overflow-x: hidden;">
     <header>
         <section><!--Barra de navegacion-->
-            <nav class="py-4 fixed-top" style="background-color: rgba(255, 255, 255, 0.1);backdrop-filter: blur(10px); box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
-                <ul class="my-0 mx-3">
-                    <li class="pr-2"><a href="#Nosotros" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">Nosotros</a></li>
-                    <li class="px-2"><a href="#NoticiasYEventos" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">Noticias y Eventos</a></li>
-                    <li class="px-2"><a href="#AcercaDelPosgrado" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">Acerca del Posgrado </a></li>
-                    <li class="px-2"><a href="#AdmisionYRequisitos" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">Admision y Requisitos</a></li>
-                    <li class="px-2"><a href="#PlanDeEstudios" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">Plan de estudios</a></li>
-                    <li class="px-2"><a href="#Experiencias" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">Experiencias</a></li>
-                    <li class="px-2"><a href="#Recursos" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">Recursos</a></li>
-                    <li class="px-2"><a href="#Contacto" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">Soporte</a></li>
+            <nav class="d-flex justify-content-around py-4 fixed-top" style="background-color: rgba(255, 255, 255, 0.1);backdrop-filter: blur(10px); box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
+                <ul class="d-flex justify-content-around my-0 mx-3 px-4">
+                    <li class="px-3"><a href="#Nosotros" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">Nosotros</a></li>
+                    <li class="px-3"><a href="#NoticiasYEventos" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">Noticias y Eventos</a></li>
+                    <li class="px-3"><a href="#AcercaDelPosgrado" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">Acerca del Posgrado </a></li>
+                    <li class="px-3"><a href="#AdmisionYRequisitos" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">Admision y Requisitos</a></li>
+                    <li class="px-3"><a href="#PlanDeEstudios" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">Plan de estudios</a></li>
+                    <li class="px-3"><a href="#Experiencias" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">Experiencias</a></li>
+                    <li class="px-3"><a href="#Recursos" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">Recursos</a></li>
+                    <li class="px-3"><a href="#Contacto" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">Soporte</a></li>
                     <?php
 
 
@@ -46,9 +46,9 @@
                         
                         
                         echo "<li class='mx-1'><a>BIEVENIDO, " . $_SESSION['usuario'] . "</p></li>";
-                        echo "<li class='mx-1'><img style='width:75px;' src='profesores/incognito.png' alt='Imagen de usuario'></li>";
-                        echo "<li class='mx-1 '><a style='text-shadow: 2px 2px 4px rgba(0, 0, 0, 1)' href='logout.php'>CERRAR SESIÓN</a></li>";
-                        echo "<li class='mx-1'><a style='text-shadow: 2px 2px 4px rgba(0, 0, 0, 1)' href='ficheros_panel/academicos/academicos.php'>PANEL</a></li>";
+                        
+                        echo "<li class='mx-1 '><a style='text-shadow: 2px 2px 4px rgba(0, 0, 0, 1)' href='logout.php'>Cerrar Sesion</a></li>";
+                        echo "<li class='mx-1'><a style='text-shadow: 2px 2px 4px rgba(0, 0, 0, 1)' href='ficheros_panel/academicos/academicos.php'>Panel</a></li>";
                      
            
 
@@ -56,7 +56,7 @@
                     else
 
                     {
-                        echo "<li class='px-2'><a style='text-shadow: 2px 2px 4px rgba(0, 0, 0, 1)' type='button' data-toggle='modal' data-target='#formularioLogin'>LOGIN</a></li>";
+                        echo "<li class='px-3'><a href='#' style='text-shadow: 2px 2px 4px rgba(0, 0, 0, 1)' type='button' data-toggle='modal' data-target='#formularioLogin'>Login</a></li>";
                     }
 
           
@@ -183,12 +183,18 @@
                     </div>
                 </div>
             </div>
+            <?php
+            include_once("conexion.php");
+            $con = conectar();
+            $sql = "SELECT * FROM noticias";
+            $resultado = $con->query($sql);
+            while($row = $resultado->fetch_assoc()) {?>
             <div class="container text-center">
                 <div class="row d-flex justify-content-around my-5"><!--Tarjetas-->
                     <div class="card" style="width: 18rem;">
-                        <img src="img-about-us.jpg" class="card-img-top" alt="Imagen Noticia 1">
+                        <img style="width:200px;" src="data:image/jpg;base64,<?php echo base64_encode($row['URL_IMG'])?>" class="card-img-top" alt="Imagen Noticia 1">
                         <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="card-text"><?php echo $row['DESCRIPCION']?></p>
                         </div>
                     </div>
                     <div class="card" style="width: 18rem;">
@@ -198,6 +204,9 @@
                         </div>
                     </div>
                 </div>
+            <?php
+            } // Cierre del bucle while
+            ?>
 
                 <?php
                 include_once("ficheros_panel/Noticias_Eventos/VariablesCalendario.php");
