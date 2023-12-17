@@ -136,7 +136,7 @@
         <section id="Nosotros"><!--Descripcion General-->
             <div class="d-flex justify-content-center align-items-center bg-white w-100" style="height: 150px;">
 
-                <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Acerca de Nosotros</h2>
+                <h2 style="box-shadow: inset 0 -2px 0 #dbca11">ACERCA DE NOSOTROS</h2>
             </div>
             <div class="w-100" style="background-color: #dbca11; height: 300px;">
                 <img src="img-about-us.jpg" class="w-100 h-100" style="object-fit: cover;">
@@ -147,7 +147,7 @@
         </section>
         <section id="NoticiasYEventos" class="section-margin"><!--1. Noticias y Eventos-->
             <div class="d-flex justify-content-center align-items-center bg-white w-100" style="height: 150px;">
-                <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Noticias y Eventos</h2>
+                <h2 style="box-shadow: inset 0 -2px 0 #dbca11">NOTICIAS Y EVENTOS</h2>
             </div>
            <!----> <div class="my-5"><!--Tarjeta Ancha-->
                 <?php 
@@ -192,9 +192,9 @@
 
                 <div class="row">
                     <div class="col"><!--Calendario-->
-                        <div class="my-5">
-                            <h3>Calendario de Eventos</h3>
-                        </div>
+                            <div class="d-flex justify-content-center align-items-center bg-white w-100" style="height: 150px;">
+                        <h2 style="box-shadow: inset 0 -2px 0 #dbca11">CALENDARIO DE EVENTOS</h2>
+                            </div>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -209,47 +209,47 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                <td class="p-5"></td>
-                                <td class="p-5"></td>
-                                <td class="p-2">1<br><br><?php echo $titulos_1?></td>
-                                <td class="p-2">2<br><br><?php echo $titulos_2?></td>
-                                <td class="p-2">3<br><br><?php echo $titulos_3?></td>
-                                <td class="p-2">4<br><br><?php echo $titulos_4?></td>
-                                <td class="p-2">5<br><br><?php echo $titulos_5?></td>
+                                <td></td>
+                                <td></td>
+                                <td><br><br><?php echo $titulos_1?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_2?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_3?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_4?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_5?></td>
                                 </tr>
                                 <tr class="p-5">
-                                <td class="p-2">6<br><br><?php echo $titulos_6?></td>
-                                <td class="p-2">7<br><br><?php echo $titulos_7?></td>
-                                <td class="p-2">8<br><br><?php echo $titulos_8?></td>
-                                <td class="p-2">9<br><br><?php echo $titulos_9?></td>
-                                <td class="p-2">10<br><br><?php echo $titulos_10?></td>
-                                <td class="p-2">11<br><br><?php echo $titulos_11?></td>
-                                <td class="p-2">12<br><br><?php echo $titulos_12?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_6?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_7?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_8?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_9?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_10?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_11?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_12?></td>
                                 </tr>
                                 <tr>
-                                <td class="p-2">13<br><br><?php echo $titulos_13?></td>
-                                <td class="p-2">14<br><br><?php echo $titulos_14?></td>
-                                <td class="p-2">15<br><br><?php echo $titulos_15?></td>
-                                <td class="p-2">16<br><br><?php echo $titulos_16?></td>
-                                <td class="p-2">17<br><br><?php echo $titulos_17?></td>
-                                <td class="p-2">18<br><br><?php echo $titulos_18?></td>
-                                <td class="p-2">19<br><br><?php echo $titulos_19?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_13?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_14?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_15?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_16?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_17?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_18?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_19?></td>
                                 </tr>
                                 <tr>
-                                <td class="p-2">20<br><br><?php echo $titulos_20?></td>
-                                <td class="p-2">21<br><br><?php echo $titulos_21?></td>
-                                <td class="p-2">22<br><br><?php echo $titulos_22?></td>
-                                <td class="p-2">23<br><br><?php echo $titulos_23?></td>
-                                <td class="p-2">24<br><br><?php echo $titulos_24?></td>
-                                <td class="p-2">25<br><br><?php echo $titulos_25?></td>
-                                <td class="p-2">26<br><br><?php echo $titulos_26?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_20?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_21?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_22?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_23?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_24?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_25?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_26?></td>
                                 </tr>
                                 <tr class="p-5">
-                                <td class="p-2">27<br><br><?php echo $titulos_27?></td>
-                                <td class="p-2">28<br><br><?php echo $titulos_28?></td>
-                                <td class="p-2">29<br><br><?php echo $titulos_29?></td>
-                                <td class="p-2">30<br><br><?php echo $titulos_30?></td>
-                                <td class="p-2">31<br><br><?php echo $titulos_31?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_27?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_28?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_29?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_30?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_31?></td>
                                 <td class="p-5"></td>
                                 <td class="p-5"></td>
                                 </tr>
@@ -263,7 +263,7 @@
        
         <section id="AcercaDelPosgrado" class="section-margin my-5" style="height:700px;"><!--2. Acerca del Posgrado-->
             <div class="d-flex justify-content-center align-items-center bg-white w-100" style="height: 150px;">
-                <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Acerca de Nosotros</h2>
+                <h2 style="box-shadow: inset 0 -2px 0 #dbca11">ACERCA DE NOSOTROS</h2>
             </div>
             <div class="container my-5">
                 <div class="row">
@@ -322,189 +322,90 @@
         </section>
 
     
+        <?php
+$con = conectar();
 
-        <?php 
-        
-        $con = conectar();
+$sql = "SELECT * FROM academicos LIMIT 3"; // Obtener los tres primeros académicos
+$query = mysqli_query($con, $sql);
 
-        $sql="SELECT * FROM academicos";
-        $query=mysqli_query($con,$sql);
+?>
 
-        $row=mysqli_fetch_array($query);
-
-        ?>
-        <section id="Academicos" class="section-margin"><!--2.1 Academicos-->
-            <div class="d-flex justify-content-center align-items-center bg-white w-100" style="height: 150px;">
-                <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Academicos</h2>
-            </div>
-            <div class="container">
-                <div class="row mb-5">
-                    <div class="col">
-                    <div class="card">
+<section id="Academicos" class="section-margin"><!--2.1 Academicos-->
+    <div class="d-flex justify-content-center align-items-center bg-white w-100" style="height: 150px;">
+        <h2 style="box-shadow: inset 0 -2px 0 #dbca11">ACADÉMICOS</h2>
+    </div>
+    <div class="container">
+        <div class="row mb-5">
+            <?php
+            while ($row = mysqli_fetch_array($query)) {
+            ?>
+                <div class="col">
+                    <div class ="card">
                         <div class="card-body d-flex flex-column justify-content-center">
-                            <h4 class="text-center">DANTE CARRIZO</h4>
-                            <p class="text-center">Profesor</p>
-                            
+                            <h4 class="text-center"><?php echo $row['NOMBRE']; ?></h4>
+                            <p class="text-center"><?php echo $row['CARGO']; ?></p>
+                            <center>
+                            <img class ="m-5"style="width:200px; height:auto" src="data:image/jpg;base64,<?php echo base64_encode($row['IMG_ACADEMICO']); ?>" alt="">
+                            </center>
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-                            <img src="img-academicos/eye-svgrepo-com.svg" style="margin-right: 5px; width:20px;">Ver perfil
-                            </button>
+                            <a type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $row['COD_ACADEMICO']; ?>">
+                                <img src="img-academicos/eye-svgrepo-com.svg" style="margin-right: 5px; width:20px;">MÁS INFORMACIÓN
+                            </a>
 
                             <!-- Modal -->
-                            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Perfil</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                <div class="container">
-                                    <div class="row align-items-start">
-                                        <div class="col-4">
-                                        <img src="img-academicos/Dante.jpg" class="img-fluid" alt="Tu Imagen">
+                            <div class="modal fade" id="exampleModal<?php echo $row['COD_ACADEMICO']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">INFORMACIÓN</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
-                                        <div class="col-8">
-                                        
-                                        <p><br>Nombre: Dante Carrizo<br><br>Edad: 20 anios<br><br>Rol: Profesor<br></p>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-4 mb-3">
-                                        <div class="col-12">
-                                        <p>Esta es una descripción adicional del perfil. Aquí se puede incluir más detalles o información relevante.</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-12 d-flex justify-content-center">
-                                            <a href="https://diicc.uda.cl/academico.php?id=3">
-                                            <button type="button" class="btn btn-primary">
-                                                <img src="img-academicos/eye-svgrepo-com.svg" style="margin-right: 5px; width:20px;">Ir a Web Personal
-                                            </button>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="col">
-                    <div class="card">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h4 class="text-center"><?php echo $row['NOMBRE']?></h4>
-                            <p class="text-center"><?php echo $row['CARGO']?></p>
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-                            <img src="img-academicos/eye-svgrepo-com.svg" style="margin-right: 5px; width:20px;">Ver perfil
-                            </button>
+                                        <div class="modal-body">
+                                            <div class="container">
+                                                <div class="row align-items-start">
+                                                    <div class="col-12">
+                                                    <center>
+                                                            <strong>NOMBRE:</strong>
+                                                            <p><?php echo $row['NOMBRE']; ?></p>
+                                                            <strong>CORREO:</strong>
+                                                            <p><?php echo $row['CORREO']; ?></p>
 
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Perfil</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                <div class="container">
-                                    <div class="row align-items-start">
-                                        <div class="col-4">
-                                        <img style="width:200px;"src="data:image/jpg;base64,<?php echo base64_encode($row['IMG_ACADEMICO'])?>" alt="">
+                                                    </center>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-4 mb-3">
+                                                    <div class="col-12 text-justify">
+                                                        <center>
+                                                            <strong>GRADO ACADÉMICO</strong>
+                                                            <p class="text-justify"><?php echo $row['GRADO']; ?></p>
+                                                        </center>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="col-8">
-                                        
-                                        <p><br>Nombre:<?php echo $row['NOMBRE']?><br><br>Correo:<?php echo $row['CORREO']?><br><br></p>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-4 mb-3">
-                                        <div class="col-12">
-                                        <center>
-                                        <strong>GRADO ACADÉMICO</strong>
-                                        <p><?php echo $row['GRADO']?></p>
-                                        </center>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                                         </div>
                                     </div>
                                 </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                </div>
-                                </div>
-                            </div>
                             </div>
                         </div>
-                    </div>
-                    </div>
-                    <div class="col">
-                    <div class="card">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h4 class="text-center">Hector Cornide</h4>
-                            <p class="text-center">Profesor</p>
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">
-                            <img src="img-academicos/eye-svgrepo-com.svg" style="margin-right: 5px; width:20px;">Ver perfil
-                            </button>
-
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Perfil</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                <div class="container">
-                                    <div class="row align-items-start">
-                                        <div class="col-4">
-                                        <img src="img-academicos/hector.jpg" class="img-fluid" alt="Hector">
-                                        </div>
-                                        <div class="col-8">
-                                        
-                                        <p>Nombre: Hector Cornide<br><br>Edad: 20 anios<br><br>Rol: Profesor<br></p>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-4 mb-3">
-                                        <div class="col-12">
-                                        <p>Esta es una descripción adicional del perfil. Aquí se puede incluir más detalles o información relevante.</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-12 d-flex justify-content-center">
-                                            <a href="https://diicc.uda.cl/academico.php?id=4">
-                                            <button type="button" class="btn btn-primary">
-                                                <img src="img-academicos/user-icon.svg" style="margin-right: 5px; width:20px;">Ir a Web Personal
-                                            </button>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
                     </div>
                 </div>
-                
-        </section>
+            <?php
+            }
+            ?>
+        </div>
+    </div>
+</section>
+
+
 
 
         <section id="AreasDeInvestigacion" class="section-margin"><!--2.2 Areas de Investigacion-->
             <div class="section-margin mx-auto my-auto">
                 <div class="d-flex justify-content-center align-items-center bg-white w-100" style="height: 150px;">
-                    <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Areas de Investigacion</h2>
+                    <h2 style="box-shadow: inset 0 -2px 0 #dbca11">ÁREAS DE INVESTIGACIÓN</h2>
                 </div>
                 <div class="row mx-auto" style="border-bottom: 2px solid #364c59; width:1000px; height: 300px;">
                     <div class="col w-25 d-flex justify-content-center">
@@ -615,7 +516,7 @@
 
         <section id="PlanDeEstudios" class="section-margin"><!--4. Plan de Estudios-->
         <div style="display: flex; justify-content: center; align-items: center; background-color: white; width: 100%; height: 150px;">
-                <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Estudios</h2>
+                <h2 style="box-shadow: inset 0 -2px 0 #dbca11">ESTUDIOS</h2>
         </div>
             <div class="layout mt-5 mb-5">
                 <div class="container">
@@ -641,17 +542,15 @@
                 <div class="row">
                     <div class="col"><!--Calendario-->
 
-                        <table class="table table-bordered">
-                    <thead >
+                        <table class="table table-bordered table-hover">
+                        <thead class="bg-dark text-white">
                         <tr>
                         <th scope="col" style="background-color: #364c59;color:white;">HORAS</th>
-                        <th scope="col" style="background-color: #364c59;color:white;">Lunes</th>
-                        <th scope="col" style="background-color: #364c59;color:white;">Martes</th>
-                        <th scope="col" style="background-color: #364c59;color:white;">Miércoles</th>
-                        <th scope="col" style="background-color: #364c59;color:white;">Jueves</th>
-                        <th scope="col" style="background-color: #364c59;color:white;">Viernes</th>
-                        <th scope="col" style="background-color: #364c59;color:white;">Sábado</th>
-                        <th scope="col" style="background-color: #364c59;color:white;">Domingo</th>
+                        <th scope="col" style="background-color: #364c59;color:white;">LUNES</th>
+                        <th scope="col" style="background-color: #364c59;color:white;">MARTES</th>
+                        <th scope="col" style="background-color: #364c59;color:white;">MIÉRCOLES</th>
+                        <th scope="col" style="background-color: #364c59;color:white;">JUEVES</th>
+                        <th scope="col" style="background-color: #364c59;color:white;">VIERNES</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -662,28 +561,23 @@
                         <td><?php echo $titulos_3?></td>
                         <td><?php echo $titulos_4?></td>
                         <td><?php echo $titulos_5?></td>
-                        <td><?php echo $titulos_6?></td>
-                        <td><?php echo $titulos_7?></td>
                         </tr>
                         <tr>
                         <td>9:40 - 11:10</td>
+                        <td><?php echo $titulos_6?></td>
+                        <td><?php echo $titulos_7?></td>
                         <td><?php echo $titulos_8?></td>
                         <td><?php echo $titulos_9?></td>
                         <td><?php echo $titulos_10?></td>
+
+                        </tr>
+                        <tr>
+                        <td>11:20 - 12:50</td>
                         <td><?php echo $titulos_11?></td>
                         <td><?php echo $titulos_12?></td>
                         <td><?php echo $titulos_13?></td>
                         <td><?php echo $titulos_14?></td>
-                        </tr>
-                        <tr>
-                        <td>11:20 - 12:50</td>
                         <td><?php echo $titulos_15?></td>
-                        <td><?php echo $titulos_16?></td>
-                        <td><?php echo $titulos_17?></td>
-                        <td><?php echo $titulos_18?></td>
-                        <td><?php echo $titulos_19?></td>
-                        <td><?php echo $titulos_20?></td>
-                        <td><?php echo $titulos_21?></td>
                         </tr>
                  
                         
@@ -692,37 +586,6 @@
                 </table>
                     </div>
                 </div>
-
-               <!--SDADSADASDADS
-               
-                    <table class="table mx-5">
-                    <thead >
-                        <tr >
-                        <th scope="col">1° semestre <br>9/9</th>
-                        <th scope="col">2° semestre <br>6/6</th>
-                        <th scope="col">3° semestre <br>3/12</th>
-                        <th scope="col">4° semestre <br>3/12</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <th scope="col" style="background-color: #58D68D; margin-right: 30px 30px;">Asignatura fundamental <br> 3/3</th>
-                        <td scope="col" style="background-color: #CD6155; margin: 30px;">Seminario de investigación <br>  3/3</td>
-                        <td scope="col" style="background-color: #5DADE2; margin: 30px">Tesis de grado 1<br> 3/12</td>
-                        <td scope="col" style="background-color: #5DADE2;">Tesis de grado 2<br> 3/12</td>
-                        </tr>
-                        <tr>
-                        <th scope="col"  style="background-color: #BB8FCE ;">Tópico 1 <br>3/3</th>
-                        <td scope="col" style="background-color: #BB8FCE ;">tópico 2 <br>3/3</td>                       
-                        </tr>
-                        <tr>
-                        <th style="background-color: #CD6155; margin: 30px;">Metodologia de investigación <br>3/3</th>
-                        
-                        </tr>
-                    </tbody>
-                    </table>  
-                    
-                    --> 
                 </div>
             </div>    
         <div class="container " id="estudioscolum">

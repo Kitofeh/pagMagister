@@ -38,7 +38,10 @@ $row=mysqli_fetch_array($query);
             if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             echo "<a  href='../../logout.php'>Cerrar sesión</a>";            
           } else {
-            echo "<li class='px-2'><a  type='button' data-toggle='modal' data-target='#formularioLogin'>LOGIN</a></li>";
+            echo "<script>
+            alert('NO ESTÁS LOGUEADO. ESTÁS VOLVIENDO AL MENÚ PRINCIPAL.');
+            window.location.href = '../../index.php';
+           </script>";
           }                
         ?>
         </a>

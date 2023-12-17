@@ -36,7 +36,10 @@ $row=mysqli_fetch_array($query);
             if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             echo "<a  href='../../logout.php'>Cerrar sesión</a>";            
           } else {
-            echo "<li class='px-2'><a  type='button' data-toggle='modal' data-target='#formularioLogin'>LOGIN</a></li>";
+            echo "<script>
+            alert('NO ESTÁS LOGUEADO. ESTÁS VOLVIENDO AL MENÚ PRINCIPAL.');
+            window.location.href = '../../index.php';
+           </script>";
           }                
         ?>
         </a>
@@ -117,8 +120,6 @@ $row=mysqli_fetch_array($query);
                         <th scope="col">Miércoles</th>
                         <th scope="col">Jueves</th>
                         <th scope="col">Viernes</th>
-                        <th scope="col">Sábado</th>
-                        <th scope="col">Domingo</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -130,28 +131,22 @@ $row=mysqli_fetch_array($query);
                         <td class="p-2">3<br><br><?php echo $titulos_3?></td>
                         <td class="p-2">4<br><br><?php echo $titulos_4?></td>
                         <td class="p-2">5<br><br><?php echo $titulos_5?></td>
-                        <td class="p-2">6<br><br><?php echo $titulos_6?></td>
-                        <td class="p-2">7<br><br><?php echo $titulos_7?></td>
                         </tr>
                         <tr class="p-5">
                         <td>9:40 - 11:10</td>
+                        <td class="p-2">6<br><br><?php echo $titulos_6?></td>
+                        <td class="p-2">7<br><br><?php echo $titulos_7?></td>
                         <td class="p-2">8<br><br><?php echo $titulos_8?></td>
                         <td class="p-2">9<br><br><?php echo $titulos_9?></td>
                         <td class="p-2">10<br><br><?php echo $titulos_10?></td>
+                        </tr>
+                        <tr>
+                        <td>11:20 - 12:50</td>
                         <td class="p-2">11<br><br><?php echo $titulos_11?></td>
                         <td class="p-2">12<br><br><?php echo $titulos_12?></td>
                         <td class="p-2">13<br><br><?php echo $titulos_13?></td>
                         <td class="p-2">14<br><br><?php echo $titulos_14?></td>
-                        </tr>
-                        <tr>
-                        <td>11:20 - 12:50</td>
                         <td class="p-2">15<br><br><?php echo $titulos_15?></td>
-                        <td class="p-2">16<br><br><?php echo $titulos_16?></td>
-                        <td class="p-2">17<br><br><?php echo $titulos_17?></td>
-                        <td class="p-2">18<br><br><?php echo $titulos_18?></td>
-                        <td class="p-2">19<br><br><?php echo $titulos_19?></td>
-                        <td class="p-2">20<br><br><?php echo $titulos_20?></td>
-                        <td class="p-2">21<br><br><?php echo $titulos_21?></td>
                         </tr>
                  
                         
@@ -163,7 +158,7 @@ $row=mysqli_fetch_array($query);
     </div>
 
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#AgregarEvento">
+    <button type="button" class="btn btn-primary m-3 mt-5" data-bs-toggle="modal" data-bs-target="#AgregarEvento">
     Agregar clase
     </button>
 
@@ -215,16 +210,16 @@ $row=mysqli_fetch_array($query);
     </div>
 
     <!-- Crear la tabla con Bootstrap -->
-    <table class="table table-bordered">
+    <table class="table table-bordered m-2">
     <!-- Crear las cabeceras de la tabla -->
     <thead>
         <tr>
-        <th scope="col">ID_CLASE</th>
         <th scope="col">NOMBRE CLASE</th>
-        <th scope="col">LUGAR</th>
+        <th style ="width:50px" scope="col">LUGAR</th>
         <th scope="col">NOMBRE PROFESOR</th>
-        <th scope="col">Editar</th>
-        <th scope="col">Eliminar</th>
+        <th scope="col">UBICACIÓN</th>
+        <th style ="width:50px" scope="col">modificar</th>
+        <th style ="width:50px" scope="col">Eliminar</th>
         </tr>
     </thead>
 
@@ -237,10 +232,10 @@ $row=mysqli_fetch_array($query);
         ?>
         
         <tr>
-        <td><?php echo $row['ID_CLASE']; ?></td>
         <td><?php echo $row['NOMBRE_CLASE']; ?></td>
         <td><?php echo $row['LUGAR_CLASE']; ?></td>
         <td><?php echo $row['NOMBRE_PROFESOR']; ?></td>
+        <td><?php echo $row['UBICACION']; ?></td>
         <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModificarEvento<?php echo $row['ID_CLASE']; ?>">Modificar</button></td>
         <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#EliminarEvento<?php echo $row['ID_CLASE']; ?>">Eliminar</button></td>
         </tr>
@@ -255,14 +250,15 @@ $row=mysqli_fetch_array($query);
             <div class="modal-body">
 
                 <form action="ModificarClase.php" method="POST" autocomplete="off">
+
                     <div class="form-floating mb-3">
-                        <input type="hidden" id="floatingInput" name="idevento" value="<?php echo $row['ID_CLASE']; ?>">
-                        <input type="text" class="form-control" id="floatingInput" name="titulo" value="<?php echo $row['NOMBRE_CLASE']; ?>" placeholder="NOMBRE DE LA CLASE" required>
+                        <input type="hidden" id="floatingInput" name="ID_CLASE" value="<?php echo $row['ID_CLASE']; ?>">
+                        <input type="text" class="form-control" id="floatingInput" name="NOMBRE_CLASE" value="<?php echo $row['NOMBRE_CLASE']; ?>" placeholder="NOMBRE DE LA CLASE" required>
                         <label for="floatingInput">Nombre Clase</label>
                     </div>
 
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput2" name="NOMBRE_PROFESOR" value="<?php echo $row['LUGAR_CLASE']; ?>" placeholder="LUGAR CLASE" required>
+                        <input type="text" class="form-control" id="floatingInput2" name="LUGAR_CLASE" value="<?php echo $row['LUGAR_CLASE']; ?>" placeholder="LUGAR CLASE" required>
                         <label for="floatingInput2">LUGAR CLASE DEL PROFESOR</label>
                     </div>
                 
@@ -275,7 +271,7 @@ $row=mysqli_fetch_array($query);
 
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="floatingInput4" name="UBICACION" value="<?php echo $row['UBICACION']; ?>" placeholder="UBICACION" required>
-                        <label for="floatingInput4">ubicacion</label>
+                        <label for="floatingInput4">UBICACION</label>
                     </div>
                 
                    
@@ -297,7 +293,7 @@ $row=mysqli_fetch_array($query);
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Estas seguro que deseas eliminar el evento ID <?php echo $row['ID_CLASE']; ?>?
+                Estas seguro que deseas eliminar la clase ID <?php echo $row['ID_CLASE']; ?>?
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
