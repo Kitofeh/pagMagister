@@ -6,7 +6,9 @@ $id_evento = $_POST['idevento'];
 $titulo = $_POST['titulo'];
 $descripcion = $_POST['descripcion'];
 $fechaInicio = $_POST['fechainicio'];
+$fechaInicio = str_replace("T", "-", $fechaInicio);
 $fechaFin = $_POST['fechafin'];
+$fechaFin = str_replace("T", "-", $fechaFin);
 $ubicacion = $_POST['ubicacion'];
 $tipo = $_POST['tipo'];
 
