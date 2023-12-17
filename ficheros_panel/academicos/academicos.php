@@ -73,12 +73,78 @@
         <h1 class ="mt-5">ACADÉMICOS</h1>
     </center>
     <br>   
-        <a href="nuevo_academico.php" class="m-3 btn btn-dark">Agregar</a>
-    
+      <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary m-3 mt-5" data-bs-toggle="modal" data-bs-target="#AgregarEvento">
+    Agregar académico
+    </button>
+
   </div>
+        
+
+    <!-- Modal Añadir Clase-->
+    <div class="modal fade" id="AgregarEvento" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">AGREGAR ACADÉMICO</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+        <form action ="agregar_academico.php" method="POST" enctype="multipart/form-data" autocomplete="off">
+
+
+                          
+              <div class="form-floating mb-3">
+
+                  <input type="text" class ="form-control" name = "COD_ACADEMICO" placeholder = "CÓD. ACADÉMICO">
+                  <label for="floatingInput">COD. ACADÉMICO</label>
+
+              </div>
+
+              <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingInput" name="NOMBRE"  placeholder="NOMBRE ACADÉMICO" required>
+                  <label for="floatingInput">NOMBRE ACADÉMICO</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="floatingInput" name="CORREO" placeholder="CORREO ACADÉMICO" required>
+                  <label for="floatingInput">CORREO DEL PROFESOR</label>
+              </div>
+
+              <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingInput" name="CARGO" placeholder="CARGO DEL ACADÉMICO" required>
+              <label for="floatingInput">CARGO DEL ACADÉMICO</label>
+              </div>
+
+              <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingInput" name="GRADO" placeholder="GRADO DEL ACADÉMICO" required>
+              <label for="floatingInput">GRADO DEL ACADÉMICO</label>
+              </div>
+
+    
+              <div class="form-floating mb-3">
+              <input type="file" class ="mb-3 form-control" name = "IMG_ACADEMICO" accept=".jpg , .jpeg, .png" required>
+              </div>
+
+              </div>
+              <input type="submit" class="btn btn-primary">
+            
+
+                
+    
+        </div>
+  
+                    
+             
+            </form>
+        </div>
+    </div>
+    </div>
+
 
     <center>
-    <table class="table">
+    <table class="table table-bordered table-hover">
     <thead>
       <tr>
         <th scope="col">CÓD. ACADÉMICO</th>
@@ -87,7 +153,8 @@
         <th scope="col">CARGO</th>       
         <th scope="col">GRADO ACADÉMICO</th> 
         <th scope="col">IMG. ACADÉMICO</th>
-        <th scope="col">ACCIONES</th>
+        <th scope="col" COLSPAN="2">ACCIONES</th>
+        
       </tr>
     </thead>
     <tbody>
@@ -108,14 +175,97 @@
       <td ><?php echo $fila['GRADO']?></td>
       <td style="width: 250px; height: 250px;"><img style="width:200px; height:200px;" src="data:image/jpg;base64,<?php echo base64_encode($fila['IMG_ACADEMICO'])?>" alt=""></td>
       <td>
-        <a href="modificar_academico.php?COD_ACADEMICO=<?php echo $fila["COD_ACADEMICO"]; ?>" class="btn btn-warning">EDITAR</a>
-        <a href="eliminar_academico.php?COD_ACADEMICO=<?php echo $fila["COD_ACADEMICO"]; ?>" class="btn btn-danger">ELIMINAR</a>        
-      </td>
-    </tr>
-  </tbody>
-  <?php } ?>
-  </table>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModificarEvento<?php echo $fila['COD_ACADEMICO']; ?>">Modificar</button></td>
+        <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#EliminarEvento<?php echo $fila['COD_ACADEMICO']; ?>">Eliminar</button></td>
+        </tr>
+        <!-- Modal Modificar-->
+        <div class="modal fade" id="ModificarEvento<?php echo $fila['COD_ACADEMICO']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">MODIFICAR ACADEMICO</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <form action="actualizar_academico.php?IdEditar=<?php echo $fila["COD_ACADEMICO"]?>" method="POST" autocomplete="off">
+
+                <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" name="COD_ACADEMICO" value="<?php echo $fila['COD_ACADEMICO']; ?>" placeholder="CÓD. ACADÉMICO" required>
+                        <label for="floatingInput">COD. ACADÉMICO</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" name="NOMBRE" value="<?php echo $fila['NOMBRE']; ?>" placeholder="NOMBRE ACADÉMICO" required>
+                        <label for="floatingInput">NOMBRE ACADÉMICO</label>
+                    </div>  
+
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput" name="CORREO" value="<?php echo $fila['CORREO']; ?>" placeholder="CORREO ACADÉMICO" required>
+                        <label for="floatingInput">CORREO ACADÉMICO</label>
+                    </div>  
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" name="CARGO" value="<?php echo $fila['CARGO']; ?>" placeholder="CARGO DEL ACADÉMICO" required>
+                        <label for="floatingInput">CARGO ACADÉMICO</label>
+                    </div>  
+
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" name="GRADO" value="<?php echo $fila['GRADO']; ?>" placeholder="GRADO DEL ACADÉMICO" required>
+                        <label for="floatingInput">GRADO DEL ACADÉMICO</label>
+                    </div>
+
+
+                    <div class="form-floating mb-3">
+                    <input type="file" class ="mb-3 form-control" name = "IMG_ACADEMICO" accept=".jpg , .jpeg, .png">
+                    </div>  
+
+                </div>
+                <input type="submit" class="btn btn-primary">
+
+                </form>
+            </div>
+        </div>
+        </div>
+        <!-- Modal Eliminar -->
+        <div class="modal fade" id="EliminarEvento<?php echo $fila['COD_ACADEMICO']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">ELIMINAR ACADÉMICO</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¿Está seguro de eliminar el academico seleccionado?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+                <a href="eliminar_academico.php?id=<?php echo $fila['COD_ACADEMICO'] ?>" class="btn btn-danger">Eliminar</a>
+            </div>
+            </div>
+        </div>
+        </div>
+        <?php } ?>
+    </tbody>
+    </table>
+    
         </center>
+
+    
+  
+    
+
+
+
+
+
+
+
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>
 </html>

@@ -2,7 +2,7 @@
 include("../../conexion.php");
 $con = conectar();
 
-$COD_ACADEMICO = $_REQUEST['COD_ACADEMICO'];
+$COD_ACADEMICO = $_REQUEST['id'];
 
 $sql = "DELETE FROM academicos WHERE COD_ACADEMICO = $COD_ACADEMICO";
 

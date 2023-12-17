@@ -85,24 +85,7 @@ $row=mysqli_fetch_array($query);
     </nav>
 
 
-    <!-- Modal -->
-    <div class="modal fade" id="CalendarioDeEventos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            ...
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-        </div>
-    </div>
-    </div>
+    
 
     <div class="mx-auto my-auto">
         <div class="row mx-auto my-auto">
@@ -162,12 +145,12 @@ $row=mysqli_fetch_array($query);
     Agregar clase
     </button>
 
-    <!-- Modal -->
+    <!-- Modal Añadir-->
     <div class="modal fade" id="AgregarEvento" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
         <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">AGREGAR CLASE</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -175,28 +158,34 @@ $row=mysqli_fetch_array($query);
             <form action="AgregarClase.php" method="POST" autocomplete="off">
 
 
-            <div class="form-floating mb-3">
                         <input type="hidden" name="ID_CLASE">
 
-                        <input type="text" class="form-control" id="floatingInput" name="NOMBRE_CLASE"  placeholder="NOMBRE DE LA CLASE" required>
-                        <label for="floatingInput">Nombre Clase</label>
-                    </div>
+            
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput2" name="LUGAR_CLASE"  placeholder="LUGAR DE LA CLASE" required>
-                        <label for="floatingInput2">LUGAR DE LA CLASE</label>
-                    </div>
-                    
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput3" name="NOMBRE_PROFESOR" placeholder="NOMBRE DEL PROFESOR" required>
-                        <label for="floatingInput3">NOMBRE DEL PROFESOR</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput4" name="UBICACION" placeholder="Ubicacion del Evento" required>
-                    <label for="floatingInput4">UBICACION</label>
-                    </div>
-                    <input type="submit">
 
+                        <input type="text" class="form-control" id="floatingInput" name="NOMBRE_CLASE"  placeholder="NOMBRE DE LA CLASE" required>
+                        <label for="floatingInput">NOMBRE CLASE</label>
+            
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" name="LUGAR_CLASE"  placeholder="LUGAR DE LA CLASE" required>
+                        <label for="floatingInput">LUGAR DE LA CLASE</label>
+                    </div>
+      
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" name="NOMBRE_PROFESOR" placeholder="NOMBRE DEL PROFESOR" required>
+                        <label for="floatingInput">NOMBRE DEL PROFESOR</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" name="UBICACION" placeholder="Ubicacion del Evento" required>
+                    <label for="floatingInput">UBICACION</label>
+                    </div>
+
+        </div>
+                    <input type="submit" class="btn btn-primary">
+            
 
                 
     
@@ -208,6 +197,7 @@ $row=mysqli_fetch_array($query);
         </div>
     </div>
     </div>
+    
 
     <!-- Crear la tabla con Bootstrap -->
     <table class="table table-bordered m-2">
@@ -244,7 +234,7 @@ $row=mysqli_fetch_array($query);
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">MODIFICAR CLASE</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -260,26 +250,38 @@ $row=mysqli_fetch_array($query);
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="floatingInput2" name="LUGAR_CLASE" value="<?php echo $row['LUGAR_CLASE']; ?>" placeholder="LUGAR CLASE" required>
                         <label for="floatingInput2">LUGAR CLASE DEL PROFESOR</label>
-                    </div>
+                    </div>  
+
+                    <label for="floatingInput3">NOMBRE DEL PROFESOR</label>
                 
-                    
-        
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput3" name="NOMBRE_PROFESOR" value="<?php echo $row['NOMBRE_PROFESOR']; ?>" placeholder="NOMBRE DEL PROFESOR" required>
-                        <label for="floatingInput3">NOMBRE DEL PROFESOR</label>
+                      <select class="mb-3 form-control" name="NOMBRE_PROFESOR" id="floatingInput3">
+                          <option value=""></option> <!-- Primer valor vacío -->
+
+                          <?php
+                          $query_academicos = "SELECT NOMBRE FROM academicos";
+                          $result_academicos = $con->query($query_academicos);
+
+                          while ($fila_academicos = $result_academicos->fetch_assoc()) {
+                              echo "<option value='" . $fila_academicos['NOMBRE'] . "'>" . $fila_academicos['NOMBRE'] . "</option>";
+                          }
+                          ?>
+                      </select>
                     </div>
+
+                
+                       </select>
+                  
 
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="floatingInput4" name="UBICACION" value="<?php echo $row['UBICACION']; ?>" placeholder="UBICACION" required>
                         <label for="floatingInput4">UBICACION</label>
                     </div>
+
+                        </div>
                 
-                   
-        
-            </div>
-                    <div class="modal-footer">
-                        <input type="submit">
-                    </div>
+                    <input type="submit" class="btn btn-primary">
+
                 </form>
             </div>
         </div>
@@ -289,14 +291,14 @@ $row=mysqli_fetch_array($query);
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">ELIMINAR CLASE</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Estas seguro que deseas eliminar la clase ID <?php echo $row['ID_CLASE']; ?>?
+                ¿Está seguro de eliminar la clase seleccionada?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
                 <a href="EliminarClase.php?id=<?php echo $row['ID_CLASE'] ?>" class="btn btn-danger">Eliminar</a>
             </div>
             </div>
