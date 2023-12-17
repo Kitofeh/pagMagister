@@ -104,7 +104,7 @@
                           </div>
                         </div>
                       </div>
-
+    </header>
 
 
 
@@ -132,16 +132,11 @@
             </button>
             </div>
         </section>
-
     </header>
-
-    
-
-
         <section id="Nosotros"><!--Descripcion General-->
             <div class="d-flex justify-content-center align-items-center bg-white w-100" style="height: 150px;">
 
-                <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Acerca de Nosotros</h2>
+                <h2 style="box-shadow: inset 0 -2px 0 #dbca11">ACERCA DE NOSOTROS</h2>
             </div>
             <div class="w-100" style="background-color: #dbca11; height: 300px;">
                 <img src="img-about-us.jpg" class="w-100 h-100" style="object-fit: cover;">
@@ -150,18 +145,11 @@
                 <p class="text-white p-5 mx-5">El Departamento de Ingeniería Informática y Ciencias de la Computación ha estado ofreciendo el Magíster de Investigación desde 2013 con el objetivo de fomentar el desarrollo de habilidades avanzadas en investigación y potenciar la generación de conocimientos científicos en áreas vinculadas a las tecnologías de la información y las ciencias de la computación.</p>
             </div>
         </section>
-
-
-       
-
-
-
-
-
         <section id="NoticiasYEventos" class="section-margin"><!--1. Noticias y Eventos-->
             <div class="d-flex justify-content-center align-items-center bg-white w-100" style="height: 150px;">
-                <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Noticias y Eventos</h2>
+                <h2 style="box-shadow: inset 0 -2px 0 #dbca11">NOTICIAS Y EVENTOS</h2>
             </div>
+
             <div class="my-5"><!--Tarjeta Ancha-->
                 <?php 
                 include_once("../../conexion.php");
@@ -191,6 +179,7 @@
                 $resultado = $con->query($sql);
                 while($row = $resultado->fetch_assoc()) {?>
                     <div class="card" style="width: 18rem;">
+
                     <img style="width:100%;height:200px;" src="data:image/jpg;base64,<?php echo base64_encode($row['URL_IMG'])?>" class="card-img-top" alt="Imagen Noticia">
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $row['TITULO']?></h5>
@@ -199,6 +188,7 @@
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#NoticiaModal<?php echo $row['ID_NOTICIA'] ;?>">
                         Ver Noticia
                         </button>
+
                     </div>
                     </div>
                     <!-- Modal -->
@@ -230,9 +220,9 @@
 
                 <div class="row">
                     <div class="col"><!--Calendario-->
-                        <div class="my-5">
-                            <h3>Calendario de Eventos</h3>
-                        </div>
+                            <div class="d-flex justify-content-center align-items-center bg-white w-100" style="height: 150px;">
+                        <h2 style="box-shadow: inset 0 -2px 0 #dbca11">CALENDARIO DE EVENTOS</h2>
+                            </div>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -247,47 +237,47 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                <td class="p-5"></td>
-                                <td class="p-5"></td>
-                                <td class="p-2">1<br><br><?php echo $titulos_1?></td>
-                                <td class="p-2">2<br><br><?php echo $titulos_2?></td>
-                                <td class="p-2">3<br><br><?php echo $titulos_3?></td>
-                                <td class="p-2">4<br><br><?php echo $titulos_4?></td>
-                                <td class="p-2">5<br><br><?php echo $titulos_5?></td>
+                                <td></td>
+                                <td></td>
+                                <td><br><br><?php echo $titulos_1?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_2?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_3?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_4?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_5?></td>
                                 </tr>
                                 <tr class="p-5">
-                                <td class="p-2">6<br><br><?php echo $titulos_6?></td>
-                                <td class="p-2">7<br><br><?php echo $titulos_7?></td>
-                                <td class="p-2">8<br><br><?php echo $titulos_8?></td>
-                                <td class="p-2">9<br><br><?php echo $titulos_9?></td>
-                                <td class="p-2">10<br><br><?php echo $titulos_10?></td>
-                                <td class="p-2">11<br><br><?php echo $titulos_11?></td>
-                                <td class="p-2">12<br><br><?php echo $titulos_12?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_6?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_7?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_8?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_9?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_10?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_11?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_12?></td>
                                 </tr>
                                 <tr>
-                                <td class="p-2">13<br><br><?php echo $titulos_13?></td>
-                                <td class="p-2">14<br><br><?php echo $titulos_14?></td>
-                                <td class="p-2">15<br><br><?php echo $titulos_15?></td>
-                                <td class="p-2">16<br><br><?php echo $titulos_16?></td>
-                                <td class="p-2">17<br><br><?php echo $titulos_17?></td>
-                                <td class="p-2">18<br><br><?php echo $titulos_18?></td>
-                                <td class="p-2">19<br><br><?php echo $titulos_19?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_13?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_14?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_15?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_16?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_17?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_18?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_19?></td>
                                 </tr>
                                 <tr>
-                                <td class="p-2">20<br><br><?php echo $titulos_20?></td>
-                                <td class="p-2">21<br><br><?php echo $titulos_21?></td>
-                                <td class="p-2">22<br><br><?php echo $titulos_22?></td>
-                                <td class="p-2">23<br><br><?php echo $titulos_23?></td>
-                                <td class="p-2">24<br><br><?php echo $titulos_24?></td>
-                                <td class="p-2">25<br><br><?php echo $titulos_25?></td>
-                                <td class="p-2">26<br><br><?php echo $titulos_26?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_20?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_21?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_22?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_23?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_24?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_25?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_26?></td>
                                 </tr>
                                 <tr class="p-5">
-                                <td class="p-2">27<br><br><?php echo $titulos_27?></td>
-                                <td class="p-2">28<br><br><?php echo $titulos_28?></td>
-                                <td class="p-2">29<br><br><?php echo $titulos_29?></td>
-                                <td class="p-2">30<br><br><?php echo $titulos_30?></td>
-                                <td class="p-2">31<br><br><?php echo $titulos_31?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_27?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_28?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_29?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_30?></td>
+                                <td class="p-2"><br><br><?php echo $titulos_31?></td>
                                 <td class="p-5"></td>
                                 <td class="p-5"></td>
                                 </tr>
@@ -301,7 +291,7 @@
        
         <section id="AcercaDelPosgrado" class="section-margin my-5" style="height:700px;"><!--2. Acerca del Posgrado-->
             <div class="d-flex justify-content-center align-items-center bg-white w-100" style="height: 150px;">
-                <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Acerca de Nosotros</h2>
+                <h2 style="box-shadow: inset 0 -2px 0 #dbca11">ACERCA DE NOSOTROS</h2>
             </div>
             <div class="container my-5">
                 <div class="row">
@@ -360,194 +350,90 @@
         </section>
 
     
+        <?php
+$con = conectar();
 
-        <?php 
-        include("../../conexion.php");
-        $con = conectar();
+$sql = "SELECT * FROM academicos LIMIT 3"; // Obtener los tres primeros académicos
+$query = mysqli_query($con, $sql);
 
-        $sql="SELECT * FROM academicos WHERE COD_ACADEMICO='9991'";
-        $query=mysqli_query($con,$sql);
+?>
 
-        $row=mysqli_fetch_array($query);
-
-        
-    
-
-
-
-        ?>
-        <section id="Academicos" class="section-margin"><!--2.1 Academicos-->
-            <div class="d-flex justify-content-center align-items-center bg-white w-100" style="height: 150px;">
-                <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Academicos</h2>
-            </div>
-            <div class="container">
-                <div class="row mb-5">
-                    <div class="col">
-                    <div class="card">
+<section id="Academicos" class="section-margin"><!--2.1 Academicos-->
+    <div class="d-flex justify-content-center align-items-center bg-white w-100" style="height: 150px;">
+        <h2 style="box-shadow: inset 0 -2px 0 #dbca11">ACADÉMICOS</h2>
+    </div>
+    <div class="container">
+        <div class="row mb-5">
+            <?php
+            while ($row = mysqli_fetch_array($query)) {
+            ?>
+                <div class="col">
+                    <div class ="card">
                         <div class="card-body d-flex flex-column justify-content-center">
-                            <h4 class="text-center">Dante Carrizo</h4>
-                            <p class="text-center">Profesor</p>
-                            
+                            <h4 class="text-center"><?php echo $row['NOMBRE']; ?></h4>
+                            <p class="text-center"><?php echo $row['CARGO']; ?></p>
+                            <center>
+                            <img class ="m-5"style="width:200px; height:auto" src="data:image/jpg;base64,<?php echo base64_encode($row['IMG_ACADEMICO']); ?>" alt="">
+                            </center>
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-                            <img src="img-academicos/eye.svg" style="margin-right: 5px; width:20px;">Ver perfil
-                            </button>
+                            <a type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $row['COD_ACADEMICO']; ?>">
+                                <img src="img-academicos/eye-svgrepo-com.svg" style="margin-right: 5px; width:20px;">MÁS INFORMACIÓN
+                            </a>
 
                             <!-- Modal -->
-                            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Perfil</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                <div class="container">
-                                    <div class="row align-items-start">
-                                        <div class="col-4">
-                                        <img src="img-academicos/Dante.jpg" class="img-fluid" alt="Tu Imagen">
+                            <div class="modal fade" id="exampleModal<?php echo $row['COD_ACADEMICO']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">INFORMACIÓN</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
-                                        <div class="col-8">
-                                        
-                                        <p><br>Nombre: Dante Carrizo<br><br>Edad: 20 anios<br><br>Rol: Profesor<br></p>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-4 mb-3">
-                                        <div class="col-12">
-                                        <p>Esta es una descripción adicional del perfil. Aquí se puede incluir más detalles o información relevante.</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-12 d-flex justify-content-center">
-                                            <a href="https://diicc.uda.cl/academico.php?id=3">
-                                            <button type="button" class="btn btn-primary">
-                                                <img src="img-academicos/user-icon.svg" style="margin-right: 5px; width:20px;">Ir a Web Personal
-                                            </button>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="col">
-                    <div class="card">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h4 class="text-center"><?php echo $row['NOMBRE']?></h4>
-                            <p class="text-center"><?php echo $row['CARGO']?></p>
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-                            <img src="img-academicos/eye.svg" style="margin-right: 5px; width:20px;">Ver perfil
-                            </button>
+                                        <div class="modal-body">
+                                            <div class="container">
+                                                <div class="row align-items-start">
+                                                    <div class="col-12">
+                                                    <center>
+                                                            <strong>NOMBRE:</strong>
+                                                            <p><?php echo $row['NOMBRE']; ?></p>
+                                                            <strong>CORREO:</strong>
+                                                            <p><?php echo $row['CORREO']; ?></p>
 
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Perfil</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                <div class="container">
-                                    <div class="row align-items-start">
-                                        <div class="col-4">
-                                        <img style="width:200px;"src="data:image/jpg;base64,<?php echo base64_encode($row['IMG_ACADEMICO'])?>" alt="">
+                                                    </center>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-4 mb-3">
+                                                    <div class="col-12 text-justify">
+                                                        <center>
+                                                            <strong>GRADO ACADÉMICO</strong>
+                                                            <p class="text-justify"><?php echo $row['GRADO']; ?></p>
+                                                        </center>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="col-8">
-                                        
-                                        <p><br>Nombre:<?php echo $row['NOMBRE']?><br><br>Correo:<?php echo $row['CORREO']?><br><br></p>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-4 mb-3">
-                                        <div class="col-12">
-                                        <center>
-                                        <strong>GRADO ACADÉMICO</strong>
-                                        <p><?php echo $row['GRADO']?></p>
-                                        </center>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                                         </div>
                                     </div>
                                 </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                </div>
-                                </div>
-                            </div>
                             </div>
                         </div>
-                    </div>
-                    </div>
-                    <div class="col">
-                    <div class="card">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h4 class="text-center">Hector Cornide</h4>
-                            <p class="text-center">Profesor</p>
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">
-                            <img src="img-academicos/eye.svg" style="margin-right: 5px; width:20px;">Ver perfil
-                            </button>
-
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Perfil</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                <div class="container">
-                                    <div class="row align-items-start">
-                                        <div class="col-4">
-                                        <img src="img-academicos/hector.jpg" class="img-fluid" alt="Hector">
-                                        </div>
-                                        <div class="col-8">
-                                        
-                                        <p>Nombre: Hector Cornide<br><br>Edad: 20 anios<br><br>Rol: Profesor<br></p>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-4 mb-3">
-                                        <div class="col-12">
-                                        <p>Esta es una descripción adicional del perfil. Aquí se puede incluir más detalles o información relevante.</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-12 d-flex justify-content-center">
-                                            <a href="https://diicc.uda.cl/academico.php?id=4">
-                                            <button type="button" class="btn btn-primary">
-                                                <img src="img-academicos/user-icon.svg" style="margin-right: 5px; width:20px;">Ir a Web Personal
-                                            </button>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
                     </div>
                 </div>
-                
-        </section>
+            <?php
+            }
+            ?>
+        </div>
+    </div>
+</section>
+
+
 
 
         <section id="AreasDeInvestigacion" class="section-margin"><!--2.2 Areas de Investigacion-->
             <div class="section-margin mx-auto my-auto">
                 <div class="d-flex justify-content-center align-items-center bg-white w-100" style="height: 150px;">
-                    <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Areas de Investigacion</h2>
+                    <h2 style="box-shadow: inset 0 -2px 0 #dbca11">ÁREAS DE INVESTIGACIÓN</h2>
                 </div>
                 <div class="row mx-auto" style="border-bottom: 2px solid #364c59; width:1000px; height: 300px;">
                     <div class="col w-25 d-flex justify-content-center">
@@ -578,49 +464,87 @@
                 </div>
             </div>
         </section>
-
-  <section id="AdmisionYRequisitos" class="section-margin my-5"><!--2.3Admision-->
-              <div class="container my-5">
+    <!--Agregado enlace de formulario con modal para postulacion-->
+    <section id="AdmisionYRequisitos" class="section-margin"><!--2.3Admision-->
+              <div class="container">
                   <div class="d-flex justify-content-center align-items-center bg-white w-100 mb-3" style="height: 150px;">
                       <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Admision y Requisitos</h2>
                   </div>
                   <div style="width: 1100px; height: 700px;">
-                      <div class="row primary-color h-100">
-                          <div class="col h-100 p-4 d-flex flex-column">
-                              <h3 class="text-white text-center mt-4 mb-5">Postulacion</h3>
-                              <p class="text-white text-justify">Se inicia la convocatoria de postulación para el programa de "MAGÍSTER EN INFORMÁTICA Y CIENCIAS DE LA COMPUTACIÓN". Podrán ser postulantes todos aquellos que cumplan con los requisitos asociados.
+                      <div class="row primary-color h-100" >
+                          <div class="col h-100 p-4 d-flex flex-column" >
+                                <h3 class="text-white text-center mt-4 mb-5">Postulacion</h3>
+                                <p class="text-white text-justify">Se inicia la convocatoria de postulación para el programa de "MAGÍSTER EN INFORMÁTICA Y CIENCIAS DE LA COMPUTACIÓN". Podrán ser postulantes todos aquellos que cumplan con los requisitos asociados.
 
-                              "La Universidad de Atacama ofrece becas de liberación de arancel y la posibildad de una ayuda económica, otorgables de acuerdo a la exigencia del reglamento"
-                              <ul class="text-white text-justify">
-                              <li class="m-2">- Postulación de las bases: 17 de noviembre del 2023</li>
-                              <li class="m-2">- Fin recepción documentación postulantes: 15 de diciembre del 2023</li>
-                              <li class="m-2">- Entrevista a los postulantes: 18 - 22 de diciembre del 2023</li>
-                              </ul>
-                              </p>
-                          </div>
-                          <div class="col p-0 h-100">
+                                "La Universidad de Atacama ofrece becas de liberación de arancel y la posibildad de una ayuda económica, otorgables de acuerdo a la exigencia del reglamento"
+                                <ul class="text-white text-justify">
+                                <li class="m-2">- Postulación de las bases: 17 de noviembre del 2023</li>
+                                <li class="m-2">- Fin recepción documentación postulantes: 15 de diciembre del 2023</li>
+                                <li class="m-2">- Entrevista a los postulantes: 18 - 22 de diciembre del 2023</li>
+                                </ul>
+                                </p>
+                                <div class="col-2 justify-content-center mx-5 mb-5">
+                                    <button type="button" class="btn btn-primary" style="width: 150px;" data-toggle="modal" data-target="#formulariopostulacion">Postulacion</button>             
+                                </div>
+                                <!-- Modal Contacto -->
+                                <div class="modal fade" id="formulariopostulacion" tabindex="-1" role="dialog" aria-labelledby="modalContactoCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLongTitle">Formulario Postulacion</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">                                        
+                                                <div class="row">
+                                                    <div class="col-md-6 offset-lg-3">
+                                                        <form action ="ficheros_panel/form_postulacion/agregar_postulacionindex.php" method="POST" enctype="multipart/form-data">
+                                                            <input type="text" class ="mb-3 form-control" name = "RUT" placeholder = "RUT" required>
+                                                            <input type="text" class ="mb-3 form-control" name = "NOMBRE" placeholder = "NOMBRE" required>
+                                                            <input type="date" class ="mb-3 form-control" name = "FECHA_NAC" placeholder = "FECHA NACIMIENTO">
+                                                            <input type="text" class ="mb-3 form-control"  name = "GENERO" placeholder = "GENERO">
+                                                            <input type="email" class ="mb-3 form-control" name = "CORREO" placeholder = "CORREO" required>
+                                                            <input type="text" class ="mb-3 form-control" name = "TELEFONO" placeholder="TELÉFONO">
+                                                            <input type="text" class ="mb-3 form-control" name = "DIRECCION" placeholder = "DIRECCIÓN">
+                                                            <input type="text" class ="mb-3 form-control" name = "INSTITUCION" placeholder = "INSTITUCIÓN">
+                                                            <input type="text" class ="mb-3 form-control" name = "GRADO" placeholder = "GRADO" >    
+                                                            <input type="text" class ="mb-3 form-control" name = "ANO_GRADUACION" placeholder = "AÑO GRADUACIÓN" >    
+                                                            <input type="text" class ="mb-3 form-control" name = "CAMPO_ESTUDIO" placeholder = "CAMPO DE ESTUDIO" >      
+                                                            <input type="submit" class ="btn btn-primary btn-success">
+                                                        </form>
+                                                    </div>
+                                                </div>                           
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            
+                        
+                        <div class="col p-0 h-100">
                               <img src="img-magister-desc/img-magister-desc-3.jpg" style="width: 100%; height: 100%; object-fit: cover;">
-                          </div>
-                          <div class="col secondary-color h-100 p-4 d-flex flex-column">
-                              <h3 class="text-center mt-4 mb-5">Requisitos</h3>
-                              <p class="text-justify">1.- Estar en posesión de grado académico Licenciado en Ciencias de la Ingeniería y un título profesional universitario en el área de la computación e informática o afín, con un mínimo de cuatro años de estudio, y con nivel medio de lectura en inglés.
+                        </div>
+                        <div class="col secondary-color h-100 p-4 d-flex flex-column" >
+                            <h3 class="text-center mt-4 mb-5">Requisitos</h3>
+                            <p class="text-justify">1.- Estar en posesión de grado académico Licenciado en Ciencias de la Ingeniería y un título profesional universitario en el área de la computación e informática o afín, con un mínimo de cuatro años de estudio, y con nivel medio de lectura en inglés.
 
-                              <br><br>2.-Los estudiantes del plan de la carrera de Ingeniería civil en computación e informática de la Universidad de Atacama podrán postular al programa si han cursado completamente el quinto año de la carrera.
+                            <br><br>2.-Los estudiantes del plan de la carrera de Ingeniería civil en computación e informática de la Universidad de Atacama podrán postular al programa si han cursado completamente el quinto año de la carrera.
 
-                              <br><br>Documentación: Solicitud de postulación, carta de intensiones, certificado de grado y título (si procede), curriculum vitae, fotocopia de cédula de indentidad, certificado de notas si procede, certificado de lectura de Inglés si lo tiene.
-                              </p>
-                          </div>
-                      </div>
+                            <br><br>Documentación: Solicitud de postulación, carta de intensiones, certificado de grado y título (si procede), curriculum vitae, fotocopia de cédula de indentidad, certificado de notas si procede, certificado de lectura de Inglés si lo tiene.
+                            </p>
+                        </div>
+                    </div>
                   </div>
               </div>
-          </section>
+    </section>
 
        
 
 
         <section id="PlanDeEstudios" class="section-margin"><!--4. Plan de Estudios-->
         <div style="display: flex; justify-content: center; align-items: center; background-color: white; width: 100%; height: 150px;">
-                <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Estudios</h2>
+                <h2 style="box-shadow: inset 0 -2px 0 #dbca11">ESTUDIOS</h2>
         </div>
             <div class="layout mt-5 mb-5">
                 <div class="container">
@@ -638,33 +562,58 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12 custom-sec-img wow fadeInDown" >
-               
-                    <table class="table mx-5">
-                    <thead >
-                        <tr >
-                        <th scope="col">1° semestre <br>9/9</th>
-                        <th scope="col">2° semestre <br>6/6</th>
-                        <th scope="col">3° semestre <br>3/12</th>
-                        <th scope="col">4° semestre <br>3/12</th>
+
+                <?php
+                include_once("ficheros_panel/horario_clases/VariablesClase.php");
+                ?>
+
+                <div class="row">
+                    <div class="col"><!--Calendario-->
+
+                        <table class="table table-bordered table-hover">
+                        <thead class="bg-dark text-white">
+                        <tr>
+                        <th scope="col" style="background-color: #364c59;color:white;">HORAS</th>
+                        <th scope="col" style="background-color: #364c59;color:white;">LUNES</th>
+                        <th scope="col" style="background-color: #364c59;color:white;">MARTES</th>
+                        <th scope="col" style="background-color: #364c59;color:white;">MIÉRCOLES</th>
+                        <th scope="col" style="background-color: #364c59;color:white;">JUEVES</th>
+                        <th scope="col" style="background-color: #364c59;color:white;">VIERNES</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                        <th scope="col" style="background-color: #58D68D; margin-right: 30px 30px;">Asignatura fundamental <br> 3/3</th>
-                        <td scope="col" style="background-color: #CD6155; margin: 30px;">Seminario de investigación <br>  3/3</td>
-                        <td scope="col" style="background-color: #5DADE2; margin: 30px">Tesis de grado 1<br> 3/12</td>
-                        <td scope="col" style="background-color: #5DADE2;">Tesis de grado 2<br> 3/12</td>
+                        <td>8:00 - 9:30</td>
+                        <td><?php echo $titulos_1?></td>
+                        <td><?php echo $titulos_2?></td>
+                        <td><?php echo $titulos_3?></td>
+                        <td><?php echo $titulos_4?></td>
+                        <td><?php echo $titulos_5?></td>
                         </tr>
                         <tr>
-                        <th scope="col"  style="background-color: #BB8FCE ;">Tópico 1 <br>3/3</th>
-                        <td scope="col" style="background-color: #BB8FCE ;">tópico 2 <br>3/3</td>                       
+                        <td>9:40 - 11:10</td>
+                        <td><?php echo $titulos_6?></td>
+                        <td><?php echo $titulos_7?></td>
+                        <td><?php echo $titulos_8?></td>
+                        <td><?php echo $titulos_9?></td>
+                        <td><?php echo $titulos_10?></td>
+
                         </tr>
                         <tr>
-                        <th style="background-color: #CD6155; margin: 30px;">Metodologia de investigación <br>3/3</th>
+                        <td>11:20 - 12:50</td>
+                        <td><?php echo $titulos_11?></td>
+                        <td><?php echo $titulos_12?></td>
+                        <td><?php echo $titulos_13?></td>
+                        <td><?php echo $titulos_14?></td>
+                        <td><?php echo $titulos_15?></td>
+                        </tr>
+                 
                         
-                        </tr>
+                        
                     </tbody>
-                    </table>                    
+                </table>
+                    </div>
+                </div>
                 </div>
             </div>    
         <div class="container " id="estudioscolum">
@@ -755,13 +704,13 @@
         </div>
         </section>
                       
-         <section class="container" id="InvestigacionYProyectos"><!--5. Investigación y proyectos-->
+        <section class="container" id="InvestigacionYProyectos"><!--5. Investigación y proyectos-->
 
         <div style="display: flex; justify-content: center; align-items: center; background-color: white; width: 100%; height: 150px;">
                 <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Investigación y Proyectos</h2>
-            </div>
+        </div>
 
-            <div class ="row">
+        <div class ="row">
 
 
                 
@@ -820,37 +769,43 @@
                 <div class ="col-7">
                   <div style ="display: block;width: 100%;overflow-x: auto; overflow-y: auto; max-height: 200px">
                 <!-- TABLAx -->
-                <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Área de Investigación</th>
-        <th scope="col">Investigador</th>
-        <th scope="col">Título</th>
-        <th scope="col">Año de Ejecución</th>
-        <th scope="col">Detalles</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Ingeniería de Software</td>
-        <td>Dante Carrizo</td>
-        <td>Mejora del proceso de educción de requisitos software por medio de evidencia empírica (1º Parte)</td>
-        <td>2010</td>
-        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#proyectoModal" data-investigador="Dante Carrizo" data-titulo="Mejora del proceso de educción de requisitos software por medio de evidencia empírica (1º Parte)" data-tipo-fondo="DIUDA2010" data-ano-ejecucion="2010">Ver Detalles</button></td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Gestión de Tecnologías de Información</td>
-        <td>Alejandro Cataldo</td>
-        <td>Evaluación de la usabilidad de aplicaciones móviles multi-plataforma</td>
-        <td>2016</td>
-        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#proyectoModal" data-investigador="Alejandro Cataldo" data-titulo="Evaluación de la usabilidad de aplicaciones móviles multi-plataforma" data-tipo-fondo="DIUDA" data-ano-ejecucion="2016">Ver Detalles</button></td>
-      </tr>
 
-    </tbody>
-  </table>
+  <table class="table">
+                <thead id="tablapostulacion" style=" background-color: #364c59;color: white;text-align: center;">
+                    <tr>
+                        <th scope="col">COD. PROYECTO</th>
+                        <th scope="col">AREA</th>
+                        <th scope="col">TITULO</th>
+                        <th scope="col">FONDO</th>
+                        <th scope="col">ANO</th>
+                        <th scope="col">URL_PROYECTO</th>       
+                        <th scope="col">INVESTIGADOR</th> 
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                        include_once("../../conexion.php");
+                        $con = conectar();
+                        $sql = "SELECT p.*, a.NOMBRE as nombre_autor
+                        FROM proyectos p
+                        LEFT JOIN academicos a ON p.COD_AUTOR = a.COD_ACADEMICO";
+
+                        $resultado = $con->query($sql);
+                        while($fila = $resultado->fetch_assoc()) { ?>
+                    <tr>
+                        <th scope="row"><?php echo $fila['COD_PROYECTO']?></th>
+                        <td><?php echo $fila['AREA']?></td>
+                        <td><?php echo $fila['TITULO']?></td>
+                        <td><?php echo $fila['FONDO']?></td>
+                        <td><?php echo $fila['ANO']?></td>
+                        <td><?php echo $fila['URL_PROYECTO']?></td> 
+                        <td><?php echo $fila['nombre_autor']?></td>
+                    </tr>
+                    </tbody>
+
+                    <?php } ?>
+                </table>
+
 </div>
 </div>
 
@@ -866,10 +821,10 @@
       </div>
       <div class="modal-body">
         <!-- CONTENIDO QUE VA CAMBIANDO DEL MODAL -->
-        <p id="investigador"></p>
-        <p id="titulo"></p>
-        <p id="tipo-fondo"></p>
-        <p id="ano-ejecucion"></p>
+        <p id="investigador">a</p>
+        <p id="titulo">a</p>
+        <p id="tipo-fondo">a</p>
+        <p id="ano-ejecucion">a</p>
     
       </div>
       <div class="modal-footer">
@@ -881,8 +836,56 @@
             </div>
 
 
-            </div>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center; background-color: white; width: 100%; height: 150px;">
+            <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Publicaciones</h2>
+        </div>
+        <div class="row" >  
+            <div class ="container text-center">
+                <div style ="display: block; width: 100%;overflow-x: auto; overflow-y: auto; max-height: 500px">               
+                <table class="table">
+                <thead id="tablapostulacion" style=" background-color: #364c59;color: white;text-align: center;">
+                    <tr>
+                        <th scope="col" style="width: 50px">#</th>
+                        <th scope="col">AREA</th>
+                        <th scope="col">TUTOR</th>
+                        <th scope="col">COHORTE</th>       
+                        <th scope="col">ESTUDIANTE</th> 
+                        <th scope="col"> TITULO</th>
+                        <th scope="col">INDEXACION</th>
+                        <th scope="col">FECHA</th>
+                        <th scope="col">EVENTO</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                        include("../../conexion.php");
+                        $con = conectar();
+                        $sql = "SELECT p.*, a.NOMBRE as nombre_autor, e.NOMBRE as nombre_estudiante
+                        FROM publicaciones p
+                        LEFT JOIN academicos a ON p.COD_AUTOR = a.COD_ACADEMICO
+                        LEFT JOIN exalumnos e ON p.COD_ESTUDIANTE = e.ID_EXLAUMNO";
 
+                        $resultado = $con->query($sql);
+                        while($fila = $resultado->fetch_assoc()) { ?>
+                    <tr>
+                        <th scope="row"><?php echo $fila['COD_PUBLICACION']?></th>
+                        <td><?php echo $fila['AREA']?></td>
+                        <td><?php echo $fila['nombre_autor']?></td>
+                        <td><?php echo $fila['COHORTE']?></td>
+                        <td><?php echo $fila['nombre_estudiante']?></td>
+                        <td><?php echo $fila['TITULO']?></td>
+                        <td><?php echo $fila['INDEXACION']?></td>
+                        <td><?php echo $fila['FECHA']?></td>
+                        <td><?php echo $fila['EVENTO']?></td>
+                    </tr>
+                    </tbody>
+
+                    <?php } ?>
+                </table>
+                </div>
+                </div>
+        </div>
 
 
         </section>
@@ -1189,38 +1192,38 @@
                               <div>
                                 <div class="row">
                                     <div class="col-md-6 offset-lg-3">
-                                        <form >
+                                        <form action ="ficheros_panel/form_contacto/agregar_contactoindex.php" method="POST" enctype="multipart/form-data">
                                             <div class="form-group mb-3">
                                                 <label for="nombre">RUT:</label>
-                                                <input type="text" class="form-control mb-3 mt-3" name ="rut" id="rut" placeholder="Ingresa tu RUT">
+                                                <input type="text" class ="form-control mb-3 mt-3" name = "RUT" placeholder = "RUT" required>
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label for="nombre">NOMBRE:</label>
-                                                <input type="text" class="form-control mb-3 mt-3" name ="nombre" id="nombre" placeholder="Ingresa tu nombre">
+                                                <input type="text" class ="form-control mb-3 mt-3" name = "NOMBRE" placeholder = "NOMBRE" required>
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label for="nombre">FECHA NACIMIENTO:</label>
-                                                <input type="text" class="form-control mb-3 mt-3" name ="fecha_nac" id="fecha_nac" placeholder="Ingresa tu fecha de nacimiento">
+                                                <input type="date" class ="form-control mb-3 mt-3" name = "FECHA_NAC" placeholder = "FECHA_NAC">
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label for="nombre">GENERO:</label>
-                                                <input type="text" class="form-control mb-3 mt-3" name ="genero" id="genero" placeholder="Ingresa tu género">
+                                                <input type="text" class ="form-control mb-3 mt-3"  name = "GENERO" placeholder = "GENERO">
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label for="nombre">CORREO:</label>
-                                                <input type="email" class="form-control mb-3 mt-3" name ="email" id="email" placeholder="Ingresa tu e-mail">
+                                                <input type="email" class ="form-control mb-3 mt-3" name = "CORREO" placeholder = "CORREO" required>
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label for="nombre">TELEFONO:</label>
-                                                <input type="text" class="form-control mb-3 mt-3" name ="telefono" id="telefono" placeholder="Ingresa tu teléfono">
+                                                <input type="text" class ="form-control mb-3 mt-3" name = "TELEFONO" placeholder="TELEFONO">
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label for="nombre">DIRECCION:</label>
-                                                <input type="text" class="form-control mb-3 mt-3" name ="direccion" id="direccion" placeholder="Ingresa tu dirección">
+                                                <input type="text" class ="form-control mb-3 mt-3" name = "DIRECCION" placeholder = "DIRECCION">
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label for="nombre">INSTITUCIÓN:</label>
-                                                <input type="text" class="form-control mb-3 mt-3" name ="institucion" id="institucion" placeholder="Ingresa tu institución">
+                                                <input type="text" class ="form-control mb-3 mt-3" name = "INSTITUCION" placeholder = "INSTITUCION">
                                             </div>
                                             
                                             <input type="submit" class="mt-3 mx-5 mb-3 btn btn-primary btn-block" value="ENVIAR"></button>

@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="../styleFicheros.css">
+    <link rel="stylesheet" href="stylecontacto.css">
   </head>
-  <body>
-    <nav class="navbar navbar-dark fixed-top" style="background-color: #364c59;">
+<body>
+<nav class="navbar navbar-dark fixed-top" style="background-color: #364c59;">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <img src="../../logos/logo-corp-diic-txtblanco.png"  width="150px"  height="50px">
@@ -67,50 +67,49 @@
           </div>
         </div>
     </nav>
-    <div class="container">
-
-    <center>
-        <h1 class ="mt-5">ACADÉMICOS</h1>
-    </center>
-    <br>   
-        <a href="nuevo_academico.php" class="m-3 btn btn-dark">Agregar</a>
-    
+  <div class="container">
+  <center>
+    <h1 class ="mt-5">FORMULARIO DE CONTACTOS</h1>
+  </center>
+  <br>   
+  <a href="nueva_contacto.php" class="m-3 btn btn-dark">Agregar</a>   
   </div>
-
     <center>
     <table class="table">
     <thead>
       <tr>
-        <th scope="col">CÓD. ACADÉMICO</th>
+        <th scope="col">RUT</th>
         <th scope="col">NOMBRE</th>
-        <th scope="col">CORREO</th>
-        <th scope="col">CARGO</th>       
-        <th scope="col">GRADO ACADÉMICO</th> 
-        <th scope="col">IMG. ACADÉMICO</th>
-        <th scope="col">ACCIONES</th>
+        <th scope="col">FECHA DE NACIMINETO</th>
+        <th scope="col">GENERO</th>       
+        <th scope="col">CORREO</th> 
+        <th scope="col"> TELEFONO</th>
+        <th scope="col">DIRECCIÓN</th>
+        <th scope="col">INSTITUCIÓN</th>
+        <th colspan="2">ACCIÓN</th>
       </tr>
     </thead>
     <tbody>
-
-
     <?php
         include("../../conexion.php");
         $con = conectar();
-        $sql = "SELECT * FROM academicos";
+        $sql = "SELECT * FROM  formulario_contacto";
         $resultado = $con->query($sql);
         while($fila = $resultado->fetch_assoc()) { ?>
     <tr>
-      <th scope="row"><?php echo $fila['COD_ACADEMICO']?></th>
+      <th scope="row"><?php echo $fila['RUT']?></th>
       <td><?php echo $fila['NOMBRE']?></td>
+      <td><?php echo $fila['FECHA_NAC']?></td>
+      <td><?php echo $fila['GENERO']?></td>
       <td><?php echo $fila['CORREO']?></td>
+      <td><?php echo $fila['TELEFONO']?></td>
+      <td><?php echo $fila['DIRECCION']?></td>
+      <td><?php echo $fila['INSTITUCION']?></td>
 
-      <td style="width:200px;"><?php echo $fila['CARGO']?></td>
-      <td ><?php echo $fila['GRADO']?></td>
-      <td style="width: 250px; height: 250px;"><img style="width:200px; height:200px;" src="data:image/jpg;base64,<?php echo base64_encode($fila['IMG_ACADEMICO'])?>" alt=""></td>
+
       <td>
-        <a href="modificar_academico.php?COD_ACADEMICO=<?php echo $fila["COD_ACADEMICO"]; ?>" class="btn btn-warning">EDITAR</a>
-        <a href="eliminar_academico.php?COD_ACADEMICO=<?php echo $fila["COD_ACADEMICO"]; ?>" class="btn btn-danger">ELIMINAR</a>        
-      </td>
+        <a href="modificar_contacto.php?RUT=<?php echo $fila["RUT"]; ?>" class="btn btn-warning">EDITAR</a>
+        <a href="eliminar_contacto.php?RUT=<?php echo $fila["RUT"]; ?>" class="btn btn-danger">ELIMINAR</a>        </td>
     </tr>
   </tbody>
   <?php } ?>

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../styleFicheros.css">
   </head>
   <body>
-    <nav class="navbar navbar-dark fixed-top" style="background-color: #364c59;">
+  <nav class="navbar navbar-dark fixed-top" style="background-color: #364c59;">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <img src="../../logos/logo-corp-diic-txtblanco.png"  width="150px"  height="50px">
@@ -70,23 +70,22 @@
     <div class="container">
 
     <center>
-        <h1 class ="mt-5">ACADÉMICOS</h1>
+        <h1 class ="mt-5">PROYECTOS</h1>
     </center>
     <br>   
-        <a href="nuevo_academico.php" class="m-3 btn btn-dark">Agregar</a>
+        <a href="nuevo_proyecto.php" class="m-3 btn btn-dark">Agregar</a>
     
   </div>
 
     <center>
-    <table class="table">
+    <table class="table m-5">
     <thead>
       <tr>
-        <th scope="col">CÓD. ACADÉMICO</th>
-        <th scope="col">NOMBRE</th>
-        <th scope="col">CORREO</th>
-        <th scope="col">CARGO</th>       
-        <th scope="col">GRADO ACADÉMICO</th> 
-        <th scope="col">IMG. ACADÉMICO</th>
+        <th scope="col">CÓD. PROYECTO</th>
+        <th scope="col">TITULO</th>
+        <th scope="col">AÑO</th>
+        <th scope="col">URL PROYECTO</th>       
+        <th scope="col">COD. AUTOR</th> 
         <th scope="col">ACCIONES</th>
       </tr>
     </thead>
@@ -96,20 +95,18 @@
     <?php
         include("../../conexion.php");
         $con = conectar();
-        $sql = "SELECT * FROM academicos";
+        $sql = "SELECT * FROM proyectos";
         $resultado = $con->query($sql);
         while($fila = $resultado->fetch_assoc()) { ?>
     <tr>
-      <th scope="row"><?php echo $fila['COD_ACADEMICO']?></th>
-      <td><?php echo $fila['NOMBRE']?></td>
-      <td><?php echo $fila['CORREO']?></td>
-
-      <td style="width:200px;"><?php echo $fila['CARGO']?></td>
-      <td ><?php echo $fila['GRADO']?></td>
-      <td style="width: 250px; height: 250px;"><img style="width:200px; height:200px;" src="data:image/jpg;base64,<?php echo base64_encode($fila['IMG_ACADEMICO'])?>" alt=""></td>
+      <th scope="row"><?php echo $fila['COD_PROYECTO']?></th>
+      <td ><?php echo $fila['TITULO']?></td>
+      <td><?php echo $fila['ANO']?></td>
+      <td><?php echo $fila['URL_PROYECTO']?></td>
+      <td><?php echo $fila['COD_AUTOR']?></td>
       <td>
-        <a href="modificar_academico.php?COD_ACADEMICO=<?php echo $fila["COD_ACADEMICO"]; ?>" class="btn btn-warning">EDITAR</a>
-        <a href="eliminar_academico.php?COD_ACADEMICO=<?php echo $fila["COD_ACADEMICO"]; ?>" class="btn btn-danger">ELIMINAR</a>        
+        <a href="modificar_proyecto.php?COD_PROYECTO=<?php echo $fila["COD_PROYECTO"]; ?>" class="btn btn-warning">EDITAR</a>
+        <a href="eliminar_proyecto.php?COD_PROYECTO=<?php echo $fila["COD_PROYECTO"]; ?>" class="btn btn-danger">ELIMINAR</a>        
       </td>
     </tr>
   </tbody>
