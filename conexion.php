@@ -4,7 +4,7 @@ function conectar()
 {
     $host = "localhost";
     $user = "root";
-    $pass = "kito1234";
+    $pass = "1110";
     $bd = "dbmagister";
 
     $con = mysqli_connect($host, $user, $pass);

@@ -466,11 +466,11 @@ $query = mysqli_query($con, $sql);
         </section>
     <!--Agregado enlace de formulario con modal para postulacion-->
     <section id="AdmisionYRequisitos" class="section-margin"><!--2.3Admision-->
-              <div class="container">
+              <div class="d-flex flex-column justify-content-center mx-auto">
                   <div class="d-flex justify-content-center align-items-center bg-white w-100 mb-3" style="height: 150px;">
                       <h2 style="box-shadow: inset 0 -2px 0 #dbca11">Admision y Requisitos</h2>
                   </div>
-                  <div style="width: 1100px; height: 700px;">
+                  <div class="mx-auto" style="width: 1100px; height: 700px;">
                       <div class="row primary-color h-100" >
                           <div class="col h-100 p-4 d-flex flex-column" >
                                 <h3 class="text-white text-center mt-4 mb-5">Postulacion</h3>
