@@ -190,16 +190,34 @@
                 $sql = "SELECT * FROM noticias WHERE VISIBILIDAD='SI'";
                 $resultado = $con->query($sql);
                 while($row = $resultado->fetch_assoc()) {?>
-                    <div class="container text-center">
-                        <div class="row d-flex justify-content-around my-5"><!--Tarjetas-->
-                            <div class="card" style="width: 18rem;">
-                                <img style="width:200px;" src="data:image/jpg;base64,<?php echo base64_encode($row['URL_IMG'])?>" class="card-img-top" alt="Imagen Noticia">
-                                <div class="card-body">
-                                    <h5 class="card-text"><?php echo $row['TITULO']?></h5>
-                                    <p class="card-text"><?php echo $row['DESCRIPCION']?></p>
-                                </div>
-                            </div>
+                    <div class="card" style="width: 18rem;">
+                    <img style="width:100%;height:200px;" src="data:image/jpg;base64,<?php echo base64_encode($row['URL_IMG'])?>" class="card-img-top" alt="Imagen Noticia">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $row['TITULO']?></h5>
+                        <p class="card-text">Fecha de la Noticia: <?php echo $row['FECHA']?></p>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#NoticiaModal<?php echo $row['ID_NOTICIA'] ;?>">
+                        Ver Noticia
+                        </button>
+                    </div>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="NoticiaModal<?php echo $row['ID_NOTICIA'] ;?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel"><?php echo $row['TITULO']?></h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
+                        <div class="modal-body">
+                            <p>Fecha de la Noticia: <?php echo $row['FECHA']?></p><br>
+                            <?php echo $row['DESCRIPCION']?>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                        </div>
+                    </div>
                     </div>
                 <?php
                 } // Cierre del bucle while
