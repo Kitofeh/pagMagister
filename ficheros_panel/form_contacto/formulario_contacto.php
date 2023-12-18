@@ -41,11 +41,15 @@
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="../../ficheros_panel/academicos/academicos.php">Académicos</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="../../ficheros_panel/Noticias_Eventos/CalendarioDeEventos.php">Calendario eventos</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="../../ficheros_panel/Noticias_Eventos/NoticiaImportante.php">Noticias</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Noticias y Eventos
+                    </a>
+                    <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item text-white" href="NoticiaImportante.php">Noticia Importante</a></li>
+                        <li><a class="dropdown-item text-white" href="CalendarioDeEventos.php">Calendario de Eventos</a></li>
+                        <li><a class="dropdown-item text-white" href="PanelNoticias.php">Tarjeta de Noticias</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="../../ficheros_panel/proyectos/proyectos.php">Proyectos</a>
