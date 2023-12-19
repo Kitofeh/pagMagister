@@ -2,14 +2,14 @@
 include("../../conexion.php");
 $con = conectar();
 
-$COD_ACADEMICO = $_REQUEST['id'];
+$COD_PROYECTO = $_REQUEST['COD_PROYECTO'];
 
-$sql = "DELETE FROM academicos WHERE COD_ACADEMICO = $COD_ACADEMICO";
+$sql = "DELETE FROM proyectos WHERE COD_PROYECTO = $COD_PROYECTO";
 
 $resultado = $con->query($sql);
 
 if ($resultado) {
-    header("Location: academicos.php");
+    header("Location: proyectos.php");
 } else {
     echo "NO SE ELIMINÓ EL DATO";
 }

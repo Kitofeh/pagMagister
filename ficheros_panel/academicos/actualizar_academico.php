@@ -1,36 +1,42 @@
 <?php
-
+// ...
 
 include("../../conexion.php");
 $con = conectar();
 
 $COD_ACADEMICO = $_REQUEST['IdEditar'];
 
+$COD_ACADEMICO2 = $_POST['COD_ACADEMICO'];
 $NOMBRE = $_POST['NOMBRE'];
 $CORREO = $_POST['CORREO'];
 $CARGO = $_POST['CARGO'];
 $GRADO = $_POST['GRADO'];
-$IMG_ACADEMICO = addslashes(file_get_contents($_FILES['IMG_ACADEMICO']['tmp_name']));
 
-// Verifica si se ha cargado una nueva imagen
-if (!empty($_FILES['IMG_ACADEMICO']['tmp_name'])) {
-    // Se cargó una nueva imagen
+// Verifica si se ha subido un nuevo archivo
+$IMG_ACADEMICO = "";
+if ($_FILES['IMG_ACADEMICO']['size'] > 0) {
     $IMG_ACADEMICO = addslashes(file_get_contents($_FILES['IMG_ACADEMICO']['tmp_name']));
-} else {
-    // No se cargó una nueva imagen, mantén la existente
-    $IMG_ACADEMICO = $fila['IMG_ACADEMICO'];
 }
 
-$sql = "UPDATE academicos SET 
+// Construye la consulta SQL
+$sql = "UPDATE academicos SET
+            COD_ACADEMICO = '$COD_ACADEMICO2',
             NOMBRE = '$NOMBRE',
             CORREO = '$CORREO',
             CARGO = '$CARGO',
-            GRADO = '$GRADO',
-            IMG_ACADEMICO = '$IMG_ACADEMICO'
-        WHERE COD_ACADEMICO = $COD_ACADEMICO";
+            GRADO = '$GRADO'";
 
+// Agrega la actualización de la imagen solo si se ha subido un nuevo archivo
+if ($IMG_ACADEMICO !== "") {
+    $sql .= ", IMG_ACADEMICO = '$IMG_ACADEMICO'";
+}
+
+$sql .= " WHERE COD_ACADEMICO = $COD_ACADEMICO";
+
+// Ejecuta la consulta
 $resultado = $con->query($sql);
 
+// Verifica el resultado y redirige
 if ($resultado) {
     header("Location: academicos.php");
 } else {
