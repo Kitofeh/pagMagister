@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Panel de Noticias</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="styleAcademicos.css">
+    <link rel="stylesheet" href="../styleFicheros.css">
   </head>
   <body>
-    <nav class="navbar navbar-dark fixed-top" style="background-color: #364c59;">
+    
+  <nav class="navbar navbar-dark fixed-top" style="background-color: #364c59;">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <img src="../../logos/logo-corp-diic-txtblanco.png"  width="150px"  height="50px">
@@ -23,7 +24,10 @@
             if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             echo "<a  href='../../logout.php'>Cerrar sesión</a>";            
           } else {
-            echo "<li class='px-2'><a  type='button' data-toggle='modal' data-target='#formularioLogin'>LOGIN</a></li>";
+            echo "<script>
+            alert('NO ESTÁS LOGUEADO. ESTÁS VOLVIENDO AL MENÚ PRINCIPAL.');
+            window.location.href = '../../index.php';
+           </script>";
           }                
         ?>
         </a>
@@ -39,54 +43,119 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Académicos</a>
+                  <a class="nav-link active" aria-current="page" href="../../ficheros_panel/academicos/academicos.php">Académicos</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Calendario eventos</a>
+                  <a class="nav-link active" aria-current="page" href="../../ficheros_panel/Noticias_Eventos/CalendarioDeEventos.php">Calendario eventos</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Noticias y Eventos
+                    </a>
+                    <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item text-white" href="NoticiaImportante.php">Noticia Importante</a></li>
+                        <li><a class="dropdown-item text-white" href="CalendarioDeEventos.php">Calendario de Eventos</a></li>
+                        <li><a class="dropdown-item text-white" href="PanelNoticias.php">Tarjeta de Noticias</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Ex-alumnos</a>
+                  <a class="nav-link active" aria-current="page" href="../../ficheros_panel/proyectos/proyectos.php">Proyectos</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Noticias</a>
+                  <a class="nav-link active" aria-current="page" href="../../ficheros_panel/publicaciones/publicaciones.php">Publicaciones</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Proyectos</a>
+                  <a class="nav-link active" aria-current="page" href="../../ficheros_panel/form_contacto/formulario_contacto.php">Form contacto</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Publicaciones</a>
+                  <a class="nav-link active" aria-current="page" href="../../ficheros_panel/form_postulacion/formulario_postulacion.php">Form postulación</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Form contacto</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Form postulación</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Horario de clases</a>
+                  <a class="nav-link active" aria-current="page" href="../../ficheros_panel/horario_clases/HorarioClases.php">Horario de clases</a>
                 </li>
               </ul>            
             </div>
           </div>
         </div>
-      </nav>
-    <div class="container">
+    </nav>
+
+    <div class="container" style="margin-top:100px;">
 
     <center>
-        <h1 class ="mt-5">NOTICIAS</h1>
+        <h1 class ="mt-5 mb-3">NOTICIAS</h1>
+    </center>  
+
+    <center>
+        <h2 class ="mt-5 mb-5">NOTICIAS VISIBLES</h2>
     </center>
-    <br>   
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#AgregarNoticia">
-        Agregar Noticia
-        </button>
+
+    <div>
+      <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID NOTICIA</th>
+          <th scope="col">FECHA</th>
+          <th scope="col">TITULO</th>
+          <th scope="col">VISIBLE</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+
+
+      <?php
+          include_once("../../conexion.php");
+          $con = conectar();
+          $sql = "SELECT * FROM noticias WHERE VISIBILIDAD = 'SI'";
+          $resultado = $con->query($sql);
+          while($row = $resultado->fetch_assoc()) { ?>
+      <tr>
+        <th scope="row" class="text-center"><?php echo $row['ID_NOTICIA']?></th>
+        <td class="text-center"><?php echo $row['FECHA']?></td>
+        <td class="text-center"><?php echo $row['TITULO']?></td>
+        <td class="text-center"><?php echo $row['VISIBILIDAD']?></td>
+        <td class="text-center"><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#OcultarNoticia<?php echo $row['ID_NOTICIA']; ?>">Ocultar</button></td>
+        <!-- Modal Ocultar -->
+        <div class="modal fade" id="OcultarNoticia<?php echo $row['ID_NOTICIA']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Ocultar Noticia</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Estas seguro que deseas ocultar la noticia de ID <?php echo $row['ID_NOTICIA']; ?> de la pagina principal?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
+                <a href="OcultarNoticia.php?id=<?php echo $row['ID_NOTICIA'] ?>" class="btn btn-danger">Ocultar</a>
+            </div>
+            </div>
+        </div>
+        </div>
+      </tr>
+    </tbody>
+    <?php } ?>
+    </table>
+    </div>
+
+    <div class="d-flex justify-content-center my-4">  
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#AgregarNoticia">
+          Agregar Noticia
+          </button>
+    </div>
+
+    <center>
+        <h2 class ="mt-5 mb-5">LISTA DE NOTICIAS</h2>
+    </center>
 
         <!-- Modal -->
         <div class="modal fade" id="AgregarNoticia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Noticia</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -135,8 +204,7 @@
             </div>
         </div>
         </div>
-    
-  </div>
+    </div>
 
     <center>
     <table class="table">
@@ -162,20 +230,20 @@
         $resultado = $con->query($sql);
         while($row = $resultado->fetch_assoc()) { ?>
     <tr>
-      <th scope="row"><?php echo $row['ID_NOTICIA']?></th>
-      <td><?php echo $row['FECHA']?></td>
-      <td><?php echo $row['TITULO']?></td>
-      <td style="width:200px;"><?php echo $row['DESCRIPCION']?></td>
+      <th scope="row" class="text-center"><?php echo $row['ID_NOTICIA']?></th>
+      <td class="text-center"><?php echo $row['FECHA']?></td>
+      <td class="text-center"><?php echo $row['TITULO']?></td>
+      <td class="text-center" style="width:200px;"><?php echo $row['DESCRIPCION']?></td>
       <td style="width: 250px;"><img style="width:200px;"src="data:image/jpg;base64,<?php echo base64_encode($row['URL_IMG'])?>" alt=""></td>
       <td><?php echo $row['VISIBILIDAD']?></td>
-      <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModificarNoticia<?php echo $row['ID_NOTICIA']; ?>">Modificar</button></td>
-      <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#EliminarNoticia<?php echo $row['ID_NOTICIA']; ?>">Eliminar</button></td>
+      <td class="text-center"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModificarNoticia<?php echo $row['ID_NOTICIA']; ?>">Modificar</button></td>
+      <td class="text-center"><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#EliminarNoticia<?php echo $row['ID_NOTICIA']; ?>">Eliminar</button></td>
       <!-- Modal Modificar -->
       <div class="modal fade" id="ModificarNoticia<?php echo $row['ID_NOTICIA']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modificar Noticia</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -231,7 +299,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar Noticia</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -244,54 +312,6 @@
             </div>
         </div>
         </div>
-    </tr>
-  </tbody>
-  <?php } ?>
-  </table>
-
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">ID NOTICIA</th>
-        <th scope="col">FECHA</th>
-        <th scope="col">TITULO</th>
-        <th scope="col">VISIBLE</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-
-
-    <?php
-        include_once("../../conexion.php");
-        $con = conectar();
-        $sql = "SELECT * FROM noticias WHERE VISIBILIDAD = 'SI'";
-        $resultado = $con->query($sql);
-        while($row = $resultado->fetch_assoc()) { ?>
-    <tr>
-      <th scope="row"><?php echo $row['ID_NOTICIA']?></th>
-      <td><?php echo $row['FECHA']?></td>
-      <td><?php echo $row['TITULO']?></td>
-      <td><?php echo $row['VISIBILIDAD']?></td>
-      <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#OcultarNoticia<?php echo $row['ID_NOTICIA']; ?>">Ocultar</button></td>
-      <!-- Modal Ocultar -->
-      <div class="modal fade" id="OcultarNoticia<?php echo $row['ID_NOTICIA']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-          <div class="modal-content">
-          <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-              Estas seguro que deseas ocultar la noticia de ID <?php echo $row['ID_NOTICIA']; ?> de la pagina principal?
-          </div>
-          <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
-              <a href="OcultarNoticia.php?id=<?php echo $row['ID_NOTICIA'] ?>" class="btn btn-danger">Ocultar</a>
-          </div>
-          </div>
-      </div>
-      </div>
     </tr>
   </tbody>
   <?php } ?>

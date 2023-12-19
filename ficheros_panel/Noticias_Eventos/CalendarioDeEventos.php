@@ -18,14 +18,22 @@ $row=mysqli_fetch_array($query);
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <!--STYLE.CSS-->
-    <link rel="stylesheet" href="../../style.css">
+
+    <link rel="stylesheet" href="../styleFicheros.css">
 
     <title>Calendario de Eventos Magister UDA</title>
 </head>
+
+<style>
+.dropdown-item:hover {
+    background-color: #343a40 !important;
+    color: white !important;
+}
+</style>
+
 <body>
 
-<nav class="navbar navbar-dark fixed-top" style="background-color: #364c59;">
+    <nav class="navbar navbar-dark fixed-top" style="background-color: #364c59;">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <img src="../../logos/logo-corp-diic-txtblanco.png"  width="150px"  height="50px">
@@ -64,8 +72,15 @@ $row=mysqli_fetch_array($query);
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="../../ficheros_panel/Noticias_Eventos/CalendarioDeEventos.php">Calendario eventos</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="../../ficheros_panel/Noticias_Eventos/NoticiaImportante.php">Noticias</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Noticias y Eventos
+                    </a>
+                    <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item text-white" href="NoticiaImportante.php">Noticia Importante</a></li>
+                        <li><a class="dropdown-item text-white" href="CalendarioDeEventos.php">Calendario de Eventos</a></li>
+                        <li><a class="dropdown-item text-white" href="PanelNoticias.php">Tarjeta de Noticias</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="../../ficheros_panel/proyectos/proyectos.php">Proyectos</a>
@@ -87,32 +102,79 @@ $row=mysqli_fetch_array($query);
           </div>
         </div>
     </nav>
-    
 
-    <!-- Modal -->
-    <div class="modal fade" id="CalendarioDeEventos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            ...
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-        </div>
-    </div>
-    </div>
-
-    <div class="mx-auto my-auto">
-        <div class="row mx-auto my-auto">
+    <div class="mx-auto my-5">
+          
+        <div class="row mx-auto my-5">
             <div class="col"><!--Calendario-->
-                <div class="my-5">
-                    <h3>Calendario de Eventos <?php echo ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"][$mesActual - 1] ?></h3>
+
+                <div class="text-center my-5 mx-auto">
+                    <h1>CALENDARIO DE EVENTOS</h1>
+                </div>
+
+                <div class="d-flex justify-content-center mb-5">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#AgregarEvento">
+                    Agregar Evento
+                    </button>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="AgregarEvento" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <form action="AgregarEvento.php" method="POST" autocomplete="off">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingInput" name="titulo" placeholder="Titulo del Evento" required>
+                                <label for="floatingInput">Titulo del Evento</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" name="descripcion" style="height: 100px" required></textarea>
+                                <label for="floatingTextarea2">Descripcion del Evento</label>
+                            </div>
+                            <div class="row g-2 mb-3">
+                                <div class="col-md">
+                                    <div class="form-floating">
+                                    <label for="fechaHora">Fecha y Hora de Inicio:</label><br>
+                                    <input type="datetime-local" id="fechaHora" name="fechainicio" name="FechaInicial" required><br>
+                                    </div>
+                                </div>
+                                <div class="col-md">
+                                    <div class="form-floating">
+                                        <label for="fechaHora">Fecha y Hora de Fin:</label><br>
+                                        <input type="datetime-local" id="fechaHora" name="fechafin" required><br>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingInput" name="ubicacion" placeholder="Ubicacion del Evento" required>
+                                <label for="floatingInput">Ubicacion del Evento</label>
+                            </div>
+                            <div class="form-floating">
+                                <select class="form-select" id="floatingSelectDisabled" name="tipo" aria-label="Floating label disabled select example" required>
+                                    <option selected>Open this select menu</option>
+                                    <option value="Conferencia">Conferencia</option>
+                                    <option value="Seminario">Seminario</option>
+                                    <option value="Taller">Taller</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                                <label for="floatingSelectDisabled">Tipo de Evento</label>
+                            </div>
+                
+                    </div>
+                            <div class="modal-footer">
+                                <input type="submit">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
                 </div>
 
                 <table class="table table-bordered" style="table-layout: fixed; width: 100%;">
@@ -179,66 +241,8 @@ $row=mysqli_fetch_array($query);
         </div>
     </div>
 
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#AgregarEvento">
-    Agregar Evento
-    </button>
-
-    <!-- Modal -->
-    <div class="modal fade" id="AgregarEvento" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-
-            <form action="AgregarEvento.php" method="POST" autocomplete="off">
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" name="titulo" placeholder="Titulo del Evento" required>
-                    <label for="floatingInput">Titulo del Evento</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" name="descripcion" style="height: 100px" required></textarea>
-                    <label for="floatingTextarea2">Descripcion del Evento</label>
-                </div>
-                <div class="row g-2 mb-3">
-                    <div class="col-md">
-                        <div class="form-floating">
-                        <label for="fechaHora">Fecha y Hora de Inicio:</label><br>
-                        <input type="datetime-local" id="fechaHora" name="fechainicio" name="FechaInicial" required><br>
-                        </div>
-                    </div>
-                    <div class="col-md">
-                        <div class="form-floating">
-                            <label for="fechaHora">Fecha y Hora de Fin:</label><br>
-                            <input type="datetime-local" id="fechaHora" name="fechafin" required><br>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" name="ubicacion" placeholder="Ubicacion del Evento" required>
-                    <label for="floatingInput">Ubicacion del Evento</label>
-                </div>
-                <div class="form-floating">
-                    <select class="form-select" id="floatingSelectDisabled" name="tipo" aria-label="Floating label disabled select example" required>
-                        <option selected>Open this select menu</option>
-                        <option value="Conferencia">Conferencia</option>
-                        <option value="Seminario">Seminario</option>
-                        <option value="Taller">Taller</option>
-                        <option value="Otro">Otro</option>
-                    </select>
-                    <label for="floatingSelectDisabled">Tipo de Evento</label>
-                </div>
-    
-        </div>
-                <div class="modal-footer">
-                    <input type="submit">
-                </div>
-            </form>
-        </div>
-    </div>
+    <div class="text-center my-5 mx-auto">
+        <h1>LISTA DE EVENTOS</h1>
     </div>
 
     <!-- Crear la tabla con Bootstrap -->

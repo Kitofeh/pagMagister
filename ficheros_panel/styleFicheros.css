@@ -75,3 +75,8 @@ a.navbar-brand:hover {
   color: #dbca11;
   text-decoration: none;
 }
+
+.dropdown-item:hover {
+  background-color: #343a40 !important;
+  color: white !important;
+}
