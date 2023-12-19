@@ -18,6 +18,7 @@ $row=mysqli_fetch_array($query);
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="../styleFicheros.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <title>Horario de Clases MAGISTER UDA</title>
 </head>
 <body>
@@ -101,7 +102,7 @@ $row=mysqli_fetch_array($query);
                     <h3>Horario de Clases</h3>
                 </div>
 
-                <table class="table table-bordered">
+                <table class="table table-bordered table-hover">
                     <thead>
                         <tr>
                         <th scope="col">HORAS</th>

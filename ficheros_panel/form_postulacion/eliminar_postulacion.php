@@ -2,7 +2,7 @@
 include("../../conexion.php");
 $con = conectar();
 
-$RUT = $_REQUEST['RUT'];
+$RUT = $_REQUEST['id'];
 
 $sql = "DELETE FROM formulario_postulacion WHERE RUT = $RUT";
 
