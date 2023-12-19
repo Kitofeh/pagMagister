@@ -82,6 +82,9 @@ $row=mysqli_fetch_array($query);
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="../../ficheros_panel/horario_clases/HorarioClases.php">Horario de clases</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="../../ficheros_panel/investigaciones/investigaciones.php">Investigaciones</a>
+                </li>
               </ul>            
             </div>
           </div>
@@ -178,8 +181,18 @@ $row=mysqli_fetch_array($query);
                     </div>
       
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" name="NOMBRE_PROFESOR" placeholder="NOMBRE DEL PROFESOR" required>
-                        <label for="floatingInput">NOMBRE DEL PROFESOR</label>
+                      <select class="mb-3 form-control" name="NOMBRE_PROFESOR" id="floatingInput3">
+                          <option value=""></option> <!-- Primer valor vacío -->
+
+                          <?php
+                          $query_academicos = "SELECT NOMBRE FROM academicos";
+                          $result_academicos = $con->query($query_academicos);
+
+                          while ($fila_academicos = $result_academicos->fetch_assoc()) {
+                              echo "<option value='" . $fila_academicos['NOMBRE'] . "'>" . $fila_academicos['NOMBRE'] . "</option>";
+                          }
+                          ?>
+                      </select>
                     </div>
 
                     <div class="form-floating mb-3">
@@ -259,22 +272,20 @@ $row=mysqli_fetch_array($query);
                     <label for="floatingInput3">NOMBRE DEL PROFESOR</label>
                 
                     <div class="form-floating mb-3">
-                      <select class="mb-3 form-control" name="NOMBRE_PROFESOR" id="floatingInput3">
-                          <option value=""></option> <!-- Primer valor vacío -->
+                    <select class="mb-3 form-control" name="NOMBRE_PROFESOR" id="floatingInput3">
+                      <option value=""></option> <!-- Primer valor vacío -->
 
-                          <?php
-                          $query_academicos = "SELECT NOMBRE FROM academicos";
-                          $result_academicos = $con->query($query_academicos);
+                      <?php
+                      $query_academicos = "SELECT NOMBRE FROM academicos";
+                      $result_academicos = $con->query($query_academicos);
 
-                          while ($fila_academicos = $result_academicos->fetch_assoc()) {
-                              echo "<option value='" . $fila_academicos['NOMBRE'] . "'>" . $fila_academicos['NOMBRE'] . "</option>";
-                          }
-                          ?>
-                      </select>
-                    </div>
+                      while ($fila_academicos = $result_academicos->fetch_assoc()) {
+                          $selected = ($fila_academicos['NOMBRE'] == $NOMBRE_PROFESOR) ? 'selected' : '';
+                          echo "<option value='" . $fila_academicos['NOMBRE'] . "' $selected>" . $fila_academicos['NOMBRE'] . "</option>";
+                      }
+                      ?>
+                  </select>
 
-                
-                       </select>
                   
 
                     <div class="form-floating mb-3">

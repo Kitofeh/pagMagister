@@ -66,30 +66,90 @@
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="../../ficheros_panel/horario_clases/HorarioClases.php">Horario de clases</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="../../ficheros_panel/investigaciones/investigaciones.php">Investigaciones</a>
+                </li>
               </ul>            
             </div>
           </div>
         </div>
     </nav>
-    <div class="container">
+
+
+    
+    <!-- Modal Añadir Clase-->
+    <div class="modal fade" id="AgregarEvento" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">AGREGAR INVESTIGACIÓN</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+        <form action ="agregar_investigacion.php" method="POST" enctype="multipart/form-data" autocomplete="off">
+
+                          
+        <div class="form-floating mb-3">
+
+        <input type="text" class ="form-control" name = "COD_INVESTIGACION" placeholder = "CÓD. INVESTIGACIÓN">
+        <label for="floatingInput">COD. INVESTIGACIÓN</label>
+
+        </div>
+
+        <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" name="DESCRIPCION"  placeholder="DESCRIPCION" required>
+        <label for="floatingInput">DESCRIPCION</label>
+        </div>
+
+        <div class="form-floating mb-3">
+        <input type="text" class ="mb-3 form-control" name = "URL_INVESTIGACION" placeholder = "LINK INVESTIGACIÓN">
+        <label for="floatingInput">LINK INVESTIGACIÓN</label>
+        </div>
+
+
+        <div class="form-floating mb-3">
+        <input type="file" class ="mb-3 form-control" name = "IMG_INVESTIGACION" accept=".jpg , .jpeg, .png" required>
+        </div>
+
+        </div>
+        <input type="submit" class="btn btn-primary">
+
+
+
+
+        </div>
+                    
+             
+            </form>
+        </div>
+    </div>
+    </div>
+
+
+
+
 
     <center>
         <h1 class ="mt-5">INVESTIGACIONES</h1>
     </center>
-    <br>   
-        <a href="nuevo_investigacion.php" class="m-3 btn btn-dark">Agregar</a>
-    
-  </div>
+
+
+    <button type="button" class="btn btn-primary m-3 mt-5" data-bs-toggle="modal" data-bs-target="#AgregarEvento">
+    Agregar Investigación
+    </button>
+
+  
 
     <center>
-    <table class="table">
+    <table class="table table-bordered table-hover">
     <thead>
       <tr>
         <th scope="col">CÓD. INVESTIGACIÓN</th>
         <th  scope="col">DESCRIPCIÓN</th>
         <th scope="col">LINK INVESTIGACIÓN</th>
         <th scope="col">FOTO INVESTIGACIÓN</th>       
-        <th scope="col">ACCIONES</th>
+        <th colspan="2">ACCIONES</th>
       </tr>
     </thead>
     <tbody>
@@ -107,12 +167,73 @@
       <td ><?php echo $fila['URL_INVESTIGACION']?></td>
       <td><img style="width:200px;"src="data:image/jpg;base64,<?php echo base64_encode($fila['IMG_INVESTIGACION'])?>" alt=""></td>
       <td>
-        <a href="modificar_investigacion.php?COD_INVESTIGACION=<?php echo $fila["COD_INVESTIGACION"]; ?>" class="btn btn-warning">EDITAR</a>
-        <a href="eliminar_investigacion.php?COD_INVESTIGACION=<?php echo $fila["COD_INVESTIGACION"]; ?>" class="btn btn-danger">ELIMINAR</a>        </td>
-    </tr>
-  </tbody>
-  <?php } ?>
-  </table>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModificarEvento<?php echo $fila['COD_INVESTIGACION']; ?>">Modificar</button></td>
+        <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#EliminarEvento<?php echo $fila['COD_INVESTIGACION']; ?>">Eliminar</button></td>
+        </tr>
+        <!-- Modal Modificar-->
+        <div class="modal fade" id="ModificarEvento<?php echo $fila['COD_INVESTIGACION']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">MODIFICAR INVESTIGACIÓN</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <form action="actualizar_investigaciones.php?IdEditar=<?php echo $fila["COD_INVESTIGACION"]?>"  enctype="multipart/form-data" method="POST" autocomplete="off">
+
+
+         
+
+                <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" name="COD_INVESTIGACION" value="<?php echo $fila['COD_INVESTIGACION']; ?>" placeholder="CÓD. ACADÉMICO" required>
+                        <label for="floatingInput">COD. INVESTIGACION</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" name="DESCRIPCION" value="<?php echo $fila['DESCRIPCION']; ?>" placeholder="DESCRIPCION" required>
+                        <label for="floatingInput">DESCRIPCION</label>
+                    </div>  
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" name="URL_INVESTIGACION" value="<?php echo $fila['URL_INVESTIGACION']; ?>" placeholder="URL_INVESTIGACION" required>
+                        <label for="floatingInput">URL_INVESTIGACION</label>
+                    </div>  
+
+                    <div class="form-floating mb-3">
+                          <img class ="m-5" style="width:200px;"src="data:image/jpg;base64,<?php echo base64_encode($fila['IMG_INVESTIGACION'])?>" alt="">
+                          <input type="file" class ="mb-3 form-control" name = "IMG_INVESTIGACION">
+                    </div>  
+
+                </div>
+                <input type="submit" class="btn btn-primary">
+
+
+                </form>
+            </div>
+        </div>
+        </div>
+        <!-- Modal Eliminar -->
+        <div class="modal fade" id="EliminarEvento<?php echo $fila['COD_INVESTIGACION']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">ELIMINAR INVESTIGACIÓN</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¿Está seguro de eliminar la investigación seleccionada?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+                <a href="eliminar_investigacion.php?id=<?php echo $fila['COD_INVESTIGACION'] ?>" class="btn btn-danger">Eliminar</a>
+            </div>
+            </div>
+        </div>
+        </div>
+        <?php } ?>
+    </tbody>
+    </table>
         </center>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>

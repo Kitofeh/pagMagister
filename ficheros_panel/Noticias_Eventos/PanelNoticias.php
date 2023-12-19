@@ -73,6 +73,9 @@
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="../../ficheros_panel/horario_clases/HorarioClases.php">Horario de clases</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="../../ficheros_panel/investigaciones/investigaciones.php">Investigaciones</a>
+                </li>
               </ul>            
             </div>
           </div>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="stylepublicaciones.css">
+    <link rel="stylesheet" href="../styleFicheros.css">
 </head>
 <body>
 <nav class="navbar navbar-dark fixed-top" style="background-color: #364c59;">
@@ -71,29 +71,114 @@
           </div>
         </div>
     </nav>
-    <div class="container">
+    
+        
+
+    <!-- Modal Añadir Clase-->
+    <div class="modal fade" id="AgregarEvento" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">AGREGAR PUBLICACIÓN</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+        <form action ="agregar_publicacion.php" method="POST" enctype="multipart/form-data" autocomplete="off">
+
+
+                          
+              <div class="form-floating mb-3">
+
+                <input type="number" class ="form-control" name = "COD_PUBLICACION" placeholder = "COD. PUBLICACION">
+                <label for="floatingInput">COD. PUBLICACIÓN</label>
+
+              </div>
+
+              <div class="form-floating mb-3">
+                <input type="text" class ="mb-3 form-control" name = "AREA" placeholder = "AREA">
+                <label for="floatingInput">AREA</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input type="number" class ="mb-3 form-control" name = "COD_AUTOR" placeholder = "COD_AUTOR">
+                <label for="floatingInput">COD. AUTOR</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input type="number" class ="mb-3 form-control"  min="1900" max="2300" name = "COHORTE" placeholder = "COHORTE">
+                <label for="floatingInput">COHORTE</label>
+              </div>
+
+              <div class="form-floating mb-3">
+              <input type="number" class ="mb-3 form-control" name = "COD_ESTUDIANTE" placeholder = "COD_ESTUDIANTE">
+              <label for="floatingInput">COD. ESTUDIANTE</label>
+              </div>
+
+    
+              <div class="form-floating mb-3">
+                <input type="text" class ="mb-3 form-control" name = "TITULO" placeholder="TITULO" required>
+                <label for="floatingInput">TÍTULO</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input type="text" class ="mb-3 form-control" name = "INDEXACION" placeholder = "INDEXACION">
+                <label for="floatingInput">INDEXACIÓN</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input type="number" class ="mb-3 form-control"  min="1900" max="2300" name = "FECHA" placeholder = "FECHA">
+                <label for="floatingInput">FECHA(AÑO)</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input type="text" class ="mb-3 form-control" name = "EVENTO" placeholder = "EVENTO">
+                <label for="floatingInput">EVENTO</label>
+              </div>
+
+              </div>
+              <input type="submit" class="btn btn-primary">
+            
+
+                
+    
+        </div>
+  
+                    
+             
+            </form>
+        </div>
+    </div>
+    </div>
+
+    <button type="button" class="btn btn-primary m-3 mt-5" data-bs-toggle="modal" data-bs-target="#AgregarEvento">
+    Agregar Publicación
+    </button>
+
+
     <center>
         <h1 class ="mt-5">PUBLICACIONES</h1>
     </center>
-        <br>   
-        <a href="nueva_publicacion.php" class="m-3 btn btn-dark">Agregar</a> 
+           <!-- Button trigger modal -->
+    
+
     </div>
     <center>
-    <table class="table">
+    <table class="table table-bordered table-hover">
     <thead>
       <tr>
-        <th scope="col">COD_PUBLICACION</th>
+        <th scope="col" style="max-width: 50px; overflow: hidden; text-overflow: ellipsis;" title="CÓD. PUBLICACIÓN">COD_PUBLICACION</th>
         <th scope="col">AREA</th>
-        <th scope="col">COD_TUTOR</th>
+        <th scope="col" style="max-width: 50px; overflow: hidden; text-overflow: ellipsis;" title="CÓD. TUTOR">COD_TUTOR</th>
         <th scope="col">TUTOR</th>
         <th scope="col">COHORTE</th>       
-        <th scope="col">COD_ESTUDIANTE</th> 
+        <th scope="col" style="max-width: 50px; overflow: hidden; text-overflow: ellipsis;" title="CÓD. ESTUDIANTE">COD_ESTUDIANTE</th> 
         <th scope="col">ESTUDIANTE</th> 
         <th scope="col"> TITULO</th>
         <th scope="col">INDEXACION</th>
         <th scope="col">FECHA</th>
         <th scope="col">EVENTO</th>
-        <th colspan="2">ACCIÓN</th>
+        <th colspan="2">ACCIONES</th>
       </tr>
     </thead>
     <tbody>
@@ -110,7 +195,7 @@
     <tr>
       <th scope="row"><?php echo $fila['COD_PUBLICACION']?></th>
       <td><?php echo $fila['AREA']?></td>
-      <td><?php echo $fila['COD_AUTOR']?></td>
+      <td ><?php echo $fila['COD_AUTOR']?></td>
       <td><?php echo $fila['nombre_autor']?></td>
       <td><?php echo $fila['COHORTE']?></td>
       <td><?php echo $fila['COD_ESTUDIANTE']?></td>
@@ -122,13 +207,121 @@
 
 
       <td>
-        <a href="modificar_publicacion.php?COD_PUBLICACION=<?php echo $fila["COD_PUBLICACION"]; ?>" class="btn btn-warning">EDITAR</a>
-        <a href="eliminar_publicacion.php?COD_PUBLICACION=<?php echo $fila["COD_PUBLICACION"]; ?>" class="btn btn-danger">ELIMINAR</a>        </td>
-    </tr>
-  </tbody>
-  <?php } ?>
-  </table>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModificarEvento<?php echo $fila['COD_PUBLICACION']; ?>">Modificar</button></td>
+      <td>
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#EliminarEvento<?php echo $fila['COD_PUBLICACION']; ?>">Eliminar</button></td>
+        </tr>
+        <!-- Modal Modificar-->
+        <div class="modal fade" id="ModificarEvento<?php echo $fila['COD_PUBLICACION']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">MODIFICAR PUBLICACIÓN</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+
+                <form action="actualizar_publicacion.php?IdEditar=<?php echo $fila["COD_PUBLICACION"]?>" method="POST" autocomplete="off">
+
+                  <div class="form-floating mb-3">
+
+                  <input type="number" class ="form-control" name = "COD_PUBLICACION" placeholder = "COD. PUBLICACION" value="<?php echo $fila['COD_PUBLICACION']; ?>">
+                  <label for="floatingInput">COD. PUBLICACIÓN</label>
+
+                  </div>
+
+                  <div class="form-floating mb-3">
+                  <input type="text" class ="mb-3 form-control" name = "AREA" placeholder = "AREA" value="<?php echo $fila['AREA']; ?>">
+                  <label for="floatingInput">AREA</label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+
+                  <select class="mb-3 form-control" name="COD_AUTOR" id="floatingInput3">
+                    <option value=""></option> <!-- Primer valor vacío -->
+
+                    <?php
+                    $query_academicos = "SELECT * FROM academicos";
+                    $result_academicos = $con->query($query_academicos);
+
+                    while ($fila_academicos = $result_academicos->fetch_assoc()) {
+                        echo "<option value='" . $fila_academicos['COD_ACADEMICO'] . "'>" . $fila_academicos['COD_ACADEMICO'] . " - " . $fila_academicos['NOMBRE'] . "</option>";
+                    }
+                    ?>
+                </select>
+        
+                  </div>
+
+                  <div class="form-floating mb-3">
+                  <input type="number" class ="mb-3 form-control"  min="1900" max="2300" name = "COHORTE" placeholder = "COHORTE" value="<?php echo $fila['COHORTE']; ?>">
+                  <label for="floatingInput">COHORTE</label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                  <input type="number" class ="mb-3 form-control" name = "COD_ESTUDIANTE" placeholder = "COD_ESTUDIANTE" value="<?php echo $fila['COD_ESTUDIANTE']; ?>">
+                  <label for="floatingInput">COD. ESTUDIANTE</label>
+                  </div>
+
+
+                  <div class="form-floating mb-3">
+                  <input type="text" class ="mb-3 form-control" name = "TITULO" placeholder="TITULO" required value="<?php echo $fila['TITULO']; ?>">
+                  <label for="floatingInput">TÍTULO</label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                  <input type="text" class ="mb-3 form-control" name = "INDEXACION" placeholder = "INDEXACION" value="<?php echo $fila['INDEXACION']; ?>">
+                  <label for="floatingInput">INDEXACIÓN</label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                  <input type="number" class ="mb-3 form-control"  min="1900" max="2300" name = "FECHA" placeholder = "FECHA" value="<?php echo $fila['FECHA']; ?>">
+                  <label for="floatingInput">FECHA(AÑO)</label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                  <input type="text" class ="mb-3 form-control" name = "EVENTO" placeholder = "EVENTO" value="<?php echo $fila['EVENTO']; ?>">
+                  <label for="floatingInput">EVENTO</label>
+                  </div>
+
+                  </div>
+                  <input type="submit" class="btn btn-primary">
+
+
+
+
+                  </div>
+
+
+                
+                </form>
+            </div>
+        </div>
+        </div>
+        <!-- Modal Eliminar -->
+        <div class="modal fade" id="EliminarEvento<?php echo $fila['COD_PUBLICACION']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">ELIMINAR PUBLICACIÓN</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¿Está seguro de eliminar la publicación seleccionada?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+                <a href="eliminar_publicacion.php?id=<?php echo $fila['COD_PUBLICACION'] ?>" class="btn btn-danger">Eliminar</a>
+            </div>
+            </div>
+        </div>
+        </div>
+        <?php } ?>
+    </tbody>
+    </table>
+    
         </center>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>
 </html>
