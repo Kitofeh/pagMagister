@@ -170,7 +170,8 @@ CREATE TABLE `noticias` (
   `FECHA` date DEFAULT NULL,
   `TITULO` varchar(45) DEFAULT NULL,
   `DESCRIPCION` varchar(45) DEFAULT NULL,
-  `URL_IMG` varchar(45) DEFAULT NULL
+  `URL_IMG` varchar(45) DEFAULT NULL,
+  `VISIBILIDAD` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE `noticia_importante` (

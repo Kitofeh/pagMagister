@@ -18,6 +18,8 @@ $row=mysqli_fetch_array($query);
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!--STYLE.CSS-->
+    <link rel="stylesheet" href="../../style.css">
 
     <title>Calendario de Eventos Magister UDA</title>
 </head>
@@ -110,10 +112,10 @@ $row=mysqli_fetch_array($query);
         <div class="row mx-auto my-auto">
             <div class="col"><!--Calendario-->
                 <div class="my-5">
-                    <h3>Calendario de Eventos</h3>
+                    <h3>Calendario de Eventos <?php echo ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"][$mesActual - 1] ?></h3>
                 </div>
 
-                <table class="table table-bordered">
+                <table class="table table-bordered" style="table-layout: fixed; width: 100%;">
                     <thead>
                         <tr>
                         <th scope="col">Domingo</th>
@@ -127,49 +129,49 @@ $row=mysqli_fetch_array($query);
                     </thead>
                     <tbody>
                         <tr>
-                        <td class="p-5"></td>
-                        <td class="p-5"></td>
-                        <td class="p-2">1<br><br><?php echo $titulos_1?></td>
-                        <td class="p-2">2<br><br><?php echo $titulos_2?></td>
-                        <td class="p-2">3<br><br><?php echo $titulos_3?></td>
-                        <td class="p-2">4<br><br><?php echo $titulos_4?></td>
-                        <td class="p-2">5<br><br><?php echo $titulos_5?></td>
+                        <td class="text-center px-0 CeldasCalendario"></td>
+                        <td class="text-center px-0 CeldasCalendario"></td>
+                        <td class="text-center px-0 CeldasCalendario">1<br><br><?php echo $titulos_1?></td>
+                        <td class="text-center px-0 CeldasCalendario">2<br><br><?php echo $titulos_2?></td>
+                        <td class="text-center px-0 CeldasCalendario">3<br><br><?php echo $titulos_3?></td>
+                        <td class="text-center px-0 CeldasCalendario">4<br><br><?php echo $titulos_4?></td>
+                        <td class="text-center px-0 CeldasCalendario">5<br><br><?php echo $titulos_5?></td>
                         </tr>
-                        <tr class="p-5">
-                        <td class="p-2">6<br><br><?php echo $titulos_6?></td>
-                        <td class="p-2">7<br><br><?php echo $titulos_7?></td>
-                        <td class="p-2">8<br><br><?php echo $titulos_8?></td>
-                        <td class="p-2">9<br><br><?php echo $titulos_9?></td>
-                        <td class="p-2">10<br><br><?php echo $titulos_10?></td>
-                        <td class="p-2">11<br><br><?php echo $titulos_11?></td>
-                        <td class="p-2">12<br><br><?php echo $titulos_12?></td>
-                        </tr>
-                        <tr>
-                        <td class="p-2">13<br><br><?php echo $titulos_13?></td>
-                        <td class="p-2">14<br><br><?php echo $titulos_14?></td>
-                        <td class="p-2">15<br><br><?php echo $titulos_15?></td>
-                        <td class="p-2">16<br><br><?php echo $titulos_16?></td>
-                        <td class="p-2">17<br><br><?php echo $titulos_17?></td>
-                        <td class="p-2">18<br><br><?php echo $titulos_18?></td>
-                        <td class="p-2">19<br><br><?php echo $titulos_19?></td>
+                        <tr class="text-center px-0 CeldasCalendario">
+                        <td class="text-center px-0 CeldasCalendario">6<br><br><?php echo $titulos_6?></td>
+                        <td class="text-center px-0 CeldasCalendario">7<br><br><?php echo $titulos_7?></td>
+                        <td class="text-center px-0 CeldasCalendario">8<br><br><?php echo $titulos_8?></td>
+                        <td class="text-center px-0 CeldasCalendario">9<br><br><?php echo $titulos_9?></td>
+                        <td class="text-center px-0 CeldasCalendario">10<br><br><?php echo $titulos_10?></td>
+                        <td class="text-center px-0 CeldasCalendario">11<br><br><?php echo $titulos_11?></td>
+                        <td class="text-center px-0 CeldasCalendario">12<br><br><?php echo $titulos_12?></td>
                         </tr>
                         <tr>
-                        <td class="p-2">20<br><br><?php echo $titulos_20?></td>
-                        <td class="p-2">21<br><br><?php echo $titulos_21?></td>
-                        <td class="p-2">22<br><br><?php echo $titulos_22?></td>
-                        <td class="p-2">23<br><br><?php echo $titulos_23?></td>
-                        <td class="p-2">24<br><br><?php echo $titulos_24?></td>
-                        <td class="p-2">25<br><br><?php echo $titulos_25?></td>
-                        <td class="p-2">26<br><br><?php echo $titulos_26?></td>
+                        <td class="text-center px-0 CeldasCalendario">13<br><br><?php echo $titulos_13?></td>
+                        <td class="text-center px-0 CeldasCalendario">14<br><br><?php echo $titulos_14?></td>
+                        <td class="text-center px-0 CeldasCalendario">15<br><br><?php echo $titulos_15?></td>
+                        <td class="text-center px-0 CeldasCalendario">16<br><br><?php echo $titulos_16?></td>
+                        <td class="text-center px-0 CeldasCalendario">17<br><br><?php echo $titulos_17?></td>
+                        <td class="text-center px-0 CeldasCalendario">18<br><br><?php echo $titulos_18?></td>
+                        <td class="text-center px-0 CeldasCalendario">19<br><br><?php echo $titulos_19?></td>
                         </tr>
-                        <tr class="p-5">
-                        <td class="p-2">27<br><br><?php echo $titulos_27?></td>
-                        <td class="p-2">28<br><br><?php echo $titulos_28?></td>
-                        <td class="p-2">29<br><br><?php echo $titulos_29?></td>
-                        <td class="p-2">30<br><br><?php echo $titulos_30?></td>
-                        <td class="p-2">31<br><br><?php echo $titulos_31?></td>
-                        <td class="p-5"></td>
-                        <td class="p-5"></td>
+                        <tr>
+                        <td class="text-center px-0 CeldasCalendario">20<br><br><?php echo $titulos_20?></td>
+                        <td class="text-center px-0 CeldasCalendario">21<br><br><?php echo $titulos_21?></td>
+                        <td class="text-center px-0 CeldasCalendario">22<br><br><?php echo $titulos_22?></td>
+                        <td class="text-center px-0 CeldasCalendario">23<br><br><?php echo $titulos_23?></td>
+                        <td class="text-center px-0 CeldasCalendario">24<br><br><?php echo $titulos_24?></td>
+                        <td class="text-center px-0 CeldasCalendario">25<br><br><?php echo $titulos_25?></td>
+                        <td class="text-center px-0 CeldasCalendario">26<br><br><?php echo $titulos_26?></td>
+                        </tr>
+                        <tr>
+                        <td class="text-center px-0 CeldasCalendario">27<br><br><?php echo $titulos_27?></td>
+                        <td class="text-center px-0 CeldasCalendario">28<br><br><?php echo $titulos_28?></td>
+                        <td class="text-center px-0 CeldasCalendario">29<br><br><?php echo $titulos_29?></td>
+                        <td class="text-center px-0 CeldasCalendario">30<br><br><?php echo $titulos_30?></td>
+                        <td class="text-center px-0 CeldasCalendario">31<br><br><?php echo $titulos_31?></td>
+                        <td class="text-center px-0 CeldasCalendario"></td>
+                        <td class="text-center px-0 CeldasCalendario"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -299,13 +301,13 @@ $row=mysqli_fetch_array($query);
                         <div class="col-md">
                             <div class="form-floating">
                             <label for="fechaHora">Fecha y Hora de Inicio:</label><br>
-                            <input type="datetime-local" id="fechaHora" name="fechainicio" value="<?php echo $row['FECHA_INICIO']; ?>" required><br>
+                            <input type="datetime-local" id="fechaHora" name="fechainicio" value="<?php $row['FECHA_INICIO'] = substr_replace($row['FECHA_INICIO'], "T", 10, 1); echo $row['FECHA_INICIO']; ?>" required><br>
                             </div>
                         </div>
                         <div class="col-md">
                             <div class="form-floating">
                                 <label for="fechaHora">Fecha y Hora de Fin:</label><br>
-                                <input type="datetime-local" id="fechaHora" name="fechafin" value="<?php echo $row['FECHA_FIN']; ?>" required><br>
+                                <input type="datetime-local" id="fechaHora" name="fechafin" value="<?php $row['FECHA_FIN'] = substr_replace($row['FECHA_FIN'], "T", 10, 1); echo $row['FECHA_FIN']; ?>" required><br>
                             </div>
                         </div>
                     </div>
