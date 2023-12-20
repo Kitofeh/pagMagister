@@ -25,7 +25,44 @@
             echo "<a  href='../../logout.php'>Cerrar sesión</a>";            
           } else {
             echo "<li class='px-2'><a  type='button' data-toggle='modal' data-target='#formularioLogin'>LOGIN</a></li>";
-          }                
+          }      
+          
+          if (isset($_SESSION['created_contacto'])) {
+            $created_contacto = $_SESSION['created_contacto'];
+    
+            echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">' .
+                'El  contacto ' . $created_contacto . ' ha sido agregado.' .
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+                '</div>';
+    
+            unset($_SESSION['created_contacto']);
+
+
+        }
+
+        if (isset($_SESSION['modificar_contacto'])) {
+            $modificar_contacto = $_SESSION['modificar_contacto'];
+    
+            echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">' .
+                'El  contacto ' . $modificar_contacto . ' ha sido modificado.' .
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+                '</div>';
+    
+            unset($_SESSION['modificar_contacto']);
+        }
+          
+
+        if (isset($_SESSION['eliminar_contacto'])) {
+            $eliminar_contacto = $_SESSION['eliminar_contacto'];
+    
+            echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">' .
+                'El  contacto ' . $eliminar_contacto . ' ha sido eliminado.' .
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+                '</div>';
+    
+            unset($_SESSION['eliminar_contacto']);
+        }
+
         ?>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
@@ -102,7 +139,7 @@
                           
               <div class="form-floating mb-3">
 
-                  <input type="text" class ="form-control" name = "RUT" placeholder = "RUT">
+                  <input type="text" class ="form-control" name = "RUT" placeholder = "RUT" required>
                   <label for="floatingInput">RUT</label>
 
               </div>

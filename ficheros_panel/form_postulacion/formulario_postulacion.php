@@ -25,7 +25,47 @@
             echo "<a  href='../../logout.php'>Cerrar sesión</a>";            
           } else {
             echo "<li class='px-2'><a  type='button' data-toggle='modal' data-target='#formularioLogin'>LOGIN</a></li>";
-          }                
+          }       
+          
+          
+          if (isset($_SESSION['created_postulacion'])) {
+            $created_postulacion = $_SESSION['created_postulacion'];
+    
+            echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">' .
+                'La postulacion de ' . $created_postulacion . ' ha sido agregada.' .
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+                '</div>';
+    
+            unset($_SESSION['created_postulacion']);
+
+
+        }
+
+        if (isset($_SESSION['modificar_postulacion'])) {
+            $modificar_postulacion = $_SESSION['modificar_postulacion'];
+    
+            echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">' .
+                'La postulacion de  ' . $modificar_postulacion . ' ha sido modificada.' .
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+                '</div>';
+    
+            unset($_SESSION['modificar_postulacion']);
+        }
+          
+
+        if (isset($_SESSION['eliminar_postulacion'])) {
+            $eliminar_postulacion = $_SESSION['eliminar_postulacion'];
+    
+            echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">' .
+                'La postulacion ' . $eliminar_postulacion . ' ha sido eliminada.' .
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+                '</div>';
+    
+            unset($_SESSION['eliminar_postulacion']);
+        }
+
+
+
         ?>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
@@ -102,7 +142,7 @@
                           
               <div class="form-floating mb-3">
 
-                  <input type="text" class ="form-control" name = "RUT" placeholder = "RUT">
+                  <input type="text" class ="form-control" name = "RUT" placeholder = "RUT" required>
                   <label for="floatingInput">RUT</label>
 
               </div>

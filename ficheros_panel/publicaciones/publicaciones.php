@@ -25,7 +25,45 @@
             echo "<a  href='../../logout.php'>Cerrar sesión</a>";            
           } else {
             echo "<li class='px-2'><a  type='button' data-toggle='modal' data-target='#formularioLogin'>LOGIN</a></li>";
-          }                
+          }   
+          
+          if (isset($_SESSION['created_publicacion'])) {
+            $created_publicacion = $_SESSION['created_publicacion'];
+    
+            echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">' .
+                'La publicacion ' . $created_publicacion . ' ha sido agregada.' .
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+                '</div>';
+    
+            unset($_SESSION['created_publicacion']);
+
+
+        }
+
+        if (isset($_SESSION['modificar_publicacion'])) {
+            $modificar_publicacion = $_SESSION['modificar_publicacion'];
+    
+            echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">' .
+                'La publicacion  ' . $modificar_publicacion . ' ha sido modificada.' .
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+                '</div>';
+    
+            unset($_SESSION['modificar_publicacion']);
+        }
+          
+
+        if (isset($_SESSION['eliminar_publicacion'])) {
+            $eliminar_publicacion = $_SESSION['eliminar_publicacion'];
+    
+            echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">' .
+                'La publicacion ' . $eliminar_publicacion . ' ha sido eliminada.' .
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+                '</div>';
+    
+            unset($_SESSION['eliminar_publicacion']);
+        }
+
+
         ?>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
@@ -152,9 +190,7 @@
     </div>
     </div>
 
-    <button type="button" class="btn btn-primary m-3 mt-5" data-bs-toggle="modal" data-bs-target="#AgregarEvento">
-    Agregar Publicación
-    </button>
+    
 
 
     <center>
@@ -162,7 +198,9 @@
     </center>
            <!-- Button trigger modal -->
     
-
+           <button type="button" class="btn btn-primary m-3 mt-5" data-bs-toggle="modal" data-bs-target="#AgregarEvento">
+    Agregar Publicación
+    </button>
     </div>
     <center>
     <table class="table table-bordered table-hover">

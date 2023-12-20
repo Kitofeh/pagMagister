@@ -25,7 +25,48 @@
             echo "<a  href='../../logout.php'>Cerrar sesión</a>";            
           } else {
             echo "<li class='px-2'><a  type='button' data-toggle='modal' data-target='#formularioLogin'>LOGIN</a></li>";
-          }                
+          }      
+          
+          
+          if (isset($_SESSION['created_investigacion'])) {
+            $created_investigacion = $_SESSION['created_investigacion'];
+    
+            echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">' .
+                'La investigacion ' . $created_investigacion . ' ha sido agregado.' .
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+                '</div>';
+    
+            unset($_SESSION['created_investigacion']);
+
+
+        }
+
+        if (isset($_SESSION['modificar_investigacion'])) {
+            $modificar_investigacion = $_SESSION['modificar_investigacion'];
+    
+            echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">' .
+                'La investigacion ' . $modificar_investigacion . ' ha sido modificado.' .
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+                '</div>';
+    
+            unset($_SESSION['modificar_investigacion']);
+        }
+          
+
+        if (isset($_SESSION['eliminar_investigacion'])) {
+            $eliminar_investigacion = $_SESSION['eliminar_investigacion'];
+    
+            echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">' .
+                'La investigacion ' . $eliminar_investigacion . ' ha sido eliminado.' .
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+                '</div>';
+    
+            unset($_SESSION['eliminar_investigacion']);
+        }
+          
+
+
+
         ?>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">

@@ -48,7 +48,7 @@
                         echo "<li class='mx-1'><a>BIEVENIDO, " . $_SESSION['usuario'] . "</p></li>";
                         
                         echo "<li class='mx-1 '><a style='text-shadow: 2px 2px 4px rgba(0, 0, 0, 1)' href='logout.php'>Cerrar Sesion</a></li>";
-                        echo "<li class='mx-1'><a style='text-shadow: 2px 2px 4px rgba(0, 0, 0, 1)' href='ficheros_panel/academicos/academicos.php'>Panel</a></li>";
+                        echo "<li class='mx-1'><a style='text-shadow: 2px 2px 4px rgba(0, 0, 0, 1)' href='ficheros_panel/menuFicheros.php'>Panel</a></li>";
                      
            
 
@@ -108,30 +108,42 @@
 
 
 
-        <section class="section-margin my-0 mx-0"><!--Banner-->
+    <section class="section-margin my-0 mx-0"><!--Banner-->
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img-banner/1.png" height="700px;" class="d-block w-100" alt="img-dicc-1">
+                <div class="carousel-caption d-none d-md-block text-end">
+                    <h4 class="text-light">MAGISTER EN INFORMÁTICA</h4>
+                    <p class="text-light mb-5">Facultad de Ingeniería</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img-banner/4.png" height="700px;" class="d-block w-100" alt="img-dicc-2">
+                <div class="carousel-caption d-none d-md-block text-end">
+                    <h1 class="text-light">DEPARTAMENTO DE INFORMÁTICA</h1>
+                    <p class="text-light mb-5">Facultad de Ingeniería</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img-banner/5.png" height="700px;" class="d-block w-100" alt="img-dicc-3">
+                <div class="carousel-caption d-none d-md-block text-end">
+                    <h1 class="text-light">CARRERA DE INFORMÁTICA</h1>
+                    <p class="text-light mb-5">Facultad de Ingeniería</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
 
-            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                <img src="img-banner/img-dicc-1.jpg" height="700px;" class="d-block w-100" alt="img-dicc-1">
-                </div>
-                <div class="carousel-item">
-                <img src="img-banner/img-dicc-2.jpg" height="700px;" class="d-block w-100" alt="img-dicc-2">
-                </div>
-                <div class="carousel-item">
-                <img src="img-banner/img-dicc-1.jpg" height="700px;" class="d-block w-100" alt="img-dicc-3">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-            </div>
-        </section>
     </header>
         <section id="Nosotros"><!--Descripcion General-->
             <div class="d-flex justify-content-center align-items-center bg-white w-100" style="height: 150px;">
@@ -719,48 +731,44 @@ $query = mysqli_query($con, $sql);
 
                 
 
-                <div class ="col-3 mx-5 mb-5">
-                    <div id="carrusel1" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="card">
-                                    <img class="img-fluid" src="img-secciones/img-seccion-proyectos-investigacion/img-card1.jpg" alt="Card image 1">
-                                    <div class="card-body">
-                                    <p>Descubre las fronteras de la innovación en la informática con nuestras investigaciones pioneras.</p>
-                                    </div>
-                                </div>
-                            </div>
-                                
-                        <div class="carousel-item">
-                            <div class="card">
-                                    <img class="img-fluid" src="img-secciones/img-seccion-proyectos-investigacion/img-card2.jpg" alt="Card image 2">
-                                    <div class="card-body">
-                                    <p>Exploramos los misterios de la inteligencia artificial y la visión por computadora en la detección de objetos peligrosos en imágenes de rayos X. .</p>
-                                    </div>
-                            </div>
-                        </div>
-                        
-                        <div class="carousel-item">
-                            <div class="card">
-                                    <img class="img-fluid" src="img-secciones/img-seccion-proyectos-investigacion/img-card3.jpg" alt="Card image 3">
-                                    <div class="card-body">
-                                    <p>Sumérgete en el futuro de la informática con proyectos que van más allá de los límites convencionales.</p>
-                            </div>
-                            </div>
-                        </div>
+        <?php
+                    include_once("../../conexion.php");
+                    $con = conectar();
 
+                    $sql = "SELECT * FROM investigaciones";
+                    $query = mysqli_query($con, $sql);
+                    ?>
+
+
+                    <div class="col-3 mx-5 mb-5">
+                        <div id="carrusel1" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <?php
+                                $active = true; // Variable para controlar la clase "active" en el primer elemento
+                                while ($row = mysqli_fetch_array($query)) {
+                                ?>
+                                    <div class="carousel-item <?php echo $active ? 'active' : ''; ?>">
+                                        <div class="card">
+                                        <img style="width:100%;height:200px;" src="data:image/jpg;base64,<?php echo base64_encode($row['IMG_INVESTIGACION'])?>" class="card-img-top" alt="IMG INVESTIGACION">
+                                            <div class="card-body">
+                                                <p><?php echo $row['DESCRIPCION']; ?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php
+                                    $active = false; // Después del primer elemento, desactiva la clase "active"
+                                }
+                                ?>
+                            </div>
+
+                            <a class="carousel-control-prev" href="#carrusel1" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            </a>
+                            <a class="carousel-control-next" href="#carrusel1" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            </a>
+                        </div>
                     </div>
-
-                                <a class="carousel-control-prev" href="#carrusel1" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        
-                                </a>
-                                <a class="carousel-control-next" href="#carrusel1" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-
-                                </a>
-                                </div>
-                </div>
 
 
 
@@ -770,20 +778,20 @@ $query = mysqli_query($con, $sql);
 
     
               
-                <div class ="col-7">
-                  <div style ="display: block;width: 100%;overflow-x: auto; overflow-y: auto; max-height: 200px">
+                <div class ="col-6 mx-5">
+                  <div style ="display: block;width: 650px;overflow-x: auto; overflow-y: auto; max-height: 250px;">
                 <!-- TABLAx -->
 
-  <table class="table">
+                <table class="table table-bordered table-hover">
                 <thead id="tablapostulacion" style=" background-color: #364c59;color: white;text-align: center;">
                     <tr>
-                        <th scope="col">COD. PROYECTO</th>
-                        <th scope="col">AREA</th>
-                        <th scope="col">TITULO</th>
-                        <th scope="col">FONDO</th>
-                        <th scope="col">ANO</th>
-                        <th scope="col">URL_PROYECTO</th>       
-                        <th scope="col">INVESTIGADOR</th> 
+                        <th scope="col" style="background-color: #364c59;color:white;">COD. PROYECTO</th>
+                        <th scope="col" style="background-color: #364c59;color:white;">AREA</th>
+                        <th scope="col" style="background-color: #364c59;color:white;">TITULO</th>
+                        <th scope="col" style="background-color: #364c59;color:white;">FONDO</th>
+                        <th scope="col"style="background-color: #364c59;color:white;">ANO</th>
+                        <th scope="col"style="background-color: #364c59;color:white;">URL_PROYECTO</th>       
+                        <th scope="col"style="background-color: #364c59;color:white;">INVESTIGADOR</th> 
                     </tr>
                     </thead>
                     <tbody>
@@ -847,18 +855,18 @@ $query = mysqli_query($con, $sql);
         <div class="row" >  
             <div class ="container text-center">
                 <div style ="display: block; width: 100%;overflow-x: auto; overflow-y: auto; max-height: 500px">               
-                <table class="table">
+                <table class="table table-bordered table-hover">
                 <thead id="tablapostulacion" style=" background-color: #364c59;color: white;text-align: center;">
                     <tr>
-                        <th scope="col" style="width: 50px">#</th>
-                        <th scope="col">AREA</th>
-                        <th scope="col">TUTOR</th>
-                        <th scope="col">COHORTE</th>       
-                        <th scope="col">ESTUDIANTE</th> 
-                        <th scope="col"> TITULO</th>
-                        <th scope="col">INDEXACION</th>
-                        <th scope="col">FECHA</th>
-                        <th scope="col">EVENTO</th>
+                        <th scope="col" style="width: 50px;background-color: #364c59;color:white;">#</th>
+                        <th scope="col" style="background-color: #364c59;color:white;">AREA</th>
+                        <th scope="col"style="background-color: #364c59;color:white;">TUTOR</th>
+                        <th scope="col"style="background-color: #364c59;color:white;">COHORTE</th>       
+                        <th scope="col"style="background-color: #364c59;color:white;">ESTUDIANTE</th> 
+                        <th scope="col"style="background-color: #364c59;color:white;"> TITULO</th>
+                        <th scope="col"style="background-color: #364c59;color:white;">INDEXACION</th>
+                        <th scope="col"style="background-color: #364c59;color:white;">FECHA</th>
+                        <th scope="col"style="background-color: #364c59;color:white;">EVENTO</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -904,13 +912,13 @@ $query = mysqli_query($con, $sql);
                                         
                 <div class="col">
                     <div class="custom-card d-flex flex-column">
-                        <img src="profesores\Andres.jpg" class="custom-card-img-top" style="width: 220px;" alt="">
+                        <img src="profesores\incognito.png" class="custom-card-img-top" style="width: 220px;" alt="">
                         <div class="custom-card-body">
-                            <h5 class="custom-card-title">Andrés Alfaro</h5>
+                            <h5 class="custom-card-title mx-5 mt-2">Andrés Alfaro</h5>
                             <em class="custom-card-text">
                                 Este programa me equipó con habilidades sólidas en Gestión de Tecnologías de Información.
                                 La conexión teoría-práctica es evidente, y la capacidad de asesorar en computación es invaluable.
-                                Es fundamental para mi éxito profesional.
+                
                             </em>
                             <p class="custom-card-text" id="custom-small">Graduado</p>                                      
                         </div>
@@ -918,9 +926,9 @@ $query = mysqli_query($con, $sql);
                 </div>
                 <div class="col">
                     <div class="custom-card d-flex flex-column">
-                        <img src="profesores\incognito.png" class="custom-card-img-top" alt="...">
+                        <img src="profesores\incognito.png" class="custom-card-img-top" style="width: 220px;" alt="...">
                         <div class="custom-card-body">
-                            <h5 class="custom-card-title">Jacqueline Manríquez</h5>
+                            <h5 class="custom-card-title mx-5 mt-2">Jacqueline Manríquez</h5>
                             <em class="custom-card-text">
                                 El magíster en Inteligencia de Máquinas fue desafiante pero gratificante. Ahora, como graduada, me siento preparada para liderar proyectos de investigación gracias a la sólida base construida en este programa.
                             </em> 
@@ -930,9 +938,9 @@ $query = mysqli_query($con, $sql);
                 </div>
                 <div class="col">
                     <div class="custom-card d-flex flex-column">
-                        <img src="profesores\incognito.png" class="custom-card-img-top" alt="...">
+                        <img src="profesores\incognito.png" class="custom-card-img-top" style="width: 220px;" alt="...">
                         <div class="custom-card-body">
-                            <h5 class="custom-card-title">Jorge Rojas</h5>
+                            <h5 class="custom-card-title mx-5 mt-2">Jorge Rojas</h5>
                             <em class="custom-card-text">
                                 Este magíster ha sido un viaje inspirador. La línea de Ingeniería de Software y la metodología de investigación práctica me han moldeado como profesional. Ahora, como graduado, me siento capacitado para liderar proyectos con una perspectiva integral.
                             </em>  
@@ -1253,16 +1261,16 @@ $query = mysqli_query($con, $sql);
     <div>
       <div class="row">
 
-        <div class="col-md-4">
+        <div class="col-md-5 text-center">
           <strong class ="text-center text-md-left mx-5"> Últimas noticias </strong>
           <p class="text-center text-md-left">Se abren las postulaciones a Magíster 2024</p>
         </div>
 
-        <div class="col-md-3 text-center">
+        <div class="col-md-3 text-md-right">
           <img src="logos\logo-corp-diic-lineablanca.png" alt="Logo" class="img-fluid">
         </div>
 
-        <div class="col-md-5 text-center text-md-right">
+        <div class="col-md-4 text-center text-md-right">
           <a href="#" ><i class="fab fa-facebook fa-3x mt-4 mx-2"></i></a>
           <a href="#"><i class="fab fa-twitter fa-3x mx-2"></i></a>
           <a href="#"><i class="fab fa-instagram fa-3x mx-2"></i></a>

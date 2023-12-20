@@ -1,5 +1,5 @@
 <?php 
-include ("VariablesClase.php");
+include_once ("VariablesClase.php");
 
 include_once("../../conexion.php");
 $con = conectar();
@@ -41,7 +41,46 @@ $row=mysqli_fetch_array($query);
             alert('NO ESTÁS LOGUEADO. ESTÁS VOLVIENDO AL MENÚ PRINCIPAL.');
             window.location.href = '../../index.php';
            </script>";
-          }                
+          }      
+          
+          
+          if (isset($_SESSION['created_clase'])) {
+            $created_clase = $_SESSION['created_clase'];
+    
+            echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">' .
+                'La clase ' . $created_clase . ' ha sido agregada.' .
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+                '</div>';
+    
+            unset($_SESSION['created_clase']);
+
+
+        }
+
+        if (isset($_SESSION['modificar_clase'])) {
+            $modificar_clase = $_SESSION['modificar_clase'];
+    
+            echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">' .
+                'La clase  ' . $modificar_clase . ' ha sido modificada.' .
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+                '</div>';
+    
+            unset($_SESSION['modificar_clase']);
+        }
+          
+
+        if (isset($_SESSION['eliminar_clase'])) {
+            $eliminar_clase = $_SESSION['eliminar_clase'];
+    
+            echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">' .
+                'La clase ' . $eliminar_clase . ' ha sido eliminada.' .
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+                '</div>';
+    
+            unset($_SESSION['eliminar_clase']);
+        }
+
+
         ?>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
@@ -325,6 +364,6 @@ $row=mysqli_fetch_array($query);
     </table>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-
+                      
 </body>
 </html>

@@ -52,7 +52,45 @@ $row=mysqli_fetch_array($query);
             alert('NO ESTÁS LOGUEADO. ESTÁS VOLVIENDO AL MENÚ PRINCIPAL.');
             window.location.href = '../../index.php';
            </script>";
-          }                
+          }  
+          
+          if (isset($_SESSION['created_evento'])) {
+            $created_evento = $_SESSION['created_evento'];
+    
+            echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">' .
+                'El  evento     ' . $created_evento . ' ha sido agregado.' .
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+                '</div>';
+    
+            unset($_SESSION['created_evento']);
+
+
+        }
+
+        if (isset($_SESSION['modificar_evento'])) {
+            $modificar_evento = $_SESSION['modificar_evento'];
+    
+            echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">' .
+                'El  evento ' . $modificar_evento . ' ha sido modificado.' .
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+                '</div>';
+    
+            unset($_SESSION['modificar_evento']);
+        }
+          
+
+        if (isset($_SESSION['eliminar_evento'])) {
+            $eliminar_evento = $_SESSION['eliminar_evento'];
+    
+            echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">' .
+                'El  evento ' . $eliminar_evento . ' ha sido eliminado.' .
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+                '</div>';
+    
+            unset($_SESSION['eliminar_evento']);
+        }
+          
+          
         ?>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
@@ -127,7 +165,7 @@ $row=mysqli_fetch_array($query);
                 <div class="modal-dialog">
                     <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">AGREGAR EVENTO</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -169,18 +207,22 @@ $row=mysqli_fetch_array($query);
                                 </select>
                                 <label for="floatingSelectDisabled">Tipo de Evento</label>
                             </div>
+
+                            
                 
                     </div>
-                            <div class="modal-footer">
-                                <input type="submit">
-                            </div>
+
+                    <input type="submit" class="btn btn-primary">
+                           
+                              
+                        
                         </form>
                     </div>
                 </div>
 
                 </div>
 
-                <table class="table table-bordered" style="table-layout: fixed; width: 100%;">
+                <table class="table table-bordered table-hover" style="table-layout: fixed; width: 100%;">
                     <thead>
                         <tr>
                         <th scope="col">Domingo</th>
@@ -249,7 +291,7 @@ $row=mysqli_fetch_array($query);
     </div>
 
     <!-- Crear la tabla con Bootstrap -->
-    <table class="table table-bordered">
+    <table class="table table-bordered table-hover">
     <!-- Crear las cabeceras de la tabla -->
     <thead>
         <tr>
@@ -289,7 +331,7 @@ $row=mysqli_fetch_array($query);
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">MODIFICAR EVENTO</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -332,11 +374,11 @@ $row=mysqli_fetch_array($query);
                         </select>
                         <label for="floatingSelectDisabled">Tipo de Evento</label>
                     </div>
+
+                    <input type="submit" class="btn btn-primary">
         
             </div>
-                    <div class="modal-footer">
-                        <input type="submit">
-                    </div>
+                    
                 </form>
             </div>
         </div>
@@ -346,7 +388,7 @@ $row=mysqli_fetch_array($query);
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">ELIMINAR EVENTO</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">

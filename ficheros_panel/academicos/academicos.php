@@ -25,7 +25,46 @@
             echo "<a  href='../../logout.php'>Cerrar sesión</a>";            
           } else {
             echo "<li class='px-2'><a  type='button' data-toggle='modal' data-target='#formularioLogin'>LOGIN</a></li>";
-          }                
+          } 
+          
+
+          if (isset($_SESSION['created_academico'])) {
+            $created_academico = $_SESSION['created_academico'];
+    
+            echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">' .
+                'El  academico     ' . $created_academico . ' ha sido agregado.' .
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+                '</div>';
+    
+            unset($_SESSION['created_academico']);
+
+
+        }
+
+        if (isset($_SESSION['modificar_academico'])) {
+            $modificar_academico = $_SESSION['modificar_academico'];
+    
+            echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">' .
+                'El  academico ' . $modificar_academico . ' ha sido modificado.' .
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+                '</div>';
+    
+            unset($_SESSION['modificar_academico']);
+        }
+          
+
+        if (isset($_SESSION['eliminar_academico'])) {
+            $eliminar_academico = $_SESSION['eliminar_academico'];
+    
+            echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">' .
+                'El  academico ' . $eliminar_academico . ' ha sido eliminado.' .
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+                '</div>';
+    
+            unset($_SESSION['eliminar_academico']);
+        }
+          
+
         ?>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
@@ -105,7 +144,7 @@
                           
               <div class="form-floating mb-3">
 
-                  <input type="text" class ="form-control" name = "COD_ACADEMICO" placeholder = "CÓD. ACADÉMICO">
+                  <input type="text" class ="form-control" name = "COD_ACADEMICO" placeholder = "CÓD. ACADÉMICO" required>
                   <label for="floatingInput">COD. ACADÉMICO</label>
 
               </div>

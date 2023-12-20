@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>PROYECTOS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="../styleFicheros.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -25,7 +25,47 @@
             echo "<a  href='../../logout.php'>Cerrar sesión</a>";            
           } else {
             echo "<li class='px-2'><a  type='button' data-toggle='modal' data-target='#formularioLogin'>LOGIN</a></li>";
-          }                
+          } 
+          
+          
+          if (isset($_SESSION['created_proyecto'])) {
+            $created_proyecto = $_SESSION['created_proyecto'];
+    
+            echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">' .
+                'El proyecto ' . $created_proyecto . ' ha sido agregado.' .
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+                '</div>';
+    
+            unset($_SESSION['created_proyecto']);
+
+
+        }
+
+        if (isset($_SESSION['modificar_proyecto'])) {
+            $modificar_proyecto = $_SESSION['modificar_proyecto'];
+    
+            echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">' .
+                'El proyecto ' . $modificar_proyecto . ' ha sido modificado.' .
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+                '</div>';
+    
+            unset($_SESSION['modificar_proyecto']);
+        }
+          
+
+        if (isset($_SESSION['eliminar_proyecto'])) {
+            $eliminar_proyecto = $_SESSION['eliminar_proyecto'];
+    
+            echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">' .
+                'El proyecto ' . $eliminar_proyecto . ' ha sido eliminado.' .
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+                '</div>';
+    
+            unset($_SESSION['eliminar_proyecto']);
+        }
+          
+
+
         ?>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
