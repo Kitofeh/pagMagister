@@ -128,6 +128,18 @@
     Agregar académico
     </button>
 
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class ="mt-3 color-blanco">PANEL DE BÚSQUEDA</h1>
+            <form action="academicos.php" method="GET">
+            <input type="text" class="form-control mb-5" name="busqueda" id="busqueda_input" placeholder="BUSCAR COINCIDENCIA">
+   
+            </form>
+        </div>
+        
+    </div>
+
   </div>
         
 
@@ -213,7 +225,19 @@
     <?php
         include("../../conexion.php");
         $con = conectar();
-        $sql = "SELECT * FROM academicos";
+
+        if (isset($_GET['busqueda']) && !empty($_GET['busqueda'])) {
+          $busqueda = $_GET['busqueda'];
+      
+          $sql = "SELECT * FROM academicos WHERE 
+                  NOMBRE LIKE '%$busqueda%' OR 
+                  COD_ACADEMICO LIKE '%$busqueda%'";
+      } else {
+          $sql = "SELECT * FROM academicos";
+      }
+      
+
+
         $resultado = $con->query($sql);
         while($fila = $resultado->fetch_assoc()) { ?>
     <tr>
@@ -313,8 +337,24 @@
 
 
 
+<script>
+     let timer; // VARIABLE TEMPORIZADOR    
 
+const inputBusqueda = document.getElementById('busqueda_input');
+inputBusqueda.addEventListener('input', function () {
+    //PARAR TEMPORIZADOR SI ESTA EN EJECUCIÓN
+    clearTimeout(timer);
 
+    //TEMPORIZADOR
+    timer = setTimeout(function () {
+        const busqueda = inputBusqueda.value;
+        window.location.href = `academicos.php?busqueda=${busqueda}`;
+    }, 500); //500ms
+});
+</script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>

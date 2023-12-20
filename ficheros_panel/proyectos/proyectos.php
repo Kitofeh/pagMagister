@@ -123,6 +123,8 @@
     <center>
         <h1 class ="mt-5">PROYECTOS</h1>
     </center>
+
+    
  
 
      <!-- Modal Añadir Clase-->
@@ -195,6 +197,8 @@
     <button type="button" class="btn btn-primary m-3 mt-5" data-bs-toggle="modal" data-bs-target="#AgregarEvento">
     Agregar Publicación
     </button>
+
+    
 
 
     <center>
