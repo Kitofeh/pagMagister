@@ -35,12 +35,18 @@ $sql .= " WHERE COD_INVESTIGACION = $COD_INVESTIGACION";
 $resultado = $con->query($sql);
 
 // Verifica el resultado y redirige
-if ($resultado) {
-    header("Location: investigaciones.php");
-} else {
-    echo "NO SE LOGRARON ACTUALIZAR LOS DATOS";
-}
+if($resultado){
+    // Iniciar la sesión si aún no se ha iniciado
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
 
+    // Guardar el nombre del usuario en una variable de sesión
+    $_SESSION['modificar_investigacion'] = $COD_INVESTIGACION2;
+    Header("Location: investigaciones.php");
+
+}else {
+}
 
 
 ?>

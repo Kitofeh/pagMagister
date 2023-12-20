@@ -15,4 +15,20 @@ $query = mysqli_query($con, "INSERT INTO `calendario_eventos`(`TITULO`, `DESCRIP
 
 //echo $titulo,$descripcion,$fechaInicio,$fechaFin,$ubicacion,$tipo;
 
-Header("Location: CalendarioDeEventos.php");
+
+
+
+if($query){
+    // Iniciar la sesión si aún no se ha iniciado
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    // Guardar el nombre del usuario en una variable de sesión
+    $_SESSION['created_evento'] = $titulo;
+    Header("Location: CalendarioDeEventos.php");
+
+}else {
+}
+?>
+

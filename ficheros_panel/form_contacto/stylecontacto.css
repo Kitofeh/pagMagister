@@ -3,6 +3,10 @@
   padding: 0px;
   font-family: "Montserrat", sans-serif;
 }
+body {
+  overflow-y: auto; /* or overflow-y: scroll; */
+}
+
 nav {
   position: fixed;
   top: 0;

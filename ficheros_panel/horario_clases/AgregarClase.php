@@ -10,6 +10,17 @@ $UBICACION = $_POST['UBICACION'];
 
 $query = mysqli_query($con, "INSERT INTO `horario_clases`(`NOMBRE_CLASE`, `LUGAR_CLASE`, `NOMBRE_PROFESOR`,`UBICACION`) VALUES ('$NOMBRE_CLASE','$LUGAR_CLASE','$NOMBRE_PROFESOR','$UBICACION')");
 
-//echo $NOMBRE_CLASE,$LUGAR,$NOMBRE_PROFESOR;
+if($query){
+    // Iniciar la sesión si aún no se ha iniciado
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
 
-Header("Location: HorarioClases.php");
+    // Guardar el nombre del usuario en una variable de sesión
+    $_SESSION['created_clase'] = $NOMBRE_CLASE;
+    Header("Location: HorarioClases.php");
+
+}else {
+}
+
+?>

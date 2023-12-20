@@ -21,7 +21,18 @@ if ($ubicacionOcupada) {
 } else {
     $query = mysqli_query($con, "UPDATE `horario_clases` SET `NOMBRE_CLASE`='$NOMBRE_CLASE', `LUGAR_CLASE`='$LUGAR_CLASE', `NOMBRE_PROFESOR`='$NOMBRE_PROFESOR', `UBICACION`='$UBICACION' WHERE `ID_CLASE` = '$ID_CLASE'");
     
-    Header("Location: HorarioClases.php");
+    if($query){
+        // Iniciar la sesión si aún no se ha iniciado
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+    
+        // Guardar el nombre del usuario en una variable de sesión
+        $_SESSION['modificar_clase'] = $NOMBRE_CLASE;
+        Header("Location: HorarioClases.php");
+    
+    }else {
+    }
 }
 
 
