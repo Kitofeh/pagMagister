@@ -84,9 +84,9 @@
                         Noticias y Eventos
                     </a>
                     <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item text-white" href="NoticiaImportante.php">Noticia Importante</a></li>
-                        <li><a class="dropdown-item text-white" href="CalendarioDeEventos.php">Calendario de Eventos</a></li>
-                        <li><a class="dropdown-item text-white" href="PanelNoticias.php">Tarjeta de Noticias</a></li>
+                        <li><a class="dropdown-item text-white" href="../../ficheros_panel/Noticias_Eventos/NoticiaImportante.php">Noticia Importante</a></li>
+                        <li><a class="dropdown-item text-white" href="../../ficheros_panel/Noticias_Eventos/CalendarioDeEventos.php">Calendario de Eventos</a></li>
+                        <li><a class="dropdown-item text-white" href="../../ficheros_panel/Noticias_Eventos/PanelNoticias.php">Tarjeta de Noticias</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -105,7 +105,7 @@
                   <a class="nav-link active" aria-current="page" href="../../ficheros_panel/horario_clases/HorarioClases.php">Horario de clases</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="../../ficheros_panel/investigaciones/investigaciones.php">Investigaciones</a>
+                  <a class="nav-link active" aria-current="page" href="../../ficheros_panel/fichero_feedback/PanelFeedback.php">Estadisticas</a>
                 </li>
               </ul>            
             </div>

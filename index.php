@@ -1247,13 +1247,254 @@ $query = mysqli_query($con, $sql);
                           </div>
                         </div>
                       </div>
-                      
-                    
-
-
-          
-            
         </section>
+
+    <section>
+        <div class="d-flex justify-content-around mx-auto my-5">
+            <h2>Ayudanos a mejorar nuestra pagina!</h2>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalFeedback">
+            Envianos tu Feedback
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="ModalFeedback" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Envianos tu feedback</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <form action="AgregarFeedback.php" method="POST" autocomplete="off">
+
+                        <div class="d-flex flex-column justify-content-center mb-4">
+                        <h5>1. La descripcion al inicio de la pagina comunica correctamente su proposito?</h5>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta1" id="flexRadioDefault1" value="MS" required>
+                            <label class="form-check-label" for="flexRadioDefault1">
+                            Muy satisfactorio
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta1" id="flexRadioDefault2" value="S" required>
+                            <label class="form-check-label" for="flexRadioDefault2">
+                            Satisfactorio
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta1" id="flexRadioDefault3" value="C" required>
+                            <label class="form-check-label" for="flexRadioDefault3">
+                            Cumple
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta1" id="flexRadioDefault4" value="PS" required>
+                            <label class="form-check-label" for="flexRadioDefault4">
+                            Poco Satisfactorio
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta1" id="flexRadioDefault5" value="NS" required>
+                            <label class="form-check-label" for="flexRadioDefault5">
+                            Nada Satisfactorio
+                            </label>
+                        </div>
+                        </div>
+
+                        <div class="d-flex flex-column justify-content-center mb-4">
+                            <h5>2. Que tal le parecio el formato de la seccion noticias?</h5>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta2" id="flexRadioDefault6" value="MS" required>
+                            <label class="form-check-label" for="flexRadioDefault6">
+                                Muy satisfactorio
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta2" id="flexRadioDefault7" value="S" required>
+                            <label class="form-check-label" for="flexRadioDefault7">
+                                Satisfactorio
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta2" id="flexRadioDefault8" value="C" required>
+                            <label class="form-check-label" for="flexRadioDefault8">
+                                Cumple
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta2" id="flexRadioDefault9" value="PS" required>
+                            <label class="form-check-label" for="flexRadioDefault9">
+                                Poco Satisfactorio
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta2" id="flexRadioDefault10" value="NS" required>
+                            <label class="form-check-label" for="flexRadioDefault10">
+                                Nada Satisfactorio
+                            </label>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center mb-4">
+                            <h5>3. La informacion de los eventos fue suficiente?</h5>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta3" id="flexRadioDefault11" value="MS" required>
+                            <label class="form-check-label" for="flexRadioDefault11">
+                                Muy satisfactorio
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta3" id="flexRadioDefault12" value="S" required>
+                            <label class="form-check-label" for="flexRadioDefault12">
+                                Satisfactorio
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta3" id="flexRadioDefault13" value="C" required>
+                            <label class="form-check-label" for="flexRadioDefault13">
+                                Cumple
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta3" id="flexRadioDefault14" value="PS" required>
+                            <label class="form-check-label" for="flexRadioDefault14">
+                                Poco Satisfactorio
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta3" id="flexRadioDefault15" value="NS" required>
+                            <label class="form-check-label" for="flexRadioDefault15">
+                                Nada Satisfactorio
+                            </label>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center mb-4">
+                            <h5>4. Como valora la descripcion de los academicos que imparten el magister?</h5>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta4" id="flexRadioDefault16" value="MS" required>
+                            <label class="form-check-label" for="flexRadioDefault16">
+                                Muy satisfactorio
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta4" id="flexRadioDefault17" value="S" required>
+                            <label class="form-check-label" for="flexRadioDefault17">
+                                Satisfactorio
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta4" id="flexRadioDefault18" value="C" required>
+                            <label class="form-check-label" for="flexRadioDefault18">
+                                Cumple
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta4" id="flexRadioDefault19" value="PS" required>
+                            <label class="form-check-label" for="flexRadioDefault19">
+                                Poco Satisfactorio
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta4" id="flexRadioDefault20" value="NS" required>
+                            <label class="form-check-label" for="flexRadioDefault20">
+                                Nada Satisfactorio
+                            </label>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center mb-4">
+                            <h5>5. Cual de las areas de investigacion del magister le parece mas interesante?</h5>
+                            <div class="form-floating">
+                            <select class="form-select" id="floatingSelect" name="pregunta5" aria-label="Floating label select example" required>
+                                <option value="" selected>Opciones</option>
+                                <option value="IDS">Ingenieria de Software</option>
+                                <option value="GDTDI">Gestion de Tecnologias de Informacion</option>
+                                <option value="IDM">Inteligencia de Maquinas</option>
+                                <option value="None">Ninguna</option>
+                            </select>
+                            <label for="floatingSelect">Areas de Investigacion</label>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center mb-4">
+                            <h5>6. Que tan adecuados le parecen los requisitos para postular al magister?</h5>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta6" id="flexRadioDefault21" value="MS" required>
+                            <label class="form-check-label" for="flexRadioDefault21">
+                                Muy satisfactorio
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta6" id="flexRadioDefault22" value="S" required>
+                            <label class="form-check-label" for="flexRadioDefault22">
+                                Satisfactorio
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta6" id="flexRadioDefault23" value="C" required>
+                            <label class="form-check-label" for="flexRadioDefault23">
+                                Cumple
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta6" id="flexRadioDefault24" value="PS" required>
+                            <label class="form-check-label" for="flexRadioDefault24">
+                                Poco Satisfactorio
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta6" id="flexRadioDefault25" value="NS" required>
+                            <label class="form-check-label" for="flexRadioDefault25">
+                                Nada Satisfactorio
+                            </label>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center mb-4">
+                            <h5>7. Esta conforme con los bloques de horario de clases actuales del magister?</h5>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta7" id="flexRadioDefault26" value="MS" required>
+                            <label class="form-check-label" for="flexRadioDefault26">
+                                Muy satisfactorio
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta7" id="flexRadioDefault27" value="S" required>
+                            <label class="form-check-label" for="flexRadioDefault27">
+                                Satisfactorio
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta7" id="flexRadioDefault28" value="C" required>
+                            <label class="form-check-label" for="flexRadioDefault28">
+                                Cumple
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta7" id="flexRadioDefault29" value="PS" required>
+                            <label class="form-check-label" for="flexRadioDefault29">
+                                Poco Satisfactorio
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta7" id="flexRadioDefault30" value="NS" required>
+                            <label class="form-check-label" for="flexRadioDefault30">
+                                Nada Satisfactorio
+                            </label>
+                            </div>
+                        </div>
+
+                </div>
+
+                    
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+                </div>
+                </div>
+            </div>
+            </div>                       
+        </div>
+    </section>    
 
 
     <section><!--9. Footer-->
