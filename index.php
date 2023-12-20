@@ -1261,39 +1261,39 @@ $query = mysqli_query($con, $sql);
 
                     <form action="AgregarFeedback.php" method="POST" autocomplete="off">
 
-                    <div class="d-flex flex-column justify-content-center mb-4">
-                    <h5>1. La descripcion al inicio de la pagina comunica correctamente su proposito?</h5>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="pregunta1" id="flexRadioDefault1" value="MS" required>
-                        <label class="form-check-label" for="flexRadioDefault1">
-                        Muy satisfactorio
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="pregunta1" id="flexRadioDefault2" value="S" required>
-                        <label class="form-check-label" for="flexRadioDefault2">
-                        Satisfactorio
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="pregunta1" id="flexRadioDefault3" value="C" required>
-                        <label class="form-check-label" for="flexRadioDefault3">
-                        Cumple
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="pregunta1" id="flexRadioDefault4" value="PS" required>
-                        <label class="form-check-label" for="flexRadioDefault4">
-                        Poco Satisfactorio
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="pregunta1" id="flexRadioDefault5" value="NS" required>
-                        <label class="form-check-label" for="flexRadioDefault5">
-                        Nada Satisfactorio
-                        </label>
-                    </div>
-                    </div>
+                        <div class="d-flex flex-column justify-content-center mb-4">
+                        <h5>1. La descripcion al inicio de la pagina comunica correctamente su proposito?</h5>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta1" id="flexRadioDefault1" value="MS" required>
+                            <label class="form-check-label" for="flexRadioDefault1">
+                            Muy satisfactorio
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta1" id="flexRadioDefault2" value="S" required>
+                            <label class="form-check-label" for="flexRadioDefault2">
+                            Satisfactorio
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta1" id="flexRadioDefault3" value="C" required>
+                            <label class="form-check-label" for="flexRadioDefault3">
+                            Cumple
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta1" id="flexRadioDefault4" value="PS" required>
+                            <label class="form-check-label" for="flexRadioDefault4">
+                            Poco Satisfactorio
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pregunta1" id="flexRadioDefault5" value="NS" required>
+                            <label class="form-check-label" for="flexRadioDefault5">
+                            Nada Satisfactorio
+                            </label>
+                        </div>
+                        </div>
 
                         <div class="d-flex flex-column justify-content-center mb-4">
                             <h5>2. Que tal le parecio el formato de la seccion noticias?</h5>

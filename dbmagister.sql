@@ -186,6 +186,22 @@ INSERT INTO `noticia_importante` (`id`, `titulo`, `cuerpo`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `PREGUNTA_1` varchar(45) DEFAULT NULL,
+  `PREGUNTA_2` varchar(45) DEFAULT NULL,
+  `PREGUNTA_3` varchar(45) DEFAULT NULL,
+  `PREGUNTA_4` varchar(45) DEFAULT NULL,
+  `PREGUNTA_5` varchar(45) DEFAULT NULL,
+  `PREGUNTA_6` varchar(45) DEFAULT NULL,
+  `PREGUNTA_7` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `proyectos`
 --
 
